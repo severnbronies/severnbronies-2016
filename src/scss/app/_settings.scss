@@ -1,0 +1,43 @@
+// Breakpoints 
+$breakpoints: (
+	ent: 'only screen',
+	tos: 'only screen and (min-width: 600px)',
+	tng: 'only screen and (min-width: 770px)',
+	ds9: 'only screen and (min-width: 1024px)',
+	voy: 'only screen and (min-width: 1280px)'
+);
+
+// Settings - Typography
+$base-font-size: 16px;
+
+// Settings - Masthead
+$masthead-height: 75px;
+
+// Settings - Navigation
+$shift-top: 0;
+$shift-left: 280px;
+$shift-transition-duration: 1s;
+$shift-transition-easing: cubic-bezier(.785, .135, .150, .860);
+
+// Settings - Colours
+$palette: (
+	brand: (
+		primary: #2b2e4a,
+		secondary: #e84545,
+		text: #232323
+	),
+	cta: (
+		default: #e84545,
+		hover: #903749,
+		active: #53354a
+	),
+	context: (
+		accessibility: #fc0,
+		success: #4caf50,
+		warning: #ffc107,
+		error: #f44336
+	),
+	navigation: (
+		background: #0c0c0c
+	)
+);

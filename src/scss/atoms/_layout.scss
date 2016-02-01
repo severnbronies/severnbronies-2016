@@ -1,0 +1,20 @@
+@mixin layout-boilerplate {
+	width: 94%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin layout {
+	@include layout-boilerplate;
+	max-width: 980px;
+}
+
+@mixin content-layout {
+	@include layout-boilerplate;
+	max-width: 42em;
+}
+
+@mixin wide-layout {
+	@include layout-boilerplate;
+	max-width: 1440px;
+}

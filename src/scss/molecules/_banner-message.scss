@@ -1,0 +1,31 @@
+.banner-message {
+	padding: 15px 40px 15px 20px;
+	position: relative;
+	border-bottom: 1px solid rgba(black, .1);
+	background-color: #ededef;
+	@include mq(tng) {
+		padding-left: 40px;
+	}
+	&__body {
+		font-size: em-calc(14px);
+	}
+	&__close {
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		color: black;
+		font-size: 20px;
+		font-weight: bold;
+		text-decoration: none;
+		transform: translateY(-50%);
+		opacity: .35;
+		transition: opacity .3s ease;
+		&:hover,
+		&:focus {
+			opacity: .75;
+		}
+	}
+	&--warning {
+		background-color: #fc0;
+	}
+}

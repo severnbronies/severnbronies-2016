@@ -1,0 +1,13 @@
+@mixin body-font {
+	font-size: $base-font-size;
+	font-family: 'proxima-nova', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@mixin caption-font {
+	font-family: 'adelle-condensed', serif;
+	font-weight: 300;
+}
+
+body {
+	@include body-font;
+}

@@ -1,0 +1,29 @@
+scss_files: 'src/scss/'
+exclude: 
+  - 'src/scss/atoms/_reset.scss'
+  - 'src/scss/vendor/**'
+
+linters: 
+  BemDepth:
+    max_elements: 1
+  ChainedClasses:
+    enabled: true
+  ColorVariable:
+    enabled: false
+  ElsePlacement:
+    style: new_line
+  EmptyLineBetweenBlocks:
+    enabled: false
+  ExtendDirective:
+    enabled: true
+  Indentation:
+    character: tab
+    width: 1
+  PropertySortOrder:
+    order: smacss
+  SelectorFormat:
+    convention: strict_BEM
+  TrailingZero:
+    enabled: true
+  TransitionAll:
+    enabled: true

@@ -1,0 +1,13 @@
+.sass_cache/
+node_modules/
+pattern-library/
+Thumbs.db
+ehthumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+npm-debug.log
+
+dst/

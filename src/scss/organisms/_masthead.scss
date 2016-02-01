@@ -1,0 +1,25 @@
+.masthead {
+	@include clearfix;
+	padding-right: 20px;
+	padding-left: 20px;
+	color: white;
+	background-color: palette(brand, primary);
+	text-align: center;
+	@include mq(tng) {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+	&__inner {
+		@include wide-layout;
+	}
+	&__branding {
+		@include mq(tos) {
+			float: left;
+		}
+	}
+	&__navigation {
+		@include mq(tos) {
+			float: right;
+		}
+	}
+}
