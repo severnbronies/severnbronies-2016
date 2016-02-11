@@ -45,5 +45,5 @@ She is the best pony.              ( /  \_         `.' / `.
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: WordPress, jQuery, Modernizr, Google Fonts
-  Software: Sublime Text, Photoshop, Illustrator
+  Components: WordPress, jQuery, Modernizr, Adobe Typekit
+  Software: NGINX, Sublime Text, Adobe Photoshop, Adobe Illustrator

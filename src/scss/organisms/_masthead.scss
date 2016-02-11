@@ -1,18 +1,22 @@
 .masthead {
 	@include clearfix;
+	height: $masthead-height;
 	padding-right: 20px;
 	padding-left: 20px;
 	color: white;
-	background-color: palette(brand, primary);
+	background-color: rgba(palette(brand, primary), .85);
 	text-align: center;
 	@include mq(tng) {
 		padding-right: 40px;
 		padding-left: 40px;
 	}
 	&__inner {
-		@include wide-layout;
+		@include layout;
 	}
 	&__branding {
+		font-size: em-calc($masthead-height / 2);
+		font-weight: bold;
+		line-height: $masthead-height;
 		@include mq(tos) {
 			float: left;
 		}

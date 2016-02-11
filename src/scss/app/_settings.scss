@@ -11,19 +11,23 @@ $breakpoints: (
 $base-font-size: 16px;
 
 // Settings - Masthead
-$masthead-height: 75px;
+$masthead-height: 44px;
 
 // Settings - Navigation
-$shift-top: 0;
-$shift-left: 280px;
-$shift-transition-duration: 1s;
-$shift-transition-easing: cubic-bezier(.785, .135, .150, .860);
+// $shift-top: 0;
+// $shift-left: 280px;
+// $shift-transition-duration: 1s;
+// $shift-transition-easing: cubic-bezier(.785, .135, .150, .860);
+
+// Settings - Footer
+$footer-color: #2b2e4a;
 
 // Settings - Colours
 $palette: (
 	brand: (
 		primary: #2b2e4a,
 		secondary: #e84545,
+		faded: #53354a,
 		text: #232323
 	),
 	cta: (

@@ -1,7 +1,7 @@
 	<header class="masthead" role="banner">
 		<div class="masthead__inner">
 			<div class="masthead__branding">
-				Severn Bronies
+				<a href="/">Severn Bronies</a>
 			</div>
 			<nav class="masthead__navigation navigation" id="navigation" role="navigation">
 				<ul class="navigation__list">
