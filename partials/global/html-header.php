@@ -28,24 +28,9 @@
 	<title><?php echo sb_page_title(); ?></title>
 
 </head>
-<body id="top">
+<body class="">
 
 	<ul class="accessibility-links">
 		<li><a href="#navigation">Skip to navigation</a></li>
 		<li><a href="#content">Skip to content</a></li>
 	</ul>
-
-	<!--[if lt IE 9]>
-		<div class="banner-message banner-message--warning" data-module="bannerMessages">
-			<div class="content banner-message__body">
-				<p><strong>Your browser is old. Really old. Old as balls.</strong> It's so old that not only does it not support modern web technologies properly, it's not even supported by Microsoft anymore and is probably a risk to your safety. You should really <a href="http://browsehappy.org/">upgrade to a better browser</a>, like, right now. We'll wait.</p>
-			</div>
-		</div>
-	<![endif]-->
-
-	<div class="banner-message" data-module="bannerMessages">
-		<div class="content banner-message__body">
-			<p><strong>We're legally obliged to tell you that this website uses cookies</strong>, some of which may stalk you relentlessly into the night. For more information see our <a href="#">cookie information</a>. That's it. You can carry on with your life now, sleeping soundly, safe in the knowledge that this website uses cookies.</p>
-		</div>
-		<a class="banner-message__close" href="#">&times;</a>
-	</div>

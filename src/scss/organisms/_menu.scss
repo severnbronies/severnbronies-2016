@@ -1,0 +1,50 @@
+.menu {
+	background-color: palette(menu, background);
+	.js.csstransforms3d & {
+		max-width: $menu-width;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		transition: transform $menu-transition-duration $menu-transition-easing;
+		transform: translate3d(100%, 0, 0);
+		transform-style: preserve-3d;
+	}
+	.js.csstransforms3d .menu-open & {
+		transform: translate3d(0, 0, 0);
+	}
+	&__top {
+
+	}
+	&__bottom {
+
+	}
+	&__search-form {
+
+	}
+	&__navigation,
+	&__subnavigation,
+	&__social-links,
+	&__boilerplate {
+		margin-right: 30px;
+		margin-left: 30px;
+	}
+	&__navigation {
+
+	}
+	&__subnavigation {
+
+	}
+	&__social-links {
+
+	}
+	&__boilerplate {
+		margin-top: 20px;
+		padding-top: 5px;
+		border-top: 1px solid mix(#000, palette(menu, background), 20%);
+		color: mix(#000, palette(menu, background), 50%);
+		font-size: em-calc(13px);
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

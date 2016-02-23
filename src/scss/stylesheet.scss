@@ -15,14 +15,14 @@
 
 // Molecules
 // e.g. @import "molecules/data-table";
+@import "molecules/navigation";
 @import "molecules/banner-message";
 @import "molecules/meet-card";
 
 // Organisms
 // e.g. @import "organisms/dataset";
 @import "organisms/masthead";
-@import "organisms/navigation";
-@import "organisms/footer";
+@import "organisms/menu";
 @import "organisms/main";
 
 // Templates

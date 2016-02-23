@@ -11,16 +11,12 @@ $breakpoints: (
 $base-font-size: 16px;
 
 // Settings - Masthead
-$masthead-height: 44px;
+$masthead-height: 55px;
 
-// Settings - Navigation
-// $shift-top: 0;
-// $shift-left: 280px;
-// $shift-transition-duration: 1s;
-// $shift-transition-easing: cubic-bezier(.785, .135, .150, .860);
-
-// Settings - Footer
-$footer-color: #2b2e4a;
+// Settings - Menu
+$menu-width: 320px;
+$menu-transition-duration: 1s;
+$menu-transition-easing: cubic-bezier(.785, .135, .150, .860);
 
 // Settings - Colours
 $palette: (
@@ -41,7 +37,8 @@ $palette: (
 		warning: #ffc107,
 		error: #f44336
 	),
-	navigation: (
-		background: #0c0c0c
+	menu: (
+		background: #fff,
+		accent: #2b2e4a
 	)
 );

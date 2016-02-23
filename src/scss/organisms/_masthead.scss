@@ -1,29 +1,56 @@
 .masthead {
-	@include clearfix;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 	height: $masthead-height;
-	padding-right: 20px;
-	padding-left: 20px;
 	color: white;
-	background-color: rgba(palette(brand, primary), .85);
-	text-align: center;
-	@include mq(tng) {
-		padding-right: 40px;
-		padding-left: 40px;
-	}
-	&__inner {
-		@include layout;
-	}
+	background-color: palette(brand, primary);
 	&__branding {
-		font-size: em-calc($masthead-height / 2);
+		order: 2;
+		font-size: em-calc(17px);
 		font-weight: bold;
-		line-height: $masthead-height;
+		text-align: center;
+		line-height: em-calc(24px, 17px);
+		letter-spacing: em-calc(2px, 17px);
+		text-transform: uppercase;
 		@include mq(tos) {
-			float: left;
+			font-size: em-calc(21px);
+		}
+		a {
+			color: inherit;
+			text-decoration: none;
 		}
 	}
-	&__navigation {
-		@include mq(tos) {
-			float: right;
+	&__menu,
+	&__alert {
+		border-width: 0;
+		border-style: solid;
+		border-color: rgba(#fff, .2);
+	}
+	&__menu {
+		order: 3;
+		border-left-width: 1px;
+		.masthead__icon {
+			@include icon-menu(#fff, 24px);
 		}
+	}
+	&__alert {
+		order: 1;
+		border-right-width: 1px;
+		.masthead__icon {
+			@include icon-search(#fff, 24px);
+		}
+	}
+	&__link {
+		display: block;
+		padding: 0 15px;
+		line-height: $masthead-height;
+	}
+	&__icon {
+		vertical-align: middle;
+	}
+	&__label {
+		@include hidden;
 	}
 }

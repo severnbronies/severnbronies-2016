@@ -80,6 +80,7 @@ gulp.task("scripts-vendor", function() {
 gulp.task("scripts", function() {
 	gulp.src("./src/js/scripts/*.js")
 	.pipe(uglify())
+	.pipe(concat("scripts.js"))
 	.pipe(gulp.dest("./dst/js"))
 });
 

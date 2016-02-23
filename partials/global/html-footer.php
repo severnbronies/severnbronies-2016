@@ -14,6 +14,7 @@
 		})(document);
 	</script>
 	<script src="<?php echo get_template_directory_uri(); ?>/dst/js/vendor.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/dst/js/scripts.js"></script>
 
 	<!-- Google Analytics -->
 	<script>

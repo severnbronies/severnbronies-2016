@@ -1,8 +1,17 @@
 html {
-	// background-color: $footer-color;
+	background-color: #040404;
 }
 
 body {
 	color: palette(brand, text);
 	background-color: transparent;
+}
+
+.wrapper {
+	background-color: #fff;
+	transition: all $menu-transition-duration $menu-transition-easing;
+	.menu-open & {
+		transform: scale(.97);
+		opacity: .25;
+	}
 }

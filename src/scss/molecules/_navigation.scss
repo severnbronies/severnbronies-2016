@@ -1,0 +1,15 @@
+.navigation {
+	&__list {
+		list-style: none;
+	}
+	&__item {
+		
+	}
+	&__link {
+		display: block;
+		font-size: em-calc(14px);
+		text-transform: uppercase;
+		text-decoration: none;
+		letter-spacing: em-calc(1px, 14px);
+	}
+}
