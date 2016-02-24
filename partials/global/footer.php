@@ -1,12 +1,14 @@
 </div><!-- /.wrapper -->
 
-<nav class="menu" id="navigation" role="navigation">
+<div class="menu" id="navigation">
 	<div class="menu__top">
-		<form class="search-form menu__search-form">
-			<input type="text">
-			<button type="submit">Search</button>
+		<form class="search-form menu__search-form" role="search">
+			<input class="search-form__input" type="search" placeholder="Type and press enter to search">
+			<span class="search-form__buttons">
+				<button class="search-form__submit" type="submit">Search</button>
+			</span>
 		</form>
-		<div class="navigation menu__navigation">
+		<nav class="navigation menu__navigation" role="navigation" aria-label="Primary">
 			<ul class="navigation__list">
 				<li class="navigation__item">
 					<a class="navigation__link" href="#">
@@ -29,8 +31,8 @@
 					</a>
 				</li>
 			</ul>
-		</div>
-		<div class="navigation navigation--secondary menu__subnavigation">
+		</nav>
+		<nav class="navigation navigation--secondary menu__subnavigation" role="navigation" aria-label="Secondary">
 			<ul class="navigation__list">
 				<li class="navigation__item">
 					<a class="navigation__link" href="#">
@@ -38,36 +40,39 @@
 					</a>
 				</li>
 			</ul>
-		</div>
+		</nav>
 	</div>
 	<div class="menu__bottom">
-		<div class="social-links menu__social-links">
+		<nav class="social-links menu__social-links" role="navigation" aria-label="Social Media Links">
+			<div class="social-links__header">
+				<p>Meet us online before you meet us offline.</p>
+			</div>
 			<ul class="social-links__list">
 				<li class="social-links__item">
-					<a class="social-links__link social-links__link--twitter">
+					<a class="social-links__link social-links__link--twitter" href="#">
 						<span class="social-links__icon"></span>
 						<span class="social-links__label">Twitter</span>
 					</a>
 				</li>
 				<li class="social-links__item">
-					<a class="social-links__link social-links__link--facebook">
+					<a class="social-links__link social-links__link--facebook" href="#">
 						<span class="social-links__icon"></span>
 						<span class="social-links__label">Facebook</span>
 					</a>
 				</li>
 				<li class="social-links__item">
-					<a class="social-links__link social-links__link--github">
+					<a class="social-links__link social-links__link--github" href="#">
 						<span class="social-links__icon"></span>
 						<span class="social-links__label">GitHub</span>
 					</a>
 				</li>
 			</ul>
-		</div>
-		<div class="menu__boilerplate">
+		</nav>
+		<div class="menu__boilerplate" role="contentinfo">
 			<small>
 				&copy;<?php echo date("Y"); ?> <?php bloginfo("name"); ?>. All rights reserved. <br>
 				All copyrights belong to their their respective owners.
 			</small>
 		</div>
 	</div>
-</nav>
+</div>

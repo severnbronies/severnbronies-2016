@@ -5,6 +5,9 @@ html {
 body {
 	color: palette(brand, text);
 	background-color: transparent;
+	&.menu-open {
+		overflow: hidden;
+	}
 }
 
 .wrapper {

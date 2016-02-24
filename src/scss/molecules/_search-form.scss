@@ -1,0 +1,49 @@
+.search-form {
+	display: table;
+	width: 100%;
+	position: relative;
+	&::before {
+		@include icon-search(#fff, 16px);
+		content: "";
+		vertical-align: bottom;
+	}
+	&__input,
+	&__buttons {
+		display: table-cell;
+	}
+	&__input {
+		width: 100%;
+		position: relative;
+		z-index: 2;
+		float: left;
+		border: none;
+		border-bottom: 1px solid rgba(#fff, .4);
+		border-radius: 0;
+		color: #fff;
+		background: none;
+		font-family: inherit;
+		font-size: em-calc(14px);
+		line-height: em-calc(16px, 14px);
+		-webkit-appearance: none;
+		&:hover {
+			border-bottom-color: rgba(#fff, .6);
+		}
+		&:focus {
+			border-bottom-color: #fff;
+			outline: none;
+		}
+	}
+	&__buttons {
+		width: 1%;
+		position: relative;
+		white-space: nowrap;
+		vertical-align: middle;
+		// .js & {
+		// 	display: none;
+		// }
+	}
+	&__submit {
+		position: relative;
+		z-index: 2;
+	}
+}
