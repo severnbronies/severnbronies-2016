@@ -3,12 +3,12 @@
 <div class="menu" id="navigation">
 	<div class="menu__top">
 		<form class="search-form menu__search-form" role="search">
-			<input class="search-form__input" type="search" placeholder="Type and press enter to search">
+			<input class="search-form__input" type="search" placeholder="Search&hellip;">
 			<span class="search-form__buttons">
 				<button class="search-form__submit" type="submit">Search</button>
 			</span>
 		</form>
-		<nav class="navigation menu__navigation" role="navigation" aria-label="Primary">
+		<nav class="navigation navigation--primary menu__navigation" role="navigation" aria-label="Primary">
 			<ul class="navigation__list">
 				<li class="navigation__item">
 					<a class="navigation__link" href="#">
@@ -39,30 +39,39 @@
 						Contact
 					</a>
 				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="#">
+						Resources
+					</a>
+				</li>
+				<li class="navigation__item">
+					<a class="navigation__link" href="#">
+						Privacy Policy
+					</a>
+				</li>
 			</ul>
 		</nav>
 	</div>
 	<div class="menu__bottom">
 		<nav class="social-links menu__social-links" role="navigation" aria-label="Social Media Links">
-			<div class="social-links__header">
-				<p>Meet us online before you meet us offline.</p>
-			</div>
 			<ul class="social-links__list">
 				<li class="social-links__item">
 					<a class="social-links__link social-links__link--twitter" href="#">
-						<span class="social-links__icon"></span>
 						<span class="social-links__label">Twitter</span>
 					</a>
 				</li>
 				<li class="social-links__item">
 					<a class="social-links__link social-links__link--facebook" href="#">
-						<span class="social-links__icon"></span>
 						<span class="social-links__label">Facebook</span>
 					</a>
 				</li>
 				<li class="social-links__item">
+					<a class="social-links__link social-links__link--tumblr" href="#">
+						<span class="social-links__label">Tumblr</span>
+					</a>
+				</li>
+				<li class="social-links__item">
 					<a class="social-links__link social-links__link--github" href="#">
-						<span class="social-links__icon"></span>
 						<span class="social-links__label">GitHub</span>
 					</a>
 				</li>

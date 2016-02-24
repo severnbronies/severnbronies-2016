@@ -25,7 +25,7 @@
 		margin-bottom: 30px;
 	}
 	&__search-form {
-		padding: 20px 30px;
+		padding: 25px 30px;
 		background-color: palette(menu, accent);
 	}
 	&__navigation,
@@ -36,16 +36,16 @@
 		margin-left: 30px;
 	}
 	&__navigation {
-
+		margin-top: 15px;
+		margin-bottom: 30px;
 	}
 	&__subnavigation {
-
+		margin-bottom: 15px;
 	}
 	&__social-links {
-
+		margin-bottom: 15px;
 	}
 	&__boilerplate {
-		margin-top: 20px;
 		padding-top: 5px;
 		border-top: 1px solid mix(#000, palette(menu, background), 20%);
 		color: mix(#000, palette(menu, background), 50%);

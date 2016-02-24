@@ -1,3 +1,40 @@
 .social-links {
-	
+	&__list {
+		
+	}
+	&__item {
+		display: inline-block;
+	}
+	&__label {
+		@include hidden;
+	}
+	&__link {
+		display: block;
+		width: 2em;
+		height: 2em;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 1.5em;
+		transition: transform .3s $menu-transition-easing;
+		&:hover,
+		&:focus {
+			transform: scale(1.2);
+		}
+		&--twitter {
+			background-color: #55acee;
+			@include icon-social-twitter(#fff);
+		}
+		&--facebook {
+			background-color: #3b5998;
+			@include icon-social-facebook(#fff);
+		}
+		&--tumblr {
+			background-color: #35465c;
+			@include icon-social-tumblr(#fff);
+		}
+		&--github {
+			background-color: #333;
+			@include icon-social-github(#fff);
+		}
+	}
 }
