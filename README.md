@@ -1,1 +1,1 @@
-**We're slowly building the new Severn Bronies website here!** Watch along! Learn how to code stuff! [Raise bugs! Request a feature!](/severnbronies/severnbronies-website/issues) Find weaknesses to exploit! The choice is yours! 
+**We're slowly building the new Severn Bronies website here!** Watch along! Learn how to code stuff! [Raise bugs! Request a feature!](https://github.com/severnbronies/severnbronies-website/issues) Find weaknesses to exploit! The choice is yours! 
