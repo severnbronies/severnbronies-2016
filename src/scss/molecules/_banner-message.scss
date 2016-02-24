@@ -3,7 +3,7 @@
 	padding-right: 40px;
 	position: relative;
 	border-bottom: 1px solid rgba(black, .1);
-	background-color: #ededef;
+	background-color: palette(context, neutral);
 	@include mq(tng) {
 		padding-left: 40px;
 	}
@@ -26,6 +26,12 @@
 		}
 	}
 	&--warning {
-		background-color: #fc0;
+		background-color: palette(context, warning);
+	}
+	&--error {
+		background-color: palette(context, error);
+	}
+	&--success {
+		background-color: palette(context, success);
 	}
 }
