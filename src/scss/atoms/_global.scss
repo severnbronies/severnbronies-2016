@@ -11,10 +11,12 @@ body {
 }
 
 .wrapper {
+	min-height: 100vh;
 	background-color: #fff;
-	transition: all $menu-transition-duration $menu-transition-easing;
+	transition: transform $menu-transition-duration $menu-transition-easing, opacity $menu-transition-duration $menu-transition-easing;
 	.menu-open & {
 		transform: scale(.97);
 		opacity: .25;
+		pointer-events: none;
 	}
 }
