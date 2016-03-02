@@ -14,26 +14,31 @@
 
 	<main class="main" id="content" role="main">
 	<?php if($meet_query->have_posts()): ?>
-		<div class="meet-grid meet-grid--homepage meet-grid--items-<?php echo $meet_query->post_count; ?> template-homepage__meet-grid">
+		<div class="meet-grid meet-grid--items-<?php echo $meet_query->post_count; ?> template-homepage__meet-grid">
 		<?php 
 			while($meet_query->have_posts()): 
 				$meet_query->the_post();
 				$meet_location = sb_meet_location(get_field("meet_location")); 
 				$meet_coords = $meet_location["latitude"] . "," . $meet_location["longitude"];
 				if(has_post_thumbnail()):
-					$image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), "full")[0];
+					$meet_image = sb_responsive_image_helper(get_post_thumbnail_id(), "meet-card__image");
 				else: 
-					$image_url = "//maps.googleapis.com/maps/api/staticmap?size=640x640&amp;maptype=roadmap&amp;markers=color:0xe84545%7C" . $meet_coords . "&amp;key=AIzaSyBbChsPXFcEPgXCAncMzV5FdaWc2W8_Hjk";
+					$meet_image = '<img class="meet-card__map" alt="Map showing the location of ' . $meet_location["name"] . '." srcset="//maps.googleapis.com/maps/api/staticmap?size=640x640&amp;maptype=roadmap&amp;markers=color:0xe84545%7C' . $meet_coords . '&amp;key=AIzaSyBbChsPXFcEPgXCAncMzV5FdaWc2W8_Hjk">';
 				endif; 
 		?>
-			<div class="meet-grid__item">
-				<div class="meet-card">
-					<h1><?php the_title(); ?></h1>
-					<img alt="" src="<?php echo $image_url; ?>">
-					<?php echo sb_meet_dates(get_field("meet_start_time"), get_field("meet_end_time")); ?>
-					<?php echo $meet_location["address"]; ?>
-				</div>
-			</div>
+			<article class="meet-card meet-grid__item">
+				<a class="meet-card__link" href="<?php the_permalink(); ?>">
+					<div class="meet-card__media">
+						<?php echo $meet_image; ?>
+					</div>
+					<div class="meet-card__body">
+						<h1 class="meet-card__title"><?php the_title(); ?></h1>
+						<ul class="meet-card__meta">
+							<li class="meet-card__meta-item"><?php echo sb_meet_dates(get_field("meet_start_time")); ?></li>
+						</ul>
+					</div>
+				</a>
+			</article>
 		<?php 
 			endwhile; 
 		?>

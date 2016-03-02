@@ -1,3 +1,58 @@
 .meet-card {
-	
+	display: flex;
+	position: relative;
+	&__link {
+		display: block;
+		position: relative;
+		width: 100%;
+		text-decoration: none;
+		background-color: palette(brand, secondary);
+		transition: background-color .3s $menu-transition-easing;
+		&:hover,
+		&:focus {
+			background-color: mix(#000, palette(brand, secondary), 10%);
+			z-index: 1;
+		}
+	}
+	&__media {
+		position: relative;
+		background-color: #212121;
+	}
+	&__image,
+	&__map {
+		width: 100%;
+		height: 42vw;
+		object-fit: cover;
+		@include mq(tos) {
+			height: 32vw;
+		}
+		@include mq(tng) {
+			height: 45vh;
+		}
+	}
+	&__image {
+	}
+	&__map {
+	}
+	&__body {
+		padding: 15px;
+	}
+	&__title,
+	&__meta {
+	}
+	&__title {
+		@include header-kirk;
+		margin-bottom: 5px;
+		padding-right: 15px;
+		position: relative;
+		color: #fff;
+	}
+	&__meta {
+		list-style: none;
+		color: #fff;
+		opacity: .8;
+	}
+	&__meta-item {
+		display: inline-block;
+	}
 }

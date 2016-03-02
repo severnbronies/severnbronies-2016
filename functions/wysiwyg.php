@@ -29,13 +29,6 @@ function sb_image_insertion($html, $id, $caption, $title, $align, $url, $size, $
 add_filter("image_send_to_editor", "sb_image_insertion", 10, 9);
 
 /**
- * Define desired image resizes
- */
-add_image_size('article-large', 1400, 9999);
-add_image_size('article-medium', 1000, 9999);
-add_image_size('article-small', 600, 9999);
-
-/**
  * Build responsive image sources.
  * @param  int    $image    The attachment ID.
  * @param  array  $mappings Array of defined image sizes.
