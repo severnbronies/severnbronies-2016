@@ -9,73 +9,39 @@
 			</span>
 		</form>
 		<nav class="navigation navigation--primary menu__navigation" role="navigation" aria-label="Primary">
-			<ul class="navigation__list">
-				<li class="navigation__item">
-					<a class="navigation__link" href="#">
-						Meets
-					</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__link" href="#">
-						Community
-					</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__link" href="#">
-						About
-					</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__link" href="#">
-						Rules
-					</a>
-				</li>
-			</ul>
+			<?php
+				wp_nav_menu(array(
+					"theme_location" => "primary",
+					"menu_class" => "navigation__list",
+					"container" => false,
+					"items_wrap" => '<ul class="%2$s">%3$s</ul>',
+					"walker" => new sb_navigation_walker
+				));
+			?>
 		</nav>
 		<nav class="navigation navigation--secondary menu__subnavigation" role="navigation" aria-label="Secondary">
-			<ul class="navigation__list">
-				<li class="navigation__item">
-					<a class="navigation__link" href="#">
-						Contact
-					</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__link" href="#">
-						Resources
-					</a>
-				</li>
-				<li class="navigation__item">
-					<a class="navigation__link" href="#">
-						Privacy Policy
-					</a>
-				</li>
-			</ul>
+			<?php
+				wp_nav_menu(array(
+					"theme_location" => "secondary",
+					"menu_class" => "navigation__list",
+					"container" => false,
+					"items_wrap" => '<ul class="%2$s">%3$s</ul>',
+					"walker" => new sb_navigation_walker
+				));
+			?>
 		</nav>
 	</div>
 	<div class="menu__bottom">
 		<nav class="social-links menu__social-links" role="navigation" aria-label="Social Media Links">
-			<ul class="social-links__list">
-				<li class="social-links__item">
-					<a class="social-links__link social-links__link--twitter" href="#">
-						<span class="social-links__label">Twitter</span>
-					</a>
-				</li>
-				<li class="social-links__item">
-					<a class="social-links__link social-links__link--facebook" href="#">
-						<span class="social-links__label">Facebook</span>
-					</a>
-				</li>
-				<li class="social-links__item">
-					<a class="social-links__link social-links__link--tumblr" href="#">
-						<span class="social-links__label">Tumblr</span>
-					</a>
-				</li>
-				<li class="social-links__item">
-					<a class="social-links__link social-links__link--github" href="#">
-						<span class="social-links__label">GitHub</span>
-					</a>
-				</li>
-			</ul>
+			<?php
+				wp_nav_menu(array(
+					"theme_location" => "social",
+					"menu_class" => "social-links__list",
+					"container" => false,
+					"items_wrap" => '<ul class="%2$s">%3$s</ul>',
+					"walker" => new sb_social_links_walker
+				));
+			?>
 		</nav>
 		<div class="menu__boilerplate" role="contentinfo">
 			<small>
