@@ -8,6 +8,8 @@
 	background-color: palette(brand, primary);
 	&__branding {
 		order: 2;
+		padding-right: 15px;
+		padding-left: 15px;
 		font-size: em-calc(17px);
 		font-weight: bold;
 		text-align: center;

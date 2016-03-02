@@ -10,12 +10,12 @@
 				<span class="masthead__label">Menu</span>
 			</a>
 		</div>
-		<div class="masthead__alert">
+		<!--<div class="masthead__alert">
 			<a class="masthead__link" href="#alerts">
 				<span class="masthead__icon"></span>
 				<span class="masthead__label">Alerts</span>
 			</a>
-		</div>
+		</div>-->
 	</header>
 
 	<!--[if lt IE 9]>
