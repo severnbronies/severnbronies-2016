@@ -48,6 +48,7 @@
 		}
 	}
 	&--grid {
+		flex-direction: row;
 		.meet-grid__item {
 			@include mq(tos) {
 				width: 50%;
