@@ -1,0 +1,32 @@
+.pagination {
+	padding: 30px 20px;
+	text-align: center;
+	&__title {
+		@include header-kirk;
+		margin-bottom: 7px;
+		color: mix(#fff, #000, 65%);
+	}
+	&__list {
+		max-width: 360px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	&__item {
+		display: inline-block;
+	}
+	&__link {
+		display: block;
+		padding: .3em .5em;
+		border: 1px solid mix(#fff, #000, 85%);
+		color: #777;
+		text-decoration: none;
+		transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+		&--current,
+		&:hover,
+		&:focus {
+			background-color: palette(brand, secondary);
+			border-color: palette(brand, secondary);
+			color: white;
+		}
+	}
+}

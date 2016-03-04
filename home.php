@@ -5,7 +5,7 @@
 		"post_type" => "meet",
 		"orderby" => "meta_value_num",
 		"order" => "ASC",
-		"posts_per_page" => "3",
+		"posts_per_page" => 3,
 		"meta_key" => "meet_end_time",
 		"meta_compare" => ">",
 		"meta_value" => time()
@@ -33,6 +33,7 @@
 					</div>
 					<div class="meet-card__body">
 						<h1 class="meet-card__title"><?php the_title(); ?></h1>
+						<div class="meet-card__locality"><?php echo $meet_location["locality"]; ?></div>
 						<ul class="meet-card__meta">
 							<li class="meet-card__meta-item"><?php echo sb_meet_dates(get_field("meet_start_time")); ?></li>
 						</ul>
