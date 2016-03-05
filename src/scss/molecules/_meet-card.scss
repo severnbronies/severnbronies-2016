@@ -30,38 +30,9 @@
 			height: 45vh;
 		}
 	}
-	&__image {
-	}
-	&__map {
-	}
 	&__body {
 		padding: 15px;
-	}
-	&__locality {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: inline-block;
-		padding: 8px 15px;
-		color: #fff;
-		text-transform: uppercase;
-		font-size: em-calc(14px);
-		letter-spacing: em-calc(1px, 14px);
-		background-color: palette(brand, secondary);
-		&::before {
-			content: "";
-			width: 0;
-			height: 0;
-			position: absolute;
-			top: 100%;
-			left: 0;
-			border-style: solid;
-			border-width: 10px 10px 0 0;
-			border-color: palette(brand, secondary) transparent transparent transparent;
-		}
-	}
-	&__title,
-	&__meta {
+		position: relative;
 	}
 	&__title {
 		@include header-kirk;
@@ -70,12 +41,70 @@
 		position: relative;
 		color: #fff;
 	}
+	&__live {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		display: inline-block;
+		padding: 10px 15px;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: em-calc(14px);
+		letter-spacing: em-calc(1px, 14px);
+		background-color: palette(brand, secondary);
+		font-weight: bold;
+		&::before {
+			content: "";
+			display: inline-block;
+			width: .9em;
+			height: .9em;
+			background-color: #fff;
+			border-radius: 50% 50%;
+			margin-right: 6px;
+			vertical-align: top;
+			animation: live-flash 2.6s ease infinite;
+		}
+	}
 	&__meta {
 		list-style: none;
-		color: #fff;
-		opacity: .8;
+		color: #ccc;
 	}
 	&__meta-item {
 		display: inline-block;
+		&--locality {
+			position: absolute;
+			margin-bottom: -1px;
+			bottom: 100%;
+			left: 0;
+			display: inline-block;
+			padding: 8px 15px;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: em-calc(14px);
+			letter-spacing: em-calc(1px, 14px);
+			background-color: palette(brand, secondary);
+			&::before {
+				content: "";
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				border-style: solid;
+				border-width: 10px 10px 0 0;
+				border-color: palette(brand, secondary) transparent transparent transparent;
+			}
+		}
+	}
+}
+
+@keyframes live-flash {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: .9;
 	}
 }
