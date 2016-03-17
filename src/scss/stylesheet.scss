@@ -21,6 +21,8 @@
 @import "molecules/banner-message";
 @import "molecules/meet-card";
 @import "molecules/pagination";
+@import "molecules/metadata";
+@import "molecules/avatar-grid";
 
 // Organisms
 // e.g. @import "organisms/dataset";
@@ -28,6 +30,7 @@
 @import "organisms/menu";
 @import "organisms/main";
 @import "organisms/meet-grid";
+@import "organisms/hero";
 
 // Templates
 // e.g. @import "templates/datasheet";
