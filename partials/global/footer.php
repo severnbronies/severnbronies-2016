@@ -1,4 +1,4 @@
-	<aside class="search-overlay">
+<!-- 	<aside class="search-overlay">
 		<form class="search-form" role="search" method="get" action="/search">
 			<input class="search-form__input" type="search" placeholder="Type to search&hellip;">
 			<span class="search-form__buttons">
@@ -6,7 +6,7 @@
 			</span>
 		</form>
 	</aside>
-
+ -->
 	<footer class="footer" id="bottom" role="contentinfo">
 		<div class="footer__inner">
 			<div class="footer__section footer__section--social">

@@ -36,7 +36,7 @@
 		}
 		&[href*="//"] {
 			&::after {
-				@include icon-external(#fff, 16px);
+				@include icon-external(#fff, 10px);
 				content: "";
 				margin-left: 6px;
 				vertical-align: text-top;

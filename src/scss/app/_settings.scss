@@ -48,3 +48,13 @@ $palette: (
 // Settings - Meets
 $avatar-grid-size: 74px;
 $meet-border-color: #ddd;
+
+// Settings - Articles
+$article-content-width: 36em;
+$article-gutter: 1.25em;
+$article-left-width: 10em;
+$article-right-width: 20em;
+$article-content-medium-width: ($article-content-width + $article-gutter + $article-left-width);
+$article-content-large-width: ($article-content-medium-width + $article-gutter + $article-right-width);
+$article-medium-breakpoint: $article-content-medium-width + ($article-gutter * 2);
+$article-large-breakpoint: $article-content-large-width + ($article-gutter * 2);

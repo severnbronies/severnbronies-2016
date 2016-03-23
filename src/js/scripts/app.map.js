@@ -35,7 +35,7 @@ app.map = function() {
 			map: map,
 			animation: google.maps.Animation.DROP
 		});
-		google.maps.event.addListener(map, "resize", function() {
+		google.maps.event.addDomListener(window, "resize", function() {
 			map.setCenter(location);
 		});
 	};

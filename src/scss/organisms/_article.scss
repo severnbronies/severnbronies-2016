@@ -1,0 +1,46 @@
+.article {
+	max-width: $article-content-width;
+	margin-right: auto;
+	margin-left: auto;
+	@include mq("(min-width: #{$article-medium-breakpoint})") {
+		max-width: $article-content-medium-width;
+		padding-left: ($article-left-width + $article-gutter);
+	}
+	@include mq("(min-width: #{$article-large-breakpoint})") {
+		max-width: $article-content-large-width;
+		padding-right: ($article-right-width + $article-gutter);
+	}
+	&__aside {
+		background-color: #ddd;
+		min-height: 11em;
+		&--left {
+			width: $article-left-width;
+			margin-right: $article-gutter;
+			float: left;
+			clear: left;
+			@include mq("(min-width: #{$article-medium-breakpoint})") {
+				margin-left: (0 - ($article-left-width + $article-gutter));
+			}
+		}
+		&--right {
+			@include mq("(min-width: #{$article-medium-breakpoint})") {
+				width: $article-right-width;
+				margin-left: $article-gutter;
+				float: right;
+				clear: right;
+			}
+			@include mq("(min-width: #{$article-large-breakpoint})") {
+				margin-right: (0 - ($article-right-width + $article-gutter));
+			}
+		}
+		&--center {
+			clear: both;
+			@include mq("(min-width: #{$article-medium-breakpoint})") {
+				margin-left: (0 - ($article-left-width + $article-gutter));
+			}
+			@include mq("(min-width: #{$article-large-breakpoint})") {
+				margin-right: (0 - ($article-right-width + $article-gutter));
+			}
+		}
+	}
+}
