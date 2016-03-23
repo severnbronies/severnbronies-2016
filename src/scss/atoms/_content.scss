@@ -7,14 +7,22 @@
 	a {
 		color: inherit;
 		text-decoration: none;
-		box-shadow: inset 0 -.1em 0 0 palette(cta, default);
 		transition: box-shadow .2s ease;
+		@each $locale, $color in $palette-locales {
+			[data-theme="#{$locale}"] & {
+				box-shadow: inset 0 -.1em 0 0 palette($locale, light); 
+			}
+		}
 		&:hover,
 		&:focus {
-			box-shadow: inset 0 -.2em 0 0 palette(cta, default);
+			@each $locale, $color in $palette-locales {
+			[data-theme="#{$locale}"] & {
+				box-shadow: inset 0 -.2em 0 0 palette($locale, light); 
+			}
+		}
 		}
 	}
 	small {
-		color: mix(#fff, palette(brand, text), 40%)
+		color: mix(#fff, #212121, 40%)
 	}
 }

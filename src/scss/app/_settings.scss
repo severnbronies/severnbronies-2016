@@ -1,4 +1,4 @@
-// Breakpoints 
+// Settings - Breakpoints 
 $breakpoints: (
 	ent: 'only screen',
 	tos: 'only screen and (min-width: 520px)',
@@ -10,39 +10,41 @@ $breakpoints: (
 // Settings - Typography
 $base-font-size: 16px;
 
-// Settings - Masthead
-$masthead-height: 55px;
-
-// Settings - Menu
-$menu-width: 320px;
+// Settings - Animation
+$menu-width: 500px;
 $menu-transition-duration: 1s;
 $menu-transition-easing: cubic-bezier(.785, .135, .150, .860);
 
-// Settings - Meets
-$avatar-grid-size: 80px;
-
 // Settings - Colours
+$palette-locales: (
+	severn: #2b2e4a,
+	bristol: #f44336,
+	cardiff: #3f51b5,
+	weston-super-mare: #ffc107,
+	newport: #009688
+);
+
 $palette: (
-	brand: (
-		primary: #2b2e4a,
-		secondary: #e84545,
-		faded: #53354a,
-		text: #232323
-	),
-	cta: (
-		default: #e84545,
-		hover: #903749,
-		active: #53354a
-	),
 	context: (
 		accessibility: #fc0,
-		neutral: #d9edf7,
-		success: #dff0d8,
-		warning: #fcf8e3,
-		error: #f2dede
-	),
-	menu: (
-		background: #fff,
-		accent: #2b2e4a
+		live: #c00
 	)
 );
+
+@each $locale, $color in $palette-locales {
+	$map: (
+		#{$locale}: (
+			base: $color,
+			darker: mix(#000, $color, 20%),
+			darkest: mix(#000, $color, 40%),
+			light: mix(#fff, $color, 70%),
+		)
+	);
+	$palette: map_merge($palette, $map);
+}
+
+ test { inspect: (sass: $palette); }
+
+// Settings - Meets
+$avatar-grid-size: 74px;
+$meet-border-color: #ddd;

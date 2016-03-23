@@ -1,22 +1,32 @@
 <div class="wrapper">
 
 	<header class="masthead" role="banner">
-		<div class="masthead__branding">
-			<a href="/">Severn Bronies</a>
+		<div class="masthead__inner">
+			<div class="masthead__branding">
+				<a class="masthead__logo" href="/">Severn Bronies</a>
+			</div>
+			<div class="masthead__nav-toggle">
+				<a class="masthead__nav-toggle__link" href="#bottom">
+					<span class="masthead__nav-toggle__label">Menu</span>
+				</a>
+			</div>
+			<nav class="navigation masthead__nav" role="navigation">
+				<div class="navigation__inner">
+					<?php
+						wp_nav_menu(array(
+							"theme_location" => "primary",
+							"menu_class" => "navigation__list",
+							"container" => false,
+							"items_wrap" => '<ul class="%2$s">%3$s</ul>',
+							"walker" => new sb_navigation_walker
+						));
+					?>
+				</div>
+			</nav>
 		</div>
-		<div class="masthead__menu">
-			<a class="masthead__link" href="#navigation">
-				<span class="masthead__icon"></span>
-				<span class="masthead__label">Menu</span>
-			</a>
-		</div>
-		<!--<div class="masthead__alert">
-			<a class="masthead__link" href="#alerts">
-				<span class="masthead__icon"></span>
-				<span class="masthead__label">Alerts</span>
-			</a>
-		</div>-->
 	</header>
+
+	
 
 	<!--[if lt IE 9]>
 		<div class="banner-message banner-message--warning">

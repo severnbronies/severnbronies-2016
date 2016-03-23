@@ -12,6 +12,8 @@
 @import "atoms/layout";
 @import "atoms/accessibility";
 @import "atoms/content";
+@import "atoms/image";
+@import "atoms/live-label";
 
 // Molecules
 // e.g. @import "molecules/data-table";
@@ -29,8 +31,9 @@
 @import "organisms/masthead";
 @import "organisms/menu";
 @import "organisms/main";
+@import "organisms/meet";
 @import "organisms/meet-grid";
-@import "organisms/hero";
+@import "organisms/footer";
 
 // Templates
 // e.g. @import "templates/datasheet";

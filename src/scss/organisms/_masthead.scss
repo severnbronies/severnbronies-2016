@@ -1,58 +1,69 @@
 .masthead {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	height: $masthead-height;
-	color: white;
-	background-color: palette(brand, primary);
+	color: #fff;
+	@each $locale, $color in $palette-locales {
+		[data-theme="#{$locale}"] & {
+			background-color: palette($locale, base);
+		}
+	}
+	&__inner {
+		@include wrapper;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: space-between;
+		@include mq(tng) {
+			justify-content: flex-start;
+		}
+	}
 	&__branding {
-		order: 2;
-		padding-right: 15px;
-		padding-left: 15px;
-		font-size: em-calc(17px);
+	}
+	&__logo {
+		display: inline-block;
+		padding: 15px 20px;
+		font-size: em-calc(21px);
 		font-weight: bold;
-		text-align: center;
-		line-height: em-calc(24px, 17px);
-		letter-spacing: em-calc(2px, 17px);
+		letter-spacing: em-calc(1px, 21px);
+		line-height: em-calc(24px, 21px);
 		text-transform: uppercase;
-		@include mq(tos) {
-			font-size: em-calc(21px);
+		color: inherit;
+		text-decoration: none;
+		transition: background-color .3s ease;
+		@each $locale, $color in $palette-locales {
+			[data-theme="#{$locale}"] & {
+				background-color: palette($locale, darker);
+				color: palette($locale, light);
+			}
 		}
-		a {
+		&:hover,
+		&:focus {
+			color: #fff;
+		}
+	}
+	&__nav-toggle {
+		@include mq(tng) {
+			display: none;
+		}
+		&__link {
+			display: block;
+			padding: 15px 20px 15px 10px;
 			color: inherit;
+			font-weight: bold;
 			text-decoration: none;
+			text-transform: uppercase;
+			&::before {
+				content: "";
+				@include icon-menu(#fff, 24px);
+				vertical-align: middle;
+			}
+		}
+		&__label {
+			@include hidden;
 		}
 	}
-	&__menu,
-	&__alert {
-		border-width: 0;
-		border-style: solid;
-		border-color: rgba(#fff, .2);
-	}
-	&__menu {
-		order: 3;
-		border-left-width: 1px;
-		.masthead__icon {
-			@include icon-menu(#fff, 24px);
+	&__nav {
+		display: none;
+		@include mq(tng) {
+			display: block;
 		}
-	}
-	&__alert {
-		order: 1;
-		border-right-width: 1px;
-		.masthead__icon {
-			@include icon-search(#fff, 24px);
-		}
-	}
-	&__link {
-		display: block;
-		padding: 0 15px;
-		line-height: $masthead-height;
-	}
-	&__icon {
-		vertical-align: middle;
-	}
-	&__label {
-		@include hidden;
 	}
 }

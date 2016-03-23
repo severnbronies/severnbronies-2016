@@ -9,6 +9,10 @@
 	font-weight: 400;
 }
 
+@mixin secondary-font {
+	opacity: 0.54;
+}
+
 @mixin caption-font {
 	font-family: 'adelle-condensed', serif;
 	font-weight: 300;

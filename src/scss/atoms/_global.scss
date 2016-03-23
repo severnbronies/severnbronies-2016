@@ -1,22 +1,17 @@
 html {
-	background-color: #040404;
+	background-color: #fafafa;
 }
 
 body {
-	color: palette(brand, text);
+	color: #212121;
 	background-color: transparent;
-	&.menu-open {
+	&.overlay-open {
 		overflow: hidden;
 	}
 }
 
-.wrapper {
-	min-height: 100vh;
-	background-color: #fff;
-	transition: transform $menu-transition-duration $menu-transition-easing, opacity $menu-transition-duration $menu-transition-easing;
-	.menu-open & {
-		transform: scale(.97);
-		opacity: .25;
-		pointer-events: none;
-	}
+@mixin wrapper {
+	max-width: 1140px;
+	margin-right: auto;
+	margin-left: auto;
 }

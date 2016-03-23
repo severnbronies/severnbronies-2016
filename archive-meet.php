@@ -8,12 +8,10 @@
 	$meet_query = new WP_Query(array(
 		"post_type" => "meet",
 		"orderby" => "meta_value_num",
-		"order" => "ASC",
+		"order" => "DESC",
 		"paged" => $current_page,
 		"posts_per_page" => $posts_per_page,
-		"meta_key" => "meet_end_time",
-		"meta_compare" => ">",
-		"meta_value" => time()
+		"meta_key" => "meet_end_time"
 	));
 ?>
 

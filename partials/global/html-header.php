@@ -28,7 +28,7 @@
 	<title><?php echo sb_page_title(); ?></title>
 
 </head>
-<body class="">
+<body class="" <?php echo sb_body_attributes(); ?>>
 
 	<ul class="accessibility-links">
 		<li><a href="#navigation">Skip to navigation</a></li>

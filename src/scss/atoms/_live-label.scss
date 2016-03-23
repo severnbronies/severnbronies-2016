@@ -1,0 +1,26 @@
+.live-label {
+	display: inline-block;
+	padding: 10px 20px;
+	color: #fff;
+	background-color: palette(context, live);
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+		background-color: #fff;
+		border-radius: 50% 50%;
+		margin-right: 4px;
+		vertical-align: top;
+		animation: live-flash 2.6s ease infinite;
+	}
+	&__title {
+		font-weight: bold;
+		font-size: em-calc(14px);
+		letter-spacing: em-calc(1px, 14px);
+		text-transform: uppercase;
+	}
+	a {
+		color: inherit;
+	}
+}

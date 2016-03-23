@@ -1,0 +1,59 @@
+.footer {
+	padding-top: 30px;
+	background-color: #212121;
+	color: #fff;
+	&__inner {
+		@include wrapper;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	&__section {
+		padding-right: 20px;
+		padding-left: 20px;
+		padding-bottom: 30px;
+		width: 100%;
+		@include mq(tos) {
+			width: 50%;
+		}
+		@include mq(tng) {
+			width: 25%;
+		}
+		&--social {
+			.footer__title {
+				@include header-sisko;
+				margin-bottom: 20px;
+				padding-right: 20px;
+			}
+		}
+		&--boilerplate {
+			width: 100%;
+			margin-top: 20px;
+			padding-top: 10px;
+			border-top: 3px solid rgba(#fff, .1);
+			color: #777;
+			font-size: em-calc(12px);
+			line-height: em-calc(15px, 12px);
+		}
+	}
+	&__title {
+		@include header-kirk;
+		margin-bottom: 15px;
+		opacity: .9;
+	}
+	&__list {
+		list-style: none;
+		font-size: em-calc(15px);
+	}
+	&__item {
+		margin-top: 7px;
+	}
+	&__link {
+		color: #777;
+		text-decoration: none;
+		&:hover,
+		&:focus {
+			color: #ccc;
+		}
+	}
+}

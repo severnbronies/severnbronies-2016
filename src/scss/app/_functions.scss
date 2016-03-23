@@ -46,3 +46,13 @@
 	$string: str-replace($string, '#', '%23');
 	@return $string;
 }
+
+// Return black or white to complement variably coloured backgrounds
+@function black-or-white($color) {
+	@if (lightness($color) > 50) {
+		@return #000;
+	}
+	@else {
+		@return #fff;
+	}
+}

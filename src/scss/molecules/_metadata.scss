@@ -2,28 +2,27 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	// background-color: palette(brand, secondary);
 	@include mq(tng) {
 		flex-direction: row;
+		border-bottom: 1px solid $meet-border-color
 	}
 	&__item {
 		min-height: $avatar-grid-size;
 		border-width: 0;
 		border-style: solid;
-		border-color: #fff;
-		border-color: rgba(#fff, .2);
+		border-color: $meet-border-color;
 		border-bottom-width: 1px;
 		position: relative;
-		padding: 10px 15px;
+		padding: 10px 20px;
 		overflow: hidden;
 		@include mq(tng) {
 			border-bottom-width: 0;
-			&:nth-child(n+1) {
+			&:nth-child(n+2) {
 				border-left-width: 1px;
 			}
 		}
 		&--media {
-			padding-left: ($avatar-grid-size + 10px);
+			padding-left: $avatar-grid-size + 10px;
 		}
 	}
 	&__media {
@@ -37,10 +36,10 @@
 	&__key {
 		@include header-archer;
 		margin-bottom: 3px;
-		color: #ccc;
+		color: #000;
 	}
 	&__value {
-		color: #fff;
+		color: #000;
 		line-height: em-calc(18px, 16px);
 	}
 }

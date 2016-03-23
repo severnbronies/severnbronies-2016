@@ -6,17 +6,38 @@
 		position: relative;
 		width: 100%;
 		text-decoration: none;
-		background-color: palette(brand, primary);
-		transition: background-color .3s $menu-transition-easing;
+		background-color: #212121;
+		transition: transform .3s $menu-transition-easing;
 		&:hover,
 		&:focus {
-			background-color: palette(brand, secondary);
+			.meet-card__media::after {
+				opacity: .9;
+			}
+		}
+		&:focus {
 			z-index: 1;
 		}
 	}
 	&__media {
 		position: relative;
-		background-color: #212121;
+		overflow: hidden;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+		}
+		&::before {
+			background-color: rgba(palette(severn, base), .6);
+		}
+		&::after {
+			opacity: .4;
+			transition: opacity 1s ease;
+		}
 	}
 	&__image,
 	&__map {
@@ -31,69 +52,43 @@
 		}
 	}
 	&__body {
-		padding: 15px;
-		position: relative;
+		padding: 15px 20px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		color: #fff;
 	}
 	&__title {
 		@include header-kirk;
 		margin-bottom: 5px;
 		padding-right: 15px;
 		position: relative;
-		color: #fff;
+		color: inherit;
 	}
 	&__live {
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 1;
-		display: inline-block;
-		padding: 10px 15px;
-		color: #fff;
-		text-transform: uppercase;
-		font-size: em-calc(14px);
-		letter-spacing: em-calc(1px, 14px);
-		background-color: palette(brand, secondary);
-		font-weight: bold;
-		&::before {
-			content: "";
-			display: inline-block;
-			width: .9em;
-			height: .9em;
-			background-color: #fff;
-			border-radius: 50% 50%;
-			margin-right: 6px;
-			vertical-align: top;
-			animation: live-flash 2.6s ease infinite;
-		}
 	}
 	&__meta {
+		@include secondary-font;
 		list-style: none;
-		color: #ccc;
 	}
 	&__meta-item {
-		display: inline-block;
-		&--locality {
-			position: absolute;
-			margin-bottom: -1px;
-			bottom: 100%;
-			left: 0;
-			display: inline-block;
-			padding: 8px 15px;
-			color: #fff;
-			text-transform: uppercase;
-			font-size: em-calc(14px);
-			letter-spacing: em-calc(1px, 14px);
-			background-color: palette(brand, secondary);
+		display: inline;
+		&:nth-child(n+2) {
 			&::before {
-				content: "";
-				width: 0;
-				height: 0;
-				position: absolute;
-				top: 100%;
-				left: 0;
-				border-style: solid;
-				border-width: 10px 10px 0 0;
-				border-color: palette(brand, secondary) transparent transparent transparent;
+				content: "\2022";
+				margin-right: .3em;
+			}
+		}
+	}
+	@each $locale, $color in $palette-locales {
+		&[data-theme="#{$locale}"] {
+			.meet-card__media::after {
+				background-image: linear-gradient(45deg, rgba(palette($locale, base), .7) 0%, rgba(0, 0, 0, 0) 100%);
 			}
 		}
 	}
@@ -102,7 +97,7 @@
 @keyframes live-flash {
 	0%,
 	100% {
-		opacity: 0;
+		opacity: .2;
 	}
 	50% {
 		opacity: .9;

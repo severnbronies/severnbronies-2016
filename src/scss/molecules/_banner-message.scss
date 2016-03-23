@@ -4,9 +4,6 @@
 	position: relative;
 	border-bottom: 1px solid rgba(black, .1);
 	background-color: palette(context, neutral);
-	@include mq(tng) {
-		padding-left: 40px;
-	}
 	&__body {
 		font-size: em-calc(14px);
 		p {

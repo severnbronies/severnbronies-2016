@@ -1,51 +1,98 @@
 .navigation {
+	display: none;
+	color: #fff;
+	@include mq(tng) {
+		display: block;
+	}
+	&__inner {
+		@include wrapper;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
 	&__list {
-		list-style: none;
+
 	}
 	&__item {
+		display: inline-block;
 	}
 	&__link {
-		font-size: em-calc(14px);
+		display: block;
+		padding: 15px 10px;
+		color: inherit;
+		font-weight: bold;
 		text-decoration: none;
-	}
-	&--primary {
-		.navigation__link {
-			display: block;
-			position: relative;
-			padding-top: 15px;
-			padding-bottom: 15px;
-			color: #778;
-			text-transform: uppercase;
-			letter-spacing: em-calc(1px, 14px);
-			&::before {
-				content: "";
-				width: 0;
-				height: 1px;
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				background-color: #ddd;
-				transition: width .25s ease;
-			}
-			&:hover,
-			&:focus {
-				color: palette(brand, secondary);
-				&::before {
-					width: 100%;
-				}
-			}
+		text-transform: uppercase;
+		letter-spacing: em-calc(1px);
+		border-bottom-width: 3px;
+		border-bottom-style: solid;
+		border-bottom-color: transparent;
+		&:hover,
+		&:focus {
+			border-bottom-color: #fff;
 		}
-	}
-	&--secondary {
-		.navigation__link {
-			display: inline-block;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			color: mix(#fff, palette(brand, faded), 50%);
-			&:hover,
-			&:focus {
-				color: mix(#fff, palette(brand, faded), 20%);
+		&[href*="//"] {
+			&::after {
+				@include icon-external(#fff, 16px);
+				content: "";
+				margin-left: 6px;
+				vertical-align: text-top;
 			}
 		}
 	}
 }
+
+// .navigation {
+// 	&__list {
+// 		list-style: none;
+// 	}
+// 	&__item {
+// 	}
+// 	&__link {
+// 		font-size: em-calc(14px);
+// 		text-decoration: none;
+// 	}
+// 	&--primary {
+// 		.navigation__link {
+// 			display: block;
+// 			position: relative;
+// 			padding-top: 15px;
+// 			padding-bottom: 15px;
+// 			color: #778;
+// 			text-transform: uppercase;
+// 			letter-spacing: em-calc(1px, 14px);
+// 			&::before {
+// 				content: "";
+// 				width: 0;
+// 				height: 1px;
+// 				position: absolute;
+// 				left: 0;
+// 				bottom: 0;
+// 				background-color: #ddd;
+// 				transition: width .25s ease;
+// 			}
+// 			&:hover,
+// 			&:focus {
+// 				color: palette(severn, base);
+// 				&::before {
+// 					width: 100%;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	&--secondary {
+// 		.navigation__link {
+// 			display: inline-block;
+// 			padding-top: 5px;
+// 			padding-bottom: 5px;
+// 			color: #ccc;
+// 			&:hover,
+// 			&:focus {
+// 				color: palette(severn, base);
+// 			}
+// 		}
+// 	}
+// }
