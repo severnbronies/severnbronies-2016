@@ -66,6 +66,10 @@
 	letter-spacing: em-calc(2px, 12px);
 }
 
+@mixin header-pike {
+	font-style: italic;
+}
+
 body {
 	@include body-font;
 }

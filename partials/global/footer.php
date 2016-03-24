@@ -59,7 +59,10 @@
 			</div>
 			<div class="footer__section footer__section--boilerplate">
 				&copy;<?php echo date("Y"); ?> <?php bloginfo("name"); ?>. All rights reserved. 
-				All copyrights belong to their their respective owners.
+				My Little Pony: Friendship is Magic is &copy; Hasbro. 
+				Severn Bronies is not affiliated in any way with Hasbro or DHX Media. 
+				No copyright infringement intended. All copyrights belong to their their respective owners.
+				Website designed and developed by <a href="http://greysadventures.com/">Grey's Adventures</a>. 
 			</div>
 		</div>
 	</footer>

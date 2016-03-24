@@ -1,8 +1,43 @@
 .content {
-	p {
-		margin-top: 1.4em;
-		margin-bottom: 1.4em;
-		line-height: 1.4;
+	line-height: 1.4;
+	p,
+	ul,
+	ol,
+	dl,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 18px;
+		margin-bottom: 18px;
+	}
+	ul,
+	ol {
+		padding-left: 2em;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1.15;
+	}
+	h1, 
+	h2,
+	h3 {
+		@include header-sisko;
+	}
+	h4 {
+		@include header-picard;
+	}
+	h5 {
+		@include header-kirk;
+	}
+	h6 {
+		@include header-archer;
 	}
 	a {
 		color: inherit;
@@ -16,13 +51,30 @@
 		&:hover,
 		&:focus {
 			@each $locale, $color in $palette-locales {
-			[data-theme="#{$locale}"] & {
-				box-shadow: inset 0 -.2em 0 0 palette($locale, light); 
+				[data-theme="#{$locale}"] & {
+					box-shadow: inset 0 -.2em 0 0 palette($locale, light); 
+				}
 			}
 		}
-		}
 	}
-	small {
+	small,
+	del {
 		color: mix(#fff, #212121, 40%)
+	}
+	ins {
+		font-weight: bold;
+		text-decoration: none;
+	}
+	blockquote {
+		margin-left: 17px;
+		padding-left: 20px;
+		border-width: 0;
+		border-left-width: 3px;
+		border-style: solid;
+		@each $locale, $color in $palette-locales {
+			[data-theme="#{$locale}"] & {
+				border-color: palette($locale, light); 
+			}
+		}
 	}
 }

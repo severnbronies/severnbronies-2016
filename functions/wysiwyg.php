@@ -58,7 +58,7 @@ function sb_responsive_image_alt($image) {
 
 /**
  * Shortcode for responsive images in content. 
- * @param  array  $attributes Attributes passed in by the shortcode.
+ * @param  array  $attributes Attributes passed into shortcode.
  * @return string             The resultant HTML when the shortcode is parsed.
  */
 function sb_responsive_image_shortcode($attributes) {
@@ -67,24 +67,37 @@ function sb_responsive_image_shortcode($attributes) {
 		"size1" => 0,
 		"size2" => 600,
 		"size3" => 1024,
-		"align" => "center"
+		"align" => "none"
 	), $attributes));
 	$mappings = array(
 		$size1 => "article-small",
 		$size2 => "article-medium",
 		$size3 => "article-large"
 	);
-	if($align === "centre") { $align = "center"; }
-	return '
-		<div class="article__media article__media--' . $align . '">
-			<picture>
-				<!--[if IE 9]><video style="display:none;"><[endif]-->'
-				. sb_responsive_image($id, $mappings) .
-				'<!--[if IE 9]></video><![endif]-->
-				<img srcset="' . wp_get_attachment_image_src($id)[0] . '" alt="' . sb_responsive_image_alt($id) . '">
-				<noscript>' . wp_get_attachment_image($id, $mappings[0]) . '</noscript>
-			</picture>
-		</div>
-	';
+	$return = '<picture><!--[if IE 9]><video style="display:none;"><[endif]-->' . sb_responsive_image($id, $mappings) . '<!--[if IE 9]></video><![endif]--><img srcset="' . wp_get_attachment_image_src($id)[0] . '" alt="' . sb_responsive_image_alt($id) . '"><noscript>' . wp_get_attachment_image($id, $mappings[0]) . '</noscript></picture>';
+	if(isset($align) && $align != "none") {
+		$return = sb_aside_shortcode(
+			array("align" => $align),
+			$return
+		);
+	}
+	return $return;
 }
 add_shortcode("image", "sb_responsive_image_shortcode");
+
+/**
+ * Shortcode for article asides
+ * @param  array  $attributes Attributes passed into shortcode.
+ * @param  string $content    The content contained in the shortcode.
+ * @return string             The resultant HTML when the shortcode is parsed.
+ */
+function sb_aside_shortcode($attributes, $content = null) {
+	extract(shortcode_atts(
+		array(
+			"align" => "right",
+		), $attributes)
+	);
+	if($align === "centre") { $align = "center"; }
+	return '<aside class="article__aside article__aside--' . $align . '">' . $content . '</aside>';
+}
+add_shortcode("aside", "sb_aside_shortcode");

@@ -11,8 +11,6 @@
 		padding-right: ($article-right-width + $article-gutter);
 	}
 	&__aside {
-		background-color: #ddd;
-		min-height: 11em;
 		&--left {
 			width: $article-left-width;
 			margin-right: $article-gutter;
