@@ -20,7 +20,7 @@
 					<h1 class="page__title"><?php the_title(); ?></h1>
 					<div class="page__modified">
 						Last modified:
-						<time datetime="<?php the_modified_date("c"); ?>"><?php the_modified_date("jS F Y"); ?></time>
+						<time datetime="<?php the_modified_date("c"); ?>"><?php the_modified_date("jS F Y; g:ia"); ?></time>
 					</div>
 				</header>
 				<div class="content article page__content">

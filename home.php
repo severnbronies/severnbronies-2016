@@ -13,16 +13,23 @@
 ?>
 
 	<main class="main" id="content" role="main">
-	<?php if($meet_query->have_posts()): ?>
-		<div class="meet-grid meet-grid--items-<?php echo $meet_query->post_count; ?> template-homepage__meet-grid">
-		<?php 
-			while($meet_query->have_posts()): 
-				$meet_query->the_post();
-				get_template_part('partials/meet/card');
-			endwhile; 
-		?>
-		</div>
-	<?php endif; ?>
+		<?php if($meet_query->have_posts()): ?>
+			<div class="meet-grid meet-grid--items-<?php echo $meet_query->post_count; ?> template-homepage__meet-grid">
+			<?php 
+				while($meet_query->have_posts()): 
+					$meet_query->the_post();
+					get_template_part('partials/meet/card');
+				endwhile; 
+			?>
+			</div>
+		<?php endif; ?>
+		<article class="page template-home">
+			<div class="page__body template-home__body">
+				<div class="article page__content">
+					ayy
+				</div>
+			</div>
+		</article>
 	</main>
 
 <?php

@@ -16,6 +16,25 @@
 	}
 }
 
-*:focus {
-	outline: 2px solid palette(context, accessibility) !important;
+a,
+button,
+input,
+select,
+textarea {
+	&:focus {
+		outline: 2px solid palette(context, accessibility);
+	}
+}
+
+[data-whatinput="mouse"],
+[data-whatinput="touch"] {
+	a,
+	button,
+	input,
+	select,
+	textarea {
+		&:focus {
+			outline: none;
+		}
+	}
 }

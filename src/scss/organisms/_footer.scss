@@ -35,6 +35,9 @@
 			color: #777;
 			font-size: em-calc(12px);
 			line-height: em-calc(15px, 12px);
+			a {
+				color: inherit;
+			}
 		}
 	}
 	&__title {

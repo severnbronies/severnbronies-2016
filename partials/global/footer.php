@@ -22,7 +22,7 @@
 				?>
 			</div>
 			<div class="footer__section">
-				<h6 class="footer__title">The Big Bits</h6>
+				<h6 class="footer__title">The big bits</h6>
 				<?php
 					wp_nav_menu(array(
 						"theme_location" => "primary",
@@ -34,7 +34,7 @@
 				?>
 			</div>
 			<div class="footer__section">
-				<h6 class="footer__title">Nice to Know</h6>
+				<h6 class="footer__title">Helpful stuff</h6>
 				<?php
 					wp_nav_menu(array(
 						"theme_location" => "secondary",
@@ -46,10 +46,10 @@
 				?>
 			</div>
 			<div class="footer__section">
-				<h6 class="footer__title">Helpful Things</h6>
+				<h6 class="footer__title">Nice to know</h6>
 				<?php
 					wp_nav_menu(array(
-						"theme_location" => "secondary",
+						"theme_location" => "legalese",
 						"menu_class" => "footer__list",
 						"container" => false,
 						"items_wrap" => '<ul class="%2$s">%3$s</ul>',

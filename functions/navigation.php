@@ -4,9 +4,12 @@
  * Register navigation menus
  */
 
-register_nav_menus(array('primary' => 'Primary navigation'));
-register_nav_menus(array('secondary' => 'Secondary navigation'));
-register_nav_menus(array('social' => 'Social links'));
+register_nav_menus(array(
+	"primary" => "Primary navigation", 
+	"secondary" => "Useful links",
+	"legalese" => "Legalese links",
+	"social" => "Social links"
+));
 
 /**
  * Custom navigation walkers
