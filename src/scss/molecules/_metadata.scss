@@ -34,12 +34,11 @@
 	&__value {
 	}
 	&__key {
+		@include secondary-font;
 		@include header-archer;
 		margin-bottom: 3px;
-		color: #000;
 	}
 	&__value {
-		color: #000;
 		line-height: em-calc(18px, 16px);
 	}
 }

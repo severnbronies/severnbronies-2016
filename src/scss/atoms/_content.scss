@@ -77,4 +77,7 @@
 			}
 		}
 	}
+	table {
+		@extend .table;
+	}
 }

@@ -1,0 +1,40 @@
+.page {
+	&__media {
+
+	}
+	&__image {
+		width: 100%;
+	}
+	&__body {
+		margin-bottom: 30px;
+		background-color: #fff;
+		border: 1px solid $meet-border-color;
+		border-top-width: 0;
+	}
+	&__header {
+		padding: 30px 20px 0;
+		max-width: $article-content-width;
+		margin-right: auto;
+		margin-left: auto;
+		@include mq("(min-width: #{$article-medium-breakpoint})") {
+			max-width: $article-content-medium-width;
+			padding-left: ($article-left-width + $article-gutter);
+		}
+		@include mq("(min-width: #{$article-large-breakpoint})") {
+			max-width: $article-content-large-width;
+			padding-right: ($article-right-width + $article-gutter);
+		}
+	}
+	&__title {
+		@include header-janeway;
+	}
+	&__modified {
+		@include secondary-font;
+		margin-top: 7px;
+	}
+	&__content {
+		min-height: 30vh;
+		padding: 20px;
+		padding-top: 0;
+	}
+}

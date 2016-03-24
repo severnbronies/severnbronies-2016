@@ -67,6 +67,8 @@
 }
 
 @mixin header-pike {
+	@include header-font;
+	font-weight: normal;
 	font-style: italic;
 }
 
