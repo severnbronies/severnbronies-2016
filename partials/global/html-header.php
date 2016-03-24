@@ -23,6 +23,9 @@
 
 	<!-- Preload JavaScript -->
 	<script src="<?php echo get_template_directory_uri(); ?>/dst/js/preload.js"></script>
+	<script>
+		GOOGLE_MAPS_API_KEY = "<?php echo GOOGLE_MAPS_API_KEY; ?>";
+	</script>
 
 	<!-- Page title -->
 	<title><?php echo sb_page_title(); ?></title>

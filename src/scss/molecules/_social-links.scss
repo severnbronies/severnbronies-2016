@@ -22,19 +22,19 @@
 			transform: scale(1.2);
 		}
 		&--twitter {
-			background-color: #55acee;
+			background-color: palette(social, twitter);
 			@include icon-social-twitter(#fff);
 		}
 		&--facebook {
-			background-color: #3b5998;
+			background-color: palette(social, facebook);
 			@include icon-social-facebook(#fff);
 		}
 		&--tumblr {
-			background-color: #35465c;
+			background-color: palette(social, tumblr);
 			@include icon-social-tumblr(#fff);
 		}
 		&--github {
-			background-color: #333;
+			background-color: palette(social, github);
 			@include icon-social-github(#fff);
 		}
 	}

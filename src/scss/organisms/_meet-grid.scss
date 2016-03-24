@@ -4,8 +4,6 @@
 	flex-wrap: wrap;
 	align-items: stretch;
 	align-content: stretch;
-	@include mq(tos) {
-	}
 	&__item {
 		width: 100%;
 	}

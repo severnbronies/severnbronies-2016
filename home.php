@@ -26,7 +26,53 @@
 		<article class="page template-home">
 			<div class="page__body template-home__body">
 				<div class="article page__content">
-					ayy
+					<div class="content">
+						<p><strong>We are the Severn Bronies.</strong> We <a href="/meet">run meets</a> for fans of My Little Pony in the south west and Wales, every single week. And it's totally awesome.</p>
+					</div>
+					<?php 
+						$posts = sb_social_feed(array(
+							"twitter" => "severnbronies",
+							"tumblr" => "severnbronies",
+							"facebook" => "severnbronies"
+						)); 
+					?>
+					<aside class="social-feed">
+						<h1 class="social-feed__title">Recently in the Severn Bronies&hellip;</h1>
+						<ul class="social-feed__list">
+							<?php 
+								$counter = 0;
+								foreach($posts as $post): 
+									if($counter > 10):
+										break; 
+									endif;
+									$counter++;
+							?>
+							<li class="social-feed__item social-feed__item--<?php echo $post->source; ?>">
+								<div class="social-feed__body">
+									<?php
+										if(!empty($post->image)):
+									?>
+									<a class="social-feed__media" href="<?php echo $post->permalink; ?>">
+										<img class="social-feed__image" alt="" src="<?php echo $post->image; ?>">
+									</a>
+									<?php
+										endif;
+									?>
+									<div class="content">
+										<?php echo sb_content_parse($post->content); ?>
+									</div>
+								</div>
+								<a class="social-feed__permalink" href="<?php echo $post->permalink; ?>">
+									<time class="social-feed__metadata" datetime="<?php echo date("c", $post->timestamp); ?>" title="<?php echo date("c", $post->timestamp); ?>">
+										<?php echo sb_fuzzy_date($post->timestamp); ?>
+									</time>
+								</a>
+							</li>
+							<?php 
+								endforeach; 
+							?>
+						</ul>
+					</aside>
 				</div>
 			</div>
 		</article>

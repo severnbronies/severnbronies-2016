@@ -14,7 +14,7 @@ app.map = function() {
 	};
 	this.loadMap = function() {
 		$.when(
-			$.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBbChsPXFcEPgXCAncMzV5FdaWc2W8_Hjk"),
+			$.getScript("https://maps.googleapis.com/maps/api/js?key=" + GOOGLE_MAPS_API_KEY),
 			$.Deferred(function(deferred) {
 				$(deferred.resolve);
 			})
