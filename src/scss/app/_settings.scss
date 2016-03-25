@@ -49,8 +49,6 @@ $palette: (
 	$palette: map_merge($palette, $map);
 }
 
- test { inspect: (sass: $palette); }
-
 // Settings - Meets
 $avatar-grid-size: 74px;
 $meet-border-color: #ddd;
