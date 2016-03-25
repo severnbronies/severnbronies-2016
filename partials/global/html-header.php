@@ -34,6 +34,6 @@
 <body class="" <?php echo sb_body_attributes(); ?>>
 
 	<ul class="accessibility-links">
-		<li><a href="#navigation">Skip to navigation</a></li>
+		<li><a href="#bottom">Skip to navigation</a></li>
 		<li><a href="#content">Skip to content</a></li>
 	</ul>

@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" id="top">
 
 	<header class="masthead" role="banner">
 		<div class="masthead__inner">
@@ -41,7 +41,7 @@
 	?>
 		<div class="banner-message">
 			<div class="content banner-message__body">
-				<p><strong>We're legally obliged to tell you that this website uses cookies</strong>, some of which may stalk you relentlessly into the night. For more information see our <a href="#">page about cookies</a>. That's it. You can carry on with your life now, sleeping soundly, safe in the knowledge that this website uses cookies.</p>
+				<p><strong>We're legally obliged to tell you that this website uses cookies</strong>, some of which may stalk you relentlessly across the internet. For more information see our <a href="/privacy-policy">page about cookies</a>. That's it. You can carry on with your life now, sleeping soundly, safe in the knowledge that this website uses cookies.</p>
 			</div>
 			<a class="banner-message__close" data-close-banner="sbCookieMessage" href="#">&times;</a>
 		</div>
