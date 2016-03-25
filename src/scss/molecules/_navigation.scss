@@ -34,7 +34,7 @@
 		&:focus {
 			border-bottom-color: #fff;
 		}
-		&[href*="//"] {
+		&[href*="blog.severnbronies.co.uk"] {
 			&::after {
 				@include icon-external(#fff, 10px);
 				content: "";
