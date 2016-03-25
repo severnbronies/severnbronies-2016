@@ -33,7 +33,8 @@
 						$posts = sb_social_feed(array(
 							"twitter" => "severnbronies",
 							"tumblr" => "severnbronies",
-							"facebook" => "severnbronies"
+							"facebook" => "severnbronies",
+							"limit" => 15
 						)); 
 					?>
 					<aside class="social-feed">
@@ -42,7 +43,7 @@
 							<?php 
 								$counter = 0;
 								foreach($posts as $post): 
-									if($counter > 10):
+									if($counter > 15):
 										break; 
 									endif;
 									$counter++;
@@ -59,7 +60,13 @@
 										endif;
 									?>
 									<div class="content">
-										<?php echo sb_content_parse($post->content); ?>
+										<?php 
+											if($post->source == "twitter" || $post->source == "facebook"):
+												echo sb_content_parse($post->content); 
+											else:
+												echo $post->content;
+											endif;
+										?>
 									</div>
 								</div>
 								<a class="social-feed__permalink" href="<?php echo $post->permalink; ?>">
