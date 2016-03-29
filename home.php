@@ -34,7 +34,7 @@
 							"twitter" => "severnbronies",
 							"tumblr" => "severnbronies",
 							"facebook" => "severnbronies",
-							"limit" => 10
+							"limit" => 15
 						)); 
 					?>
 					<aside class="social-feed">
@@ -43,7 +43,7 @@
 							<?php 
 								$counter = 0;
 								foreach($posts as $post): 
-									if($counter > 10):
+									if($counter >= 10):
 										break; 
 									endif;
 									$counter++;
