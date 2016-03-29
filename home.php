@@ -34,7 +34,7 @@
 							"twitter" => "severnbronies",
 							"tumblr" => "severnbronies",
 							"facebook" => "severnbronies",
-							"limit" => 15
+							"limit" => 10
 						)); 
 					?>
 					<aside class="social-feed">
