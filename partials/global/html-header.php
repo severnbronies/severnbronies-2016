@@ -34,10 +34,10 @@
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dst/images/favicon/android-chrome-192x192.png" sizes="192x192">
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dst/images/favicon/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/dst/images/favicon/manifest.json">
-	<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/dst/images/favicon/safari-pinned-tab.svg" color="#ffcc00">
+	<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/dst/images/favicon/safari-pinned-tab.svg" color="#2b2e4a">
 	<meta name="msapplication-TileColor" content="#2b2e4a">
 	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/dst/images/favicon/mstile-144x144.png">
-	<meta name="theme-color" content="#2b2e4a">
+	<meta name="theme-color" content="<?php echo sb_theme_color(); ?>">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dst/css/stylesheet.css">

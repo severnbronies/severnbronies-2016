@@ -32,3 +32,31 @@ function sb_body_attributes() {
 	}
 	return implode(" ", $classes);
 }
+
+/**
+ * Determine the current page's theme and return the appropriate theme colour. 
+ * @return string The (hash-prefixed) hexadecimal colour code. 
+ */
+function sb_theme_color() {
+	$theme_color = "#2b2e4a";
+	if(is_single() && get_post_type() == "meet") {
+		$meet_location = sb_meet_location(get_field("meet_location"));
+		if(isset($meet_location["locality"]) && !empty($meet_location["locality"])) {
+			switch(strtolower($meet_location["locality"])) {
+				case "bristol": 
+					$theme_color = "#f44336"; 
+					break;
+				case "cardiff": 
+					$theme_color = "#3f51b5"; 
+					break;
+				case "weston-super-mare": 
+					$theme_color = "#ffc107"; 
+					break;
+				case "newport": 
+					$theme_color = "#009688"; 
+					break;
+			}
+		}
+	}
+	return $theme_color;
+}
