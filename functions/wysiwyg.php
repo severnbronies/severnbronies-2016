@@ -1,6 +1,12 @@
 <?php 
 
 /**
+ * Detach then re-attach autop after shortcodes have been processed to prevent conflicting tags.
+ */
+remove_filter("the_content", "wpautop");
+add_filter("the_content", "wpautop", 99);
+
+/**
  * Make image attachments 'link to' setting default to 'none'.
  */
 function sb_set_image_linking() {
