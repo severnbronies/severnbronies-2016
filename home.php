@@ -43,7 +43,7 @@
 							<?php 
 								$counter = 0;
 								foreach($posts as $post): 
-									if($counter > 15):
+									if($counter > 10):
 										break; 
 									endif;
 									$counter++;
