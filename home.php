@@ -30,6 +30,9 @@
 						<p><strong>We are the Severn Bronies.</strong> We <a href="/meet">run meets</a> for fans of My Little Pony in the south west and Wales, every single week. And it's totally awesome.</p>
 					</div>
 					<?php 
+						if(function_exists("sb_social_feed")):
+					?>
+					<?php 
 						$posts = sb_social_feed(array(
 							"twitter" => "severnbronies",
 							"tumblr" => "severnbronies",
@@ -80,6 +83,9 @@
 							?>
 						</ul>
 					</aside>
+					<?php 
+						endif; 
+					?>
 				</div>
 			</div>
 		</article>
