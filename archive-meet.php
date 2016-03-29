@@ -56,6 +56,37 @@
 			endwhile; 
 		?>
 		</div>
+		<nav class="pagination">
+			<div class="pagination__title">Meet archives</div>
+			<ul class="pagination__list">
+				<?php 
+					$iteration = 0;
+					for($i = $meet_query->max_num_pages; $i > 0; $i--):
+						$number_start = $posts_count - ($posts_per_page * $iteration);
+						$number_end = ($number_start - $posts_per_page + 1) > 1 ? ($number_start - $posts_per_page + 1) : 1;
+				?>
+				<li class="pagination__item">
+					<a href="?paged=<?php echo $iteration + 1; ?>" class="pagination__link<?php if($iteration + 1 == $current_page) { echo ' pagination__link--current'; } ?>">
+						<?php 
+							if($number_start != $number_end):
+						?>
+							Meets #<?php echo $number_start; ?>&ndash;<?php echo $number_end; ?>
+						<?php 
+							else:
+						?>
+							Meet #<?php echo $number_start; ?>
+						<?php 
+							endif; 
+						?>
+					</a>
+				</li>
+				<?php 
+						$iteration++;
+					endfor;
+					// print_r($meet_query->max_num_pages);
+				?>
+			</ul>
+		</nav>
 	<?php endif; ?>
 	</main>
 
