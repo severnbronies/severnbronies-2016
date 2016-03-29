@@ -26,18 +26,20 @@
 		line-height: 1.15;
 	}
 	h1, 
-	h2,
-	h3 {
+	h2 {
 		@include header-sisko;
 	}
-	h4 {
+	h3 {
 		@include header-picard;
 	}
-	h5 {
+	h4 {
 		@include header-kirk;
 	}
-	h6 {
+	h5 {
 		@include header-archer;
+	}
+	h6 {
+		@include header-pike;
 	}
 	a {
 		color: inherit;
