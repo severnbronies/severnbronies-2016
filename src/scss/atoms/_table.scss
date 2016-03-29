@@ -14,12 +14,16 @@
 		border-width: 0;
 		border-style: solid;
 		border-color: #ddd;
+		vertical-align: top;
 	}
 	thead {
 		th,
 		td {
 			@include header-kirk;
 			border-bottom-width: 3px;
+		}
+		th {
+			vertical-align: bottom;
 		}
 	}
 	tbody {
@@ -36,6 +40,38 @@
 		}
 		th {
 			@include header-kirk;
+		}
+	}
+}
+
+@include mq("(max-width: 600px)") {
+	.table {
+		&,
+		thead,
+		tbody,
+		tfoot,
+		tr,
+		th,
+		td {
+			display: block;
+		}
+		tr {
+			border-width: 0;
+			border-style: solid;
+			border-color: #ddd;
+			border-bottom-width: 1px;
+			&:first-child {
+				border-top-width: 1px;
+			}
+		}
+		th,
+		td {
+			border-bottom: 0;
+		}
+		thead {
+			tr {
+				@include hidden;
+			}
 		}
 	}
 }
