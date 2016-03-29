@@ -16,6 +16,9 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/dst/js/vendor.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/dst/js/scripts.js"></script>
 
+	<?php 
+		if(defined("GOOGLE_ANALYTICS_ID")):
+	?>
 	<!-- Google Analytics -->
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,6 +28,9 @@
 		ga('create', '<?php echo GOOGLE_ANALYTICS_ID; ?>', 'auto');
 		ga('send', 'pageview');
 	</script>
+	<?php
+		endif;
+	?>
 
 </body>
 </html>
