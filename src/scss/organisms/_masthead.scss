@@ -11,7 +11,7 @@
 		flex-direction: row;
 		align-items: flex-end;
 		justify-content: space-between;
-		@include mq(tng) {
+		@include mq("(min-width: 650px)") {
 			justify-content: flex-start;
 		}
 	}
@@ -40,7 +40,7 @@
 		}
 	}
 	&__nav-toggle {
-		@include mq(tng) {
+		@include mq("(min-width: 650px)") {
 			display: none;
 		}
 		&__link {
@@ -62,7 +62,7 @@
 	}
 	&__nav {
 		display: none;
-		@include mq(tng) {
+		@include mq("(min-width: 650px)") {
 			display: block;
 		}
 	}
