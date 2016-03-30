@@ -32,5 +32,8 @@
 		endif;
 	?>
 
+	<!-- Injected stuff -->
+	<?php wp_footer(); ?> 
+
 </body>
 </html>

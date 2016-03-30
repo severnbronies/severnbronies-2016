@@ -50,6 +50,9 @@
 	<!-- Page title -->
 	<title><?php echo sb_page_title(); ?></title>
 
+	<!-- Injected stuff -->
+	<?php wp_head(); ?>
+
 </head>
 <body class="" <?php echo sb_body_attributes(); ?>>
 
