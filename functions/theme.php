@@ -1,6 +1,11 @@
 <?php 
 
 /**
+ * Disable WP admin bar.
+ */
+add_filter("show_admin_bar", "__return_false");
+
+/**
  * Allow article images and image resizing
  */
 add_theme_support("post-thumbnails");
