@@ -29,10 +29,11 @@ function sb_body_attributes() {
 	$theme = "severn";
 	$classes[] = 'data-month="' . date("m") . '"'; 
 	$classes[] = 'data-date="' . date("d") . '"';
-
 	if(is_single() && get_post_type() == "meet") {
 		$meet_location = sb_meet_location(get_field("meet_location"));
-		$theme = strtolower($meet_location["locality"]);
+		if(!empty($meet_location["locality"])) {
+			$theme = strtolower($meet_location["locality"]);
+		}
 	}
 	$classes[] = 'data-theme="' . $theme . '"';
 	return implode(" ", $classes);
