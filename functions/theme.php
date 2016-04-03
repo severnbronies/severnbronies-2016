@@ -21,15 +21,15 @@ add_image_size("banner-small", 600, 600, true);
  */
 function sb_body_attributes() {
 	$classes = array();
+	$theme = "severn";
 	$classes[] = 'data-month="' . date("m") . '"'; 
 	$classes[] = 'data-date="' . date("d") . '"';
+
 	if(is_single() && get_post_type() == "meet") {
 		$meet_location = sb_meet_location(get_field("meet_location"));
-		$classes[] = 'data-theme="' . strtolower($meet_location["locality"]) . '"';
+		$theme = strtolower($meet_location["locality"]);
 	}
-	else {
-		$classes[] = 'data-theme="severn"';
-	}
+	$classes[] = 'data-theme="' . $theme . '"';
 	return implode(" ", $classes);
 }
 
