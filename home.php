@@ -14,7 +14,7 @@
 
 	<main class="main" id="content" role="main">
 		<?php if($meet_query->have_posts()): ?>
-			<div class="meet-grid meet-grid--items-<?php echo $meet_query->post_count; ?> template-homepage__meet-grid">
+			<div class="meet-grid meet-grid--items-<?php echo $meet_query->post_count; ?> template-home__meet-grid">
 			<?php 
 				while($meet_query->have_posts()): 
 					$meet_query->the_post();

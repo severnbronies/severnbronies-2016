@@ -4,8 +4,10 @@
 	flex-wrap: wrap;
 	align-items: stretch;
 	align-content: stretch;
+	justify-content: space-between;
 	&__item {
 		width: 100%;
+		margin-bottom: 20px;
 	}
 	&--items-2 {
 		@include mq(tos) {
@@ -13,7 +15,7 @@
 		}
 		.meet-grid__item {
 			@include mq(tos) {
-				width: 50%;
+				width: calc(50% - 10px);
 			}
 		}
 	}
@@ -40,7 +42,7 @@
 				&:nth-child(2),
 				&:nth-child(3) {
 					flex: 1;
-					width: 33.3333%;
+					width: calc(33.3333% - 13.333333333px);
 				}
 			}
 		}
@@ -49,10 +51,10 @@
 		flex-direction: row;
 		.meet-grid__item {
 			@include mq(tos) {
-				width: 50%;
+				width: calc(50% - 10px);
 			}
 			@include mq(tng) {
-				width: 33.3333%;
+				width: calc(33.3333% - 13.333333333px);
 			}
 		}
 	}

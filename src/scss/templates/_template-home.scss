@@ -1,5 +1,8 @@
 .template-home {
+	&__meet-grid {
+		margin-top: 20px;
+	}
 	&__body {
-		padding-top: 30px;
+		border-top-width: 1px;
 	}
 }
