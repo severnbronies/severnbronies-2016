@@ -27,10 +27,10 @@
 
 	<main class="main" id="content" role="main">
 		<article class="meet">
-			<div class="meet__media">
-				<?php echo $meet_image; ?>
-			</div>
 			<header class="meet__header">
+				<div class="meet__media">
+					<?php echo $meet_image; ?>
+				</div>
 				<h1 class="meet__title"><?php the_title(); ?></h1>
 				<?php 
 					if(time() >= get_field("meet_start_time") && time() < get_field("meet_end_time")):
