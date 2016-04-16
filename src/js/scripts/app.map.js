@@ -28,7 +28,9 @@ app.map = function() {
 			center: location,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			zoom: 15,
-			disableDefaultUI: true
+			disableDefaultUI: true,
+			scrollwheel: false,
+			disableDoubleClickZoom: true
 		});
 		var marker = new google.maps.Marker({
 			position: location,
