@@ -23,6 +23,7 @@
 			else: 
 				$meet_image = '<div class="meet__map" data-map="' . $meet_location["latitude"] . ',' . $meet_location["longitude"] . '"></div>';
 			endif; 
+
 ?>
 
 	<main class="main" id="content" role="main">
