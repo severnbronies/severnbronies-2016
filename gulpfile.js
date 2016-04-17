@@ -17,7 +17,7 @@
 	  $ gulp
 	
 	Sorted.
-*/
+ */
 
 var gulp = require("gulp");
 var sass = require("gulp-sass");
@@ -27,66 +27,75 @@ var uglify = require("gulp-uglify");
 var newer = require("gulp-newer");
 var imagemin = require("gulp-imagemin");
 var plumber = require("gulp-plumber");
+var sassLint = require('gulp-sass-lint');
+var jshint = require('gulp-jshint');
+var merge = require('merge-stream');
 
 gulp.task("default", function() {
-	gulp.watch("./src/scss/{,*/}*.scss", ["stylesheets"]);
-	gulp.watch("./src/js/scripts/{,*/}*.js", ["scripts"]);
-	gulp.watch("./src/js/vendor/{,*/}*.js", ["scripts-vendor"]);
-	gulp.watch("./src/js/preload/{,*/}*.js", ["scripts-preload"]);
-	gulp.watch("./src/type/{,*/}*.js", ["type"]);
+	gulp.watch("./src/scss/{,*/}*.scss", ["sass"]);
+	gulp.watch("./src/js/{,*/}*.js", ["javascript"]);
+	gulp.watch("./src/images/{,*/}*", ["images"]);
+	gulp.watch("./src/type/{,*/}*", ["fonts"]);
 });
 
-gulp.task("force", ["stylesheets", "scripts-preload", "scripts-vendor", "scripts", "images", "type"]);
+gulp.task("force", ["sass", "javascript", "images", "fonts"]);
 
-gulp.task("stylesheets", function() {
+/*
+ * Sass compilation
+ */
+
+gulp.task("sass", ["sass-lint"], function() {
 	gulp.src("./src/scss/*.scss")
 	.pipe(plumber())
-	.pipe(sass(
-		{
-			errLogToConsole: true,
-			outputStyle: "compressed"
-		}
-	))
-	.pipe(autoprefixer(
-		{
-			browsers: ['last 2 version', 'ie 8', 'ie 9', 'ie 10'],
-			cascade: true
-		}
-	))
+	.pipe(sass({
+		outputStyle: "compressed"
+	}))
+	.pipe(autoprefixer({
+		browsers: ['last 2 version', 'ie 9', 'ie 10'],
+		cascade: true
+	}))
 	.pipe(gulp.dest("./dst/css"))
 });
 
-gulp.task("scripts-preload", function() {
-	gulp.src(
-		[
-			"./src/js/preload/*.js"
-		]
-	)
-	.pipe(plumber())
-	.pipe(uglify())
-	.pipe(concat("preload.js"))
-	.pipe(gulp.dest("./dst/js"))
+gulp.task("sass-lint", function() {
+	// The sass-lint npm module is broken at the moment, so keeping this disabled.
+	// https://github.com/sasstools/sass-lint/issues/389
+	// return gulp.src("./src/scss/{,*/}*.scss")
+	// .pipe(plumber())
+	// .pipe(sassLint({
+	// 	"config": ".sass-lint.yml"
+	// }))
+	// .pipe(sassLint.format())
+	// .pipe(sassLint.failOnError())
 });
 
-gulp.task("scripts-vendor", function() {
-	gulp.src(
-		[
-			"./src/js/vendor/jquery-1.11.3.min.js",
-			"./src/js/vendor/*.js"
-		]
-	)
-	.pipe(uglify())
-	.pipe(concat("vendor.js"))
-	.pipe(gulp.dest("./dst/js"))
+/*
+ * JavaScript minification
+ */
+
+gulp.task("javascript", ["javascript-lint"], function() {
+	var folders = ["preload", "vendor", "scripts"];
+	var tasks = folders.map(function(folder) {
+		return gulp.src("./src/js/" + folder + "/**/*.js", {
+			base: "./src/js/" + folder
+		})
+		.pipe(plumber())
+		.pipe(concat(folder + ".js"))
+		.pipe(uglify())
+		.pipe(gulp.dest("./dst/js"))
+	});
+	merge(tasks);
 });
 
-gulp.task("scripts", function() {
-	gulp.src("./src/js/scripts/*.js")
-	.pipe(plumber())
-	.pipe(uglify())
-	.pipe(concat("scripts.js"))
-	.pipe(gulp.dest("./dst/js"))
+gulp.task("javascript-lint", function() {
+	return gulp.src(["./src/js/{,*/}*.js", "!./src/js/vendor/{,*/}*.js"])
+	.pipe(jshint())
+	.pipe(jshint.reporter("default"))
 });
+
+/*
+ * Image optimisation
+ */
 
 gulp.task("images", function() {
 	gulp.src("./src/images/{,*/}*")
@@ -103,7 +112,11 @@ gulp.task("images", function() {
 	.pipe(gulp.dest("./dst/images"))
 });
 
-gulp.task("type", function() {
+/*
+ * Move any font files
+ */
+
+gulp.task("fonts", function() {
 	gulp.src("./src/type/{,*/}*")
 	.pipe(gulp.dest("./dst/type"))
 });

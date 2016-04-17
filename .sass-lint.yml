@@ -17,12 +17,15 @@ linters:
   ExtendDirective:
     enabled: true
   Indentation:
+    enabled: false
     character: tab
     width: 1
   PropertySortOrder:
     order: smacss
   SelectorFormat:
     convention: strict_BEM
+  StringQuotes:
+    style: double_quotes
   TrailingZero:
     enabled: true
   TransitionAll:
