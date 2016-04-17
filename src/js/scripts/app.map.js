@@ -41,7 +41,7 @@ app.map = function() {
 			map.setCenter(location);
 		});
 	};
-}
+};
 
 $(document).ready(function() {
 	$("[data-map]").each(function() {
