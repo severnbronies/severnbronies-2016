@@ -26,6 +26,7 @@ var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var newer = require("gulp-newer");
 var imagemin = require("gulp-imagemin");
+var plumber = require("gulp-plumber");
 
 gulp.task("default", function() {
 	gulp.watch("./src/scss/{,*/}*.scss", ["stylesheets"]);
@@ -39,6 +40,7 @@ gulp.task("force", ["stylesheets", "scripts-preload", "scripts-vendor", "scripts
 
 gulp.task("stylesheets", function() {
 	gulp.src("./src/scss/*.scss")
+	.pipe(plumber())
 	.pipe(sass(
 		{
 			errLogToConsole: true,
@@ -60,6 +62,7 @@ gulp.task("scripts-preload", function() {
 			"./src/js/preload/*.js"
 		]
 	)
+	.pipe(plumber())
 	.pipe(uglify())
 	.pipe(concat("preload.js"))
 	.pipe(gulp.dest("./dst/js"))
@@ -79,6 +82,7 @@ gulp.task("scripts-vendor", function() {
 
 gulp.task("scripts", function() {
 	gulp.src("./src/js/scripts/*.js")
+	.pipe(plumber())
 	.pipe(uglify())
 	.pipe(concat("scripts.js"))
 	.pipe(gulp.dest("./dst/js"))
@@ -86,6 +90,7 @@ gulp.task("scripts", function() {
 
 gulp.task("images", function() {
 	gulp.src("./src/images/{,*/}*")
+	.pipe(plumber())
 	.pipe(newer("./dst/images"))
 	.pipe(imagemin(
 		{
