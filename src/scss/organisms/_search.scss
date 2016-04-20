@@ -1,0 +1,10 @@
+.search {
+	padding: 10% 20px 20px;
+	&__title {
+		@include header-archer;
+		padding-left: 6.2vw;
+	}
+	&__results {
+
+	}
+}
