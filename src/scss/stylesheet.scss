@@ -20,6 +20,7 @@
 // e.g. @import "molecules/data-table";
 @import "molecules/navigation";
 @import "molecules/search-form";
+@import "molecules/search-results";
 @import "molecules/social-links";
 @import "molecules/banner-message";
 @import "molecules/meet-card";
@@ -30,18 +31,20 @@
 // Organisms
 // e.g. @import "organisms/dataset";
 @import "organisms/masthead";
+@import "organisms/footer";
 @import "organisms/menu";
 @import "organisms/main";
 @import "organisms/meet";
 @import "organisms/page";
 @import "organisms/meet-grid";
-@import "organisms/footer";
 @import "organisms/article";
 @import "organisms/social-feed";
+@import "organisms/search";
 
 // Templates
 // e.g. @import "templates/datasheet";
 @import "templates/template-home";
+@import "templates/template-search";
 @import "templates/template-error-page";
 
 // Pages

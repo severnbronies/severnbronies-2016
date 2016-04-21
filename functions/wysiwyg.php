@@ -107,3 +107,19 @@ function sb_aside_shortcode($attributes, $content = null) {
 	return '<aside class="article__aside article__aside--' . $align . '">' . $content . '</aside>';
 }
 add_shortcode("aside", "sb_aside_shortcode");
+
+/**
+ * Better excerpts, without images and shortcodes.
+ * @param  string $text        The content of the post to make an excerpt of. 
+ * @param  string $raw_excerpt The raw (markupless) excerpt text.
+ * @return string              The resulting HTML.
+ */	
+// function sb_excerpts($text, $raw_excerpt) {
+// 	if(!$raw_excerpt) {
+// 		$content = apply_filters("the_content", strip_shortcodes(get_the_content()));
+// 		$text = substr($content, 0, strpos($content, "</p>") + 4);
+// 	}
+// 	$text = preg_replace("/<img[^>]+\>/i", "", $text); 
+// 	return $text;
+// }
+// add_filter("wp_trim_excerpt", "sb_excerpts", 10, 2);

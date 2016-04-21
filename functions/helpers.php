@@ -78,3 +78,15 @@ function sb_fuzzy_date($timestamp) {
 	}
 	return "$when $str ago";
 }
+
+/**
+ * Highlights a given search term if it appears inside a piece of text.
+ * @param  string $term   The search term to highlight.
+ * @param  string $string The piece of text/HTML to highlight it in.
+ * @return string         The modified text/HTML with the term highlighted.
+ */
+function sb_search_highlight($term, $string) {
+	$keys = explode(" ", $term);
+	$string = preg_replace('/('.implode('|', $keys) .')/iu', '<mark>\0</mark>', $string);
+	return $string;
+}
