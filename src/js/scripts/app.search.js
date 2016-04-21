@@ -24,6 +24,7 @@ app.search = function($form) {
 				alert("An error occurred.");
 			}).always(function() {
 				$form.closest(".search").removeClass("search--loading");
+				self.updateHash(query);
 			});
 		});
 		$(document).on("keyup", $form.find("[name='s']"), function(e) {
@@ -31,12 +32,16 @@ app.search = function($form) {
 				var query = $form.find("[name='s']").val();
 				clearTimeout(keyTimeout);
 				keyTimeout = setTimeout(function() {
-					if(query != "") {
+					if(query !== "") {
 						$form.trigger("submit");
 					}
 				}, 500);
 			}
 		});
+	};
+	this.updateHash = function(query) {
+		query = query.replace(/ /g, "+");
+		history.replaceState({}, "", "/search/" + query);
 	};
 };
 
