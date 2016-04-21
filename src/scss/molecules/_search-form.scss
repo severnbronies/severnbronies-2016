@@ -28,13 +28,7 @@
 		-webkit-appearance: none;
 	}
 	&__buttons {
-		width: 1%;
-		position: relative;
-		white-space: nowrap;
-		vertical-align: middle;
-		.js & {
-			display: none;
-		}
+		@include hidden;
 	}
 	&__submit {
 		position: relative;
