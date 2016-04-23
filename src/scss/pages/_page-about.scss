@@ -58,11 +58,15 @@
 			.page-about__section-body {
 				@include mq(tng) {
 					column-count: 2;
-					column-gap: 30px;
+					column-gap: 40px;
 					> * {
 						break-inside: avoid;
 					}
 				}
+			}
+			.content {
+				margin-top: 20px;
+				margin-bottom: 20px;
 			}
 		}
 		&--media {
@@ -86,7 +90,6 @@
 		}
 	}
 	&__section-header {
-		margin-bottom: 10px;
 	}
 	&__section-title {
 		@include header-janeway;
