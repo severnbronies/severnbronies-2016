@@ -25,9 +25,11 @@
 @import "molecules/social-links";
 @import "molecules/banner-message";
 @import "molecules/meet-card";
+@import "molecules/staff-card";
 @import "molecules/pagination";
 @import "molecules/metadata";
 @import "molecules/avatar-grid";
+@import "molecules/stats";
 
 // Organisms
 // e.g. @import "organisms/dataset";
@@ -50,6 +52,7 @@
 
 // Pages
 // e.g. @import "pages/datasheet-3124";
+@import "pages/page-about";
 
 // Shame
 @import "shame";
