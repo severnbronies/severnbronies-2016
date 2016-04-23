@@ -27,6 +27,19 @@
 				}
 			}
 		}
+		&__copyright {
+			display: block;
+			padding: 3px 5px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 2;
+			color: #fff;
+			background-color: rgba(0, 0, 0, .75);
+			font-size: em-calc(10px);
+			letter-spacing: em-calc(.5px, 10px);
+			text-transform: uppercase;
+		}
 	}
 	&__image {
 		width: 100%;

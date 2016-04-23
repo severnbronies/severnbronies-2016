@@ -1,0 +1,45 @@
+.stats {
+	display: table;
+	width: 100%;
+	list-style: none;
+	&__item {
+		padding: 20px;
+		display: table-cell;
+		width: 33.3333%;
+	}
+	&__key,
+	&__value {
+		display: block;
+		text-align: center;
+	}
+	&__key {
+		line-height: 1;
+		font-size: em-calc(12px);
+		@include mq(tos) {
+			font-size: em-calc(16px);
+		}
+		@include mq(tng) {
+			font-size: em-calc(21px);
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		@include mq(ds9) {
+			font-size: em-calc(28px);
+		}
+	}
+	&__value {
+		line-height: .8;
+		font-size: em-calc(36px);
+		font-feature-settings: "tnum" on;
+		font-variant-numeric: tabular-nums;
+		@include mq(tos) {
+			font-size: em-calc(72px);
+		}
+		@include mq(tng) {
+			font-size: em-calc(116px);
+		}
+		@include mq(ds9) {
+			font-size: em-calc(146px);
+		}
+	}
+}

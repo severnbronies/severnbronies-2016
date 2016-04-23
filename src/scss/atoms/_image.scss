@@ -4,19 +4,3 @@
 	animation-easing: linear;
 	animation-fill-mode: backwards;
 }
-
-@keyframes image-in {
-	0% {
-		opacity: 0;
-		filter: saturate(0) grayscale(50%);
-	}
-	50% {
-		opacity: 1;
-	}
-	75% {
-		filter: saturate(75%) grayscale(0);
-	}
-	100% {
-		filter: saturate(100%) grayscale(0);
-	}
-}

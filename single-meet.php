@@ -20,6 +20,7 @@
 			// Media
 			if(has_post_thumbnail()):
 				$meet_image = sb_responsive_image_helper(get_post_thumbnail_id(), "meet__image");
+				$meet_image_copyright = get_featured_image_copyright();
 			else: 
 				$meet_image = '<div class="meet__map" data-map="' . $meet_location["latitude"] . ',' . $meet_location["longitude"] . '"></div>';
 			endif; 
@@ -31,6 +32,15 @@
 			<header class="meet__header">
 				<div class="meet__media">
 					<?php echo $meet_image; ?>
+					<?php 
+						if($meet_image_copyright):
+					?>
+						<div class="meet__media__copyright">
+							<?php echo $meet_image_copyright; ?>
+						</div>
+					<?php
+						endif;
+					?>
 				</div>
 				<h1 class="meet__title"><?php the_title(); ?></h1>
 				<?php 

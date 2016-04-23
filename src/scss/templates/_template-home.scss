@@ -5,4 +5,24 @@
 	&__body {
 		border-top-width: 1px;
 	}
+	&__social-feed {
+		position: relative;
+		&::after {
+			@include icon-loading(#444, 3vw);
+			content: "";
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-top: -1.5vw;
+			margin-left: -1.5vw;
+			animation: spinner 1s linear infinite;
+		}
+		&--loading {
+			min-height: 400px;
+			&::after {
+				display: block;
+			}
+		}
+	}
 }
