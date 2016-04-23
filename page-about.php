@@ -74,7 +74,7 @@
 							foreach($meet_categories as $category): 
 						?>
 							<div class="content">
-								<p><strong><?php echo $category->name; ?></strong>&mdash;<?php echo $category->description; ?></p>
+								<strong><?php echo $category->name; ?></strong>&mdash;<?php echo $category->description; ?>
 							</div>
 						<?php 
 							endforeach;
