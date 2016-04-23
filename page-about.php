@@ -23,8 +23,8 @@
 			if(get_field("runner_staff") == true) {
 				$meet_staff[] = array(
 					"name" => get_the_title(),
-					"avatar" => sb_profile_avatar(),
-					"biography" => sb_profile_biography(),
+					"avatar" => sb_profile_avatar(get_the_ID()),
+					"biography" => sb_profile_biography(get_the_ID()),
 					"email" => get_field("runner_email"),
 					"links" => get_field("runner_links")
 				);
