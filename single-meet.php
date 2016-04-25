@@ -16,7 +16,7 @@
 				);
 			}
 			// Location
-			$meet_location = sb_meet_location(get_field("meet_location")); 
+			$meet_location = sb_meet_location(get_field("meet_location"));			
 			// Media
 			if(has_post_thumbnail()):
 				$meet_image = sb_responsive_image_helper(get_post_thumbnail_id(), "meet__image");
@@ -75,6 +75,23 @@
 									if(!empty($meet_runners[$i + 1])):
 										echo ", ";
 									endif;
+								}
+							?>
+						</div>
+					</div>
+					<div class="metadata__item">
+						<div class="metadata__key">
+							Meet type
+						</div>
+						<div class="content metadata__value">
+							<?php
+								$meet_categories = sb_meet_category(get_the_ID());
+								//print_r($meet_categories);
+								for($i = 0; $i < count($meet_categories); $i++) {
+									echo $meet_categories[$i]["name"];
+									if(isset($meet_categories[$i + 1])) {
+										echo ", ";
+									}
 								}
 							?>
 						</div>

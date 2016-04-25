@@ -1,10 +1,6 @@
 .metadata {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
 	@include mq(tng) {
-		flex-direction: row;
-		border-bottom: 1px solid $meet-border-color
+		border-bottom: 1px solid $meet-border-color;
 	}
 	&__item {
 		min-height: $avatar-grid-size;
@@ -16,6 +12,7 @@
 		padding: 10px 20px;
 		overflow: hidden;
 		@include mq(tng) {
+			display: table-cell;
 			border-bottom-width: 0;
 			&:nth-child(n+2) {
 				border-left-width: 1px;
@@ -37,6 +34,7 @@
 		@include secondary-font;
 		@include header-archer;
 		margin-bottom: 3px;
+		white-space: nowrap;
 	}
 	&__value {
 		line-height: em-calc(18px, 16px);
