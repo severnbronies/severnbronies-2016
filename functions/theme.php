@@ -64,3 +64,12 @@ function sb_theme_color() {
 	}
 	return $theme_color;
 }
+
+/**
+ * Builds out the full URI for compiled assets.
+ * @param  string $filepath The filepath of the file, from the compiled asset folder.
+ * @return string           The modified filepath.
+ */
+function sb_asset($filepath) {
+	return get_template_directory_uri() . "/dst/" . $filepath . "?v=" . ASSET_VERSION;
+}

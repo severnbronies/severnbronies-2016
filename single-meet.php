@@ -16,7 +16,7 @@
 				);
 			}
 			// Location
-			$meet_location = sb_meet_location(get_field("meet_location")); 
+			$meet_location = sb_meet_location(get_field("meet_location"));			
 			// Media
 			if(has_post_thumbnail()):
 				$meet_image = sb_responsive_image_helper(get_post_thumbnail_id(), "meet__image");
@@ -68,7 +68,7 @@
 						<div class="metadata__key">
 							<?php echo ($meet_runners_count == 1) ? "Meet runner" : "Meet runners"; ?>
 						</div>
-						<div class="metadata__value">
+						<div class="content metadata__value">
 							<?php 
 								for($i = 0; $i < count($meet_runners); $i++) {
 									echo $meet_runners[$i]["name"];
@@ -81,9 +81,26 @@
 					</div>
 					<div class="metadata__item">
 						<div class="metadata__key">
+							Meet type
+						</div>
+						<div class="content metadata__value">
+							<?php
+								$meet_categories = sb_meet_category(get_the_ID());
+								//print_r($meet_categories);
+								for($i = 0; $i < count($meet_categories); $i++) {
+									echo $meet_categories[$i]["name"];
+									if(isset($meet_categories[$i + 1])) {
+										echo ", ";
+									}
+								}
+							?>
+						</div>
+					</div>
+					<div class="metadata__item">
+						<div class="metadata__key">
 							Running time
 						</div>
-						<div class="metadata__value">
+						<div class="content metadata__value">
 							<?php echo sb_meet_dates(get_field("meet_start_time"), get_field("meet_end_time")); ?>
 						</div>
 					</div>
@@ -91,9 +108,10 @@
 						<div class="metadata__key">
 							Meeting point
 						</div>
-						<div class="metadata__value">
+						<div class="content metadata__value">
 							<?php echo $meet_location["name"]; ?>,
 							<?php echo $meet_location["address"]; ?>
+							(<a href="https://google.co.uk/maps/?q=<?php echo urlencode($meet_location["name"] . ", " . $meet_location["address"]); ?>" target="_blank">map</a>)
 						</div>
 					</div>
 				</footer>

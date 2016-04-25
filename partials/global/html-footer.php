@@ -13,8 +13,8 @@
 			s.parentNode.insertBefore(wf, s);
 		})(document);
 	</script>
-	<script src="<?php echo get_template_directory_uri(); ?>/dst/js/vendor.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/dst/js/scripts.js"></script>
+	<script src="<?php echo sb_asset("js/vendor.js"); ?>"></script>
+	<script src="<?php echo sb_asset("js/scripts.js"); ?>"></script>
 
 	<?php 
 		if(defined("GOOGLE_ANALYTICS_ID")):

@@ -16,7 +16,7 @@ app.ui = {
 			step: function() {
 				$counter.text(self.leftPad(Math.ceil(this.count), text.length, 0));
 			}
-		})
+		});
 	},
 	leftPad: function(string, length, character) {
 		string = String(string);

@@ -64,7 +64,10 @@
 		pointer-events: none;
 	}
 	&__live {
-
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
 	}
 	&__body {
 		margin-bottom: 30px;

@@ -17,11 +17,11 @@ app.socialFeed = function() {
 			$container.removeClass("template-home__social-feed--loading");
 		}).fail(function() {
 			$container.remove();
-		})
-	}
+		});
+	};
 };
 
 $(document).ready(function() {
 	var socialFeed = new app.socialFeed();
 	socialFeed.init();
-})
+});
