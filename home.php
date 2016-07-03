@@ -12,27 +12,25 @@
 	));
 ?>
 
-	<main class="main" id="content" role="main">
-		<?php if($meet_query->have_posts()): ?>
-			<div class="meet-grid meet-grid--items-<?php echo $meet_query->post_count; ?> template-home__meet-grid">
-			<?php 
-				while($meet_query->have_posts()): 
-					$meet_query->the_post();
-					get_template_part('partials/meet/card');
-				endwhile; 
-			?>
-			</div>
-		<?php endif; ?>
-		<article class="page template-home">
-			<div class="page__body template-home__body">
-				<div class="article page__content">
-					<div class="content">
-						<p><strong>We are the Severn Bronies.</strong> We <a href="/meet">run meets</a> for fans of My Little Pony in the south west and Wales, every single week. And it's totally awesome.</p>
-					</div>
-					<div class="template-home__social-feed" data-socialfeed></div>
+	<main class="main page-home" id="content" role="main">
+		<div class="grid page-home__grid">
+			<article class="card grid__item page-home__intro">
+				<header class="card__header">
+					<h1 class="card__title">We are the Severn&nbsp;Bronies.</h1>
+				</header>
+				<div class="content card__body">
+					<p>We <a href="/meet">run meets</a> for fans of My Little Pony in the south west and Wales, every single week. And it's totally awesome.</p>
 				</div>
-			</div>
-		</article>
+			</article>
+			<?php 
+				if($meet_query->have_posts()):
+					while($meet_query->have_posts()): 
+						$meet_query->the_post();
+						get_template_part('partials/meet/card');
+					endwhile; 
+				endif;
+			?>
+		</div>
 	</main>
 
 <?php

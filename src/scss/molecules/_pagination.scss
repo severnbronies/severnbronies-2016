@@ -1,12 +1,4 @@
 .pagination {
-	padding: 30px 20px;
-	text-align: center;
-	&__title {
-		@include header-kirk;
-		margin-bottom: 7px;
-		color: mix(#fff, #000, 65%);
-		font-weight: normal;
-	}
 	&__list {
 		max-width: 48em;
 		margin-right: auto;
