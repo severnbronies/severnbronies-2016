@@ -8,7 +8,7 @@
 		$meet_image = '<img class="meet-card__map" alt="Map showing the location of ' . $meet_location["name"] . '." srcset="//maps.googleapis.com/maps/api/staticmap?size=320x320&amp;scale=2&amp;maptype=roadmap&amp;markers=color:0xe84545%7C' . $meet_coords . '&amp;zoom=15&amp;key=' . GOOGLE_MAPS_API_KEY . '">';
 	endif; 
 ?>
-<article class="meet-card meet-grid__item" data-theme="<?php echo $meet_theme; ?>">
+<article class="meet-card grid__item" data-theme="<?php echo $meet_theme; ?>">
 	<a class="meet-card__link" href="<?php the_permalink(); ?>">
 		<div class="meet-card__media">
 			<?php echo $meet_image; ?>

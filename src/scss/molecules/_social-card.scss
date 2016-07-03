@@ -1,0 +1,81 @@
+.social-card {
+	position: relative;
+	border: 1px solid $meet-border-color;
+	background-color: #fff;
+	min-height: 42vw;
+	@include mq(tos) {
+		min-height: 32vw;
+	}
+	@include mq(tng) {
+		min-height: 45vh;
+	}
+	&__media {
+
+	}
+	&__image {
+		width: 100%;
+		height: 25vh;
+		object-fit: cover;
+	}
+	&__body {
+		padding: 20px;
+	}
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__user,
+	&__date {
+		display: inline-block;
+		padding: 15px 20px;
+		color: #fff;
+		text-decoration: none;
+		line-height: 19px;
+		white-space: nowrap;
+	}
+	&__user {
+		padding-right: 0;
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-right: 4px;
+			vertical-align: middle;
+		}
+	}
+	&__date {
+		padding-left: 0;
+		opacity: .54;
+	}
+	&--twitter {
+		&:not(.social-card--has-image) .social-card__body {
+			font-size: em-calc(18px);
+			@include mq(tng) {
+				font-size: em-calc(22px);
+			}
+		}
+		.social-card__footer {
+			background-color: palette(social, twitter);
+		}
+		.social-card__user::before {
+			@include icon-social-twitter(#fff, 20px);
+		}
+	}
+	&--facebook {
+		.social-card__footer {
+			background-color: palette(social, facebook);
+		}
+		.social-card__user::before {
+			@include icon-social-facebook(#fff, 20px);
+		}
+	}
+	&--tumblr {
+		.social-card__footer {
+			background-color: palette(social, tumblr);
+		}
+		.social-card__user::before {
+			@include icon-social-tumblr(#fff, 20px);
+		}
+	}
+}

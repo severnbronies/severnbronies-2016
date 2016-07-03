@@ -10,49 +10,63 @@
 		"limit" => 15
 	)); 
 ?>
-<aside class="social-feed">
-	<h1 class="social-feed__title">Recently in the Severn Bronies&hellip;</h1>
-	<ul class="social-feed__list">
-		<?php 
-			$counter = 0;
-			foreach($posts as $post): 
-				if($counter >= 10):
-					break; 
-				endif;
-				$counter++;
-		?>
-		<li class="social-feed__item social-feed__item--<?php echo $post->source; ?>">
-			<div class="social-feed__body">
-				<?php
-					if(!empty($post->image)):
-				?>
-				<a class="social-feed__media" href="<?php echo $post->permalink; ?>">
-					<img class="social-feed__image" alt="" src="<?php echo $post->image; ?>">
-				</a>
-				<?php
-					endif;
-				?>
-				<div class="content">
-					<?php 
-						if($post->source == "twitter" || $post->source == "facebook"):
-							echo sb_content_parse($post->content); 
-						else:
-							echo $post->content;
-						endif;
-					?>
-				</div>
-			</div>
-			<a class="social-feed__permalink" href="<?php echo $post->permalink; ?>">
-				<time class="social-feed__metadata" datetime="<?php echo date("c", $post->timestamp); ?>" title="<?php echo date("c", $post->timestamp); ?>">
+	<?php 
+		$counter = 0;
+		foreach($posts as $post): 
+			if($counter >= 10):
+				break; 
+			endif;
+			$counter++;
+			$post->profile = "";
+			$post->name = "";
+	?>
+	<div class="social-card social-card--<?php echo $post->source; ?> <?php if(!empty($post->image)): ?>social-card--has-image<?php endif; ?> grid__item">
+		<footer class="social-card__footer">
+			<?php 
+				switch($post->source) {
+					case "twitter":
+						$post->profile = "https://twitter.com/severnbronies";
+						$post->name = "@severnbronies";
+						break;
+					case "facebook":
+						$post->profile = "https://facebook.com/severnbronies";
+						$post->name = "/severnbronies";
+						break;
+					case "tumblr":
+						$post->profile = "http://blog.severnbronies.co.uk/";
+						$post->name = "severnbronies";
+						break;
+				}
+			?>
+			<a class="social-card__user" href="<?php echo $post->profile; ?>"><?php echo $post->name; ?></a>
+			<a class="social-card__date" href="<?php echo $post->permalink; ?>">
+				<time datetime="<?php echo date("c", $post->timestamp); ?>" title="<?php echo date("c", $post->timestamp); ?>">
 					<?php echo sb_fuzzy_date($post->timestamp); ?>
 				</time>
 			</a>
-		</li>
-		<?php 
-			endforeach; 
+		</footer>
+		<?php
+			if(!empty($post->image)):
 		?>
-	</ul>
-</aside>
+			<a class="social-card__media" href="<?php echo $post->permalink; ?>">
+				<img class="social-card__image" alt="" src="<?php echo $post->image; ?>">
+			</a>
+		<?php
+			endif;
+		?>
+		<div class="content social-card__body">
+			<?php 
+				if($post->source == "twitter" || $post->source == "facebook"):
+					echo sb_content_parse($post->content); 
+				else:
+					echo $post->content;
+				endif;
+			?>
+		</div>
+	</div>
+	<?php 
+		endforeach; 
+	?>
 <?php 
 	endif;
 ?>

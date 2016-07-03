@@ -30,6 +30,8 @@
 @import "molecules/metadata";
 @import "molecules/avatar-grid";
 @import "molecules/stats";
+@import "molecules/card";
+@import "molecules/social-card";
 
 // Organisms
 // e.g. @import "organisms/dataset";
@@ -39,20 +41,20 @@
 @import "organisms/main";
 @import "organisms/meet";
 @import "organisms/page";
-@import "organisms/meet-grid";
+@import "organisms/grid";
 @import "organisms/article";
 @import "organisms/social-feed";
 @import "organisms/search";
 
 // Templates
 // e.g. @import "templates/datasheet";
-@import "templates/template-home";
 @import "templates/template-search";
 @import "templates/template-error-page";
 
 // Pages
 // e.g. @import "pages/datasheet-3124";
 @import "pages/page-about";
+@import "pages/page-home";
 
 // Shame
 @import "shame";

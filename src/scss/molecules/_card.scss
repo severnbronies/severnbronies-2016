@@ -1,0 +1,21 @@
+.card {
+	position: relative;
+	padding: 20px;
+	border: 1px solid $meet-border-color;
+	background-color: #fff;
+	min-height: 42vw;
+	@include mq(tos) {
+		min-height: 32vw;
+	}
+	@include mq(tng) {
+		min-height: 45vh;
+	}
+	&__header {
+		margin-bottom: 10px;
+	}
+	&__title {
+		@include header-sisko;
+	}
+	&__body {
+	}
+}
