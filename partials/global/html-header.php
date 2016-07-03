@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-gb" dir="ltr" class="no-js">
+<html lang="en-gb" dir="ltr" prefix="og: http://ogp.me/ns#" class="no-js">
 <head>
 
 	<!-- Technical metadata -->
@@ -13,10 +13,6 @@
 	<meta name="author" content="<?php bloginfo("name"); ?>">
 	<meta name="copyright" content="<?php echo date("Y"); ?> <?php bloginfo("name"); ?>">
 	<meta name="description" content="<?php bloginfo("description"); ?>">
-	<meta name="geo.region" content="GB-BST">
-	<meta name="geo.placename" content="Bristol">
-	<meta name="geo.position" content="51.454513;-2.58791">
-	<meta name="ICBM" content="51.454513, -2.58791">
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo sb_asset("images/favicon/apple-touch-icon-57x57.png"); ?>">
@@ -38,6 +34,34 @@
 	<meta name="msapplication-TileColor" content="#2b2e4a">
 	<meta name="msapplication-TileImage" content="<?php echo sb_asset("images/favicon/mstile-144x144.png"); ?>">
 	<meta name="theme-color" content="<?php echo sb_theme_color(); ?>">
+
+	<!-- OpenGraph -->
+	<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+	<meta name="twitter:site" content="@severnbronies">
+<?php 
+	if(have_posts()): 
+		while(have_posts()):
+			the_post();
+		endwhile;
+	endif;
+	if(is_single()):
+?>
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="<?php the_permalink(); ?>">
+	<meta property="og:title" content="<?php single_post_title(""); ?>">
+	<meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
+	<meta property="og:image" content="<?php if (function_exists("wp_get_attachment_thumb_url")) { echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID)); }?>">
+<?php 
+	else:
+?>
+	<meta name="twitter:card" content="summary">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="<?php bloginfo('description'); ?>">
+	<meta property="og:image" content="<?php echo sb_asset("images/favicon/apple-touch-icon-180x180.png"); ?>">
+<?php 
+	endif;
+?>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="<?php echo sb_asset("css/stylesheet.css"); ?>">
