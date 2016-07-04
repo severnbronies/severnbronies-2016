@@ -5,7 +5,7 @@
 		"post_type" => "meet",
 		"orderby" => "meta_value_num",
 		"order" => "ASC",
-		"posts_per_page" => 3,
+		"posts_per_page" => -1,
 		"meta_key" => "meet_end_time",
 		"meta_compare" => ">",
 		"meta_value" => time()
