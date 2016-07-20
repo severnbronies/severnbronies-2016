@@ -78,13 +78,9 @@
 			padding-left: 0;
 			background-color: #fafafa;
 			.page-about__section-body {
-				@include mq(tng) {
-					column-count: 2;
-					column-gap: 20px;
-					> * {
-						break-inside: avoid;
-					}
-				}
+				max-width: 880px;
+				margin-right: auto;
+				margin-left: auto;
 			}
 		}
 	}

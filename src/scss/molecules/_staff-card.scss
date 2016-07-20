@@ -2,29 +2,33 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	align-items: stretch;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 1px solid #ccc;
-	background-color: #fff;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-top: 40px;
+	margin-bottom: 40px;
 	&__avatar {
-		width: 96px;
-		height: 96px;
+		width: 20%;
+		border: 6px solid #fff;
+		border-radius: 6px;
+		line-height: 0;
 	}
 	&__body {
-		padding: 20px;
-		border-left: 1px solid #ccc;
+		width: calc(80% - 20px);
 	}
 	&__header {
-
+		margin-bottom: 20px;
+	}
+	&__title,
+	&__email {
+		display: inline-block;
+		white-space: nowrap;
 	}
 	&__title {
-		@include header-picard;
-		display: inline;
+		@include header-sisko;
 	}
 	&__email {
 		@include secondary-font;
-		margin-left: 5px;
+		margin-left: .5em;
 		color: palette(severn, base);
 		text-decoration: none;
 		&:hover,
@@ -33,6 +37,45 @@
 		}
 	}
 	&__content {
-
+		opacity: .65;
 	}
 }
+
+// .staff-card {
+// 	display: flex;
+// 	flex-direction: row;
+// 	flex-wrap: nowrap;
+// 	align-items: stretch;
+// 	margin-top: 20px;
+// 	margin-bottom: 20px;
+// 	border: 1px solid #ccc;
+// 	background-color: #fff;
+// 	&__avatar {
+// 		width: 96px;
+// 		height: 96px;
+// 	}
+// 	&__body {
+// 		padding: 20px;
+// 		border-left: 1px solid #ccc;
+// 	}
+// 	&__header {
+
+// 	}
+// 	&__title {
+// 		@include header-picard;
+// 		display: inline;
+// 	}
+// 	&__email {
+// 		@include secondary-font;
+// 		margin-left: 5px;
+// 		color: palette(severn, base);
+// 		text-decoration: none;
+// 		&:hover,
+// 		&:focus {
+// 			color: palette(severn, darkest);
+// 		}
+// 	}
+// 	&__content {
+
+// 	}
+// }
