@@ -1,34 +1,49 @@
 .staff-card {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: flex-start;
-	margin-top: 40px;
-	margin-bottom: 40px;
+	margin: 40px 20px;
+	@include mq(tos) {
+		flex-direction: row;
+	}
 	&__avatar {
-		width: 20%;
+		width: 120px;
+		height: 120px;
+		margin-left: -6px;
+		margin-bottom: 6px;
 		border: 6px solid #fff;
 		border-radius: 6px;
 		line-height: 0;
+		@include mq(tos) {
+			width: 20%;
+			height: auto;
+			margin-left: 0;
+			margin-bottom: 0;
+		}
 	}
 	&__body {
-		width: calc(80% - 20px);
+		@include mq(tos) {
+			width: calc(80% - 20px);
+		}
 	}
 	&__header {
 		margin-bottom: 20px;
 	}
 	&__title,
 	&__email {
-		display: inline-block;
-		white-space: nowrap;
+		@include mq(tos) {
+			display: inline-block;
+			white-space: nowrap;
+		}
 	}
 	&__title {
 		@include header-sisko;
+		margin-right: .5em;
 	}
 	&__email {
 		@include secondary-font;
-		margin-left: .5em;
 		color: palette(severn, base);
 		text-decoration: none;
 		&:hover,
