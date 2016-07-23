@@ -47,13 +47,13 @@
 	&__image,
 	&__map {
 		width: 100%;
-		min-height: 42vw;
+		height: 42vw;
 		object-fit: cover;
 		@include mq(tos) {
-			min-height: 32vw;
+			height: 32vw;
 		}
 		@include mq(tng) {
-			min-height: 45vh;
+			height: 45vh;
 		}
 	}
 	&__body {

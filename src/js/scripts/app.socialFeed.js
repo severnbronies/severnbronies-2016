@@ -4,7 +4,9 @@ app.socialFeed = function() {
 	var self = this;
 	var $container = $(".page-home__grid");
 	this.init = function() {
-		self.load();
+		if($container.length > 0) {
+			self.load();
+		}
 	};
 	this.load = function() {
 		$.ajax({
