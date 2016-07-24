@@ -1,0 +1,22 @@
+<article class="meet">
+    <header class="meet__header">
+        <div class="meet__media">
+            <img class="meet__image" alt="" src="{{ image }}">
+                <div class="meet__media__copyright">
+                    {{ imageCopyright }}
+                </div>
+        </div>
+        <h1 class="meet__title">{{ title }}</h1>
+        {{#if isLive}}
+        <div class="live-label meet__live"><strong class="live-label__title">Happening Now!</strong> &mdash; <a href="#">follow us on Twitter</a> for up to date information</div>
+        {{/if}}
+    </header>
+    <div class="meet__body">
+        <div class="meet__metadata">
+            {{> @metadata }}
+        </div>
+        <div class="meet__content">
+            {{> @article }}
+        </div>
+    </div>
+</article>

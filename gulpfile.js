@@ -1,106 +1,88 @@
-/*
-	Gulp is a system that automates various tasks, such as linting, 
-	compiling and minifying files, and obfuscating javascript.
+'use strict';
 
-	FIRST YOU'LL NEED THIS:
-	Node.js (http://nodejs.org/)
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const fractal = require('./fractal/fractal');
 
-	Navigate to the project dependency using the Node.js command prompt,
-	then run this to install the project dependencies:
-	  $ npm install
-
-	If some src files already exist you'll want to compile them all:
-	  $ gulp force
-
-	And if you're making further changes run this to watch for changes
-	and compile automatically:
-	  $ gulp
-	
-	Sorted.
- */
-
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var autoprefixer = require("gulp-autoprefixer");
-var concat = require("gulp-concat");
-var uglify = require("gulp-uglify");
-var newer = require("gulp-newer");
-var imagemin = require("gulp-imagemin");
-var plumber = require("gulp-plumber");
-var sassLint = require('gulp-sass-lint');
-var jshint = require('gulp-jshint');
-var merge = require('merge-stream');
-
-gulp.task("default", function() {
-	gulp.watch("./src/scss/{,*/}*.scss", ["sass"]);
-	gulp.watch("./src/js/{,*/}*.js", ["javascript"]);
-	gulp.watch("./src/images/{,*/}*", ["images"]);
-	gulp.watch("./src/type/{,*/}*", ["fonts"]);
+gulp.task('default', ['fractal:watch'], function() {
+	gulp.watch('./src/scss/{,*/}*.scss', ['sass']);
+	gulp.watch('./src/js/{,*/}*.js', ['javascript']);
+	gulp.watch('./src/images/{,*/}*', ['images']);
+	gulp.watch('./src/type/{,*/}*', ['fonts']);
 });
 
-gulp.task("force", ["sass", "javascript", "images", "fonts"]);
+gulp.task('force', ['sass', 'javascript', 'images', 'fonts', 'fractal:export']);
 
 /*
  * Sass compilation
  */
 
-gulp.task("sass", ["sass-lint"], function() {
-	gulp.src("./src/scss/*.scss")
+gulp.task('sass', ['sass-lint'], function() {
+	const sass = require('gulp-sass');
+	const autoprefixer = require('gulp-autoprefixer');
+	gulp.src('./src/scss/*.scss')
 	.pipe(plumber())
 	.pipe(sass({
-		outputStyle: "compressed"
+		outputStyle: 'compressed'
 	}))
 	.pipe(autoprefixer({
 		browsers: ['last 2 version', 'ie 9', 'ie 10'],
 		cascade: true
 	}))
-	.pipe(gulp.dest("./dst/css"))
+	.pipe(gulp.dest('./dst/css'));
 });
 
-gulp.task("sass-lint", function() {
+gulp.task('sass-lint', function() {
+	const sassLint = require('gulp-sass-lint');
 	// The sass-lint npm module is broken at the moment, so keeping this disabled.
 	// https://github.com/sasstools/sass-lint/issues/389
-	// return gulp.src("./src/scss/{,*/}*.scss")
+	// return gulp.src('./src/scss/{,*/}*.scss')
 	// .pipe(plumber())
 	// .pipe(sassLint({
-	// 	"config": ".sass-lint.yml"
+	// 	'config': '.sass-lint.yml'
 	// }))
 	// .pipe(sassLint.format())
-	// .pipe(sassLint.failOnError())
+	// .pipe(sassLint.failOnError());
 });
 
-/*
- * JavaScript minification
+/**
+ * JavaScript compilation
  */
 
-gulp.task("javascript", ["javascript-lint"], function() {
-	var folders = ["preload", "vendor", "scripts"];
+gulp.task('javascript', ['javascript-lint'], function() {
+	const concat = require('gulp-concat');
+	const uglify = require('gulp-uglify');
+	const merge = require('merge-stream');
+	var folders = ['preload', 'vendor', 'scripts'];
 	var tasks = folders.map(function(folder) {
-		return gulp.src("./src/js/" + folder + "/**/*.js", {
-			base: "./src/js/" + folder
+		return gulp.src('./src/js/' + folder + '/**/*.js', {
+			base: './src/js/' + folder
 		})
 		.pipe(plumber())
-		.pipe(concat(folder + ".js"))
+		.pipe(concat(folder + '.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest("./dst/js"))
+		.pipe(gulp.dest('./dst/js'))
 	});
 	merge(tasks);
 });
 
-gulp.task("javascript-lint", function() {
-	return gulp.src(["./src/js/{,*/}*.js", "!./src/js/vendor/{,*/}*.js"])
+gulp.task('javascript-lint', function() {
+	const jshint = require('gulp-jshint');
+	return gulp.src(['./src/js/{,*/}*.js', '!./src/js/vendor/{,*/}*.js'])
 	.pipe(jshint())
-	.pipe(jshint.reporter("default"))
+	.pipe(jshint.reporter('default'));
 });
 
-/*
+/**
  * Image optimisation
  */
 
-gulp.task("images", function() {
-	gulp.src("./src/images/{,*/}*")
+gulp.task('images', function() {
+	const newer = require('gulp-newer');
+	const imagemin = require('gulp-imagemin');
+	gulp.src('./src/images/{,*/}*')
 	.pipe(plumber())
-	.pipe(newer("./dst/images"))
+	.pipe(newer('./dst/images'))
 	.pipe(imagemin(
 		{
 			optimizationLevel: 5, // png
@@ -109,14 +91,39 @@ gulp.task("images", function() {
 			multipass: true // svg
 		}
 	))
-	.pipe(gulp.dest("./dst/images"))
+	.pipe(gulp.dest('./dst/images'));
 });
 
-/*
- * Move any font files
+/**
+ * Typography teleportation
  */
 
-gulp.task("fonts", function() {
-	gulp.src("./src/type/{,*/}*")
-	.pipe(gulp.dest("./dst/type"))
+gulp.task('fonts', function() {
+	gulp.src('./src/type/{,*/}*')
+	.pipe(gulp.dest('./dst/type'));
+});
+
+/**
+ * Fractal
+ */
+
+gulp.task('fractal:watch', function(){
+	const logger = fractal.cli.console;
+    const server = fractal.web.server({
+        sync: true
+    });
+    server.on('error', err => logger.error(err.message));
+    return server.start().then(() => {
+        logger.success(`Fractal server is now running at ${server.url}`);
+    });
+});
+
+gulp.task('fractal:export', function() {
+	const logger = fractal.cli.console;
+	const builder = fractal.web.builder();
+	builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
+	builder.on('error', err => logger.error(err.message));
+	return builder.build().then(() => {
+		logger.success('Fractal build completed!');
+	});
 });

@@ -1,0 +1,21 @@
+context:
+    navigationLinks:
+        - Meets
+        - About
+        - Rules
+        - Blog
+    footerLinks:
+        - Search
+        - Donate
+        - Resources
+        - RSS Feeds
+        - What
+    socialLinks:
+        twitter: https://twitter.com/severnbronies
+        facebook: https://facebook.com/severnbronies
+        tumblr: http://blog.severnbronies.co.uk/
+        github: https://github.com/severnbronies
+    legalLinks:
+        - Media policy
+        - Privacy policy
+        - Contact us

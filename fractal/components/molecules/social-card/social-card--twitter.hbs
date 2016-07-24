@@ -1,0 +1,20 @@
+{{#each socialItems}}
+<div class="social-card social-card--twitter {{#if this.image}}social-card--has-image{{/if}}">
+    <footer class="social-card__footer">
+        <a class="social-card__user" href="#">@severnbronies</a>
+        <a class="social-card__date" href="#">
+            <time datetime="2016-05-06T09:04:12Z" title="2016-05-06T09:04:12Z">
+                {{ this.timeAgo }}
+            </time>
+        </a>
+    </footer>
+    {{#if this.image}}
+        <a class="social-card__media" href="#">
+            <img class="social-card__image" alt="" src="{{ this.image }}">
+        </a>
+    {{/if}}
+    <div class="content social-card__body">
+        <p>{{ this.content }}
+    </div>
+</div>
+{{/each}}

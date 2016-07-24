@@ -1,0 +1,1 @@
+The background colour of the masthead depends on the global `data-theme` setting. 

@@ -1,0 +1,21 @@
+<article class="meet-card grid__item" data-theme="bristol">
+    <a class="meet-card__link" href="#">
+        <div class="meet-card__media">
+            <img alt="meet-card__image" alt="{{ meetTitle }}" src="{{ meetImage }}">
+        </div>
+        <div class="meet-card__body">
+            <h1 class="meet-card__title">{{ meetTitle }}</h1>
+            <ul class="meet-card__meta">
+                {{#if meetLocality }}
+                <li class="meet-card__meta-item meet-card__meta-item--locality">{{ meetLocality }}</li>
+                {{/if}}
+                <li class="meet-card__meta-item meet-card__meta-item--date">{{ meetDate }}</li>
+            </ul>
+        </div>
+        {{#if isLive }}
+        <div class="live-label meet-card__live">
+            <strong class="live-label__title">Happening Now!</strong>
+        </div>
+        {{/if}}
+    </a>
+</article>
