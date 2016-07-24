@@ -1,0 +1,38 @@
+<footer class="metadata">
+    <div class="metadata__item metadata__item--media">
+        <div class="metadata__media">
+            {{> @avatar-grid }}
+        </div>
+        <div class="metadata__key">
+            Meet Runners
+        </div>
+        <div class="content metadata__value">
+            {{ meetRunner }}
+        </div>
+    </div>
+    <div class="metadata__item">
+        <div class="metadata__key">
+            Meet type
+        </div>
+        <div class="content metadata__value">
+            {{ meetType }}
+        </div>
+    </div>
+    <div class="metadata__item">
+        <div class="metadata__key">
+            Running time
+        </div>
+        <div class="content metadata__value">
+            {{ meetStart }}&ndash;{{ meetEnd }}
+        </div>
+    </div>
+    <div class="metadata__item">
+        <div class="metadata__key">
+            Meeting point
+        </div>
+        <div class="content metadata__value">
+            {{ meetLocation }}
+            (<a href="https://google.co.uk/maps/?q={{ meetLocation }}" target="_blank">map</a>)
+        </div>
+    </div>
+</footer>

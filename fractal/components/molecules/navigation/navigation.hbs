@@ -1,0 +1,13 @@
+<nav class="navigation" role="navigation">
+    <div class="navigation__inner">
+        <ul class="navigation__list">
+            {{#each navigationItems}}
+            <li class="navigation__item">
+                <a class="navigation__link" href="{{ this }}">
+                    {{ @key }}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,12 @@
+context:
+    themes: 
+        - severn 
+        - bristol
+        - cardiff
+        - newport
+        - weston-super-mare
+    navigationItems:
+        Meets: /meets
+        About: /about
+        Rules: /rules
+        Blog: http://blog.severnbronies.co.uk/

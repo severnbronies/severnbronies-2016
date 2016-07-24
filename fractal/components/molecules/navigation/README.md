@@ -1,0 +1,1 @@
+The navigation is not visible on resolutions smaller than 860px wide, where it is replaced by a hamburger icon that directs to the footer navigation.

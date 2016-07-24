@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            {{#each columns}}
+            <th>{{ @key }}</th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {{#each columns}}
+            <td>{{ this }}</td>
+            {{/each}}
+        </tr>
+    </tbody>
+</table>

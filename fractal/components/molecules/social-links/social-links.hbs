@@ -1,0 +1,11 @@
+<div class="social-links">
+    <ul class="social-links__list">
+        {{#each socialLinks}}
+        <li class="social-links__item">
+            <a class="social-links__link social-links__link--{{ @key }}" href="{{ this }}">
+                <span class="social-links__label">{{ @key }}</span>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

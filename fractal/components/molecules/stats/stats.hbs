@@ -1,0 +1,8 @@
+<ul class="stats">
+    {{#each stats}}
+    <li class="stats__item">
+        <strong class="stats__value" data-counter>{{ this }}</strong>
+        <span class="stats__key">{{ @key }}</span>
+    </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,43 @@
+<footer class="footer" id="bottom" role="contentinfo">
+	<div class="footer__inner">
+		<div class="footer__social-links">
+			{{> @social-links }}
+		</div>
+		<div class="footer__navigation footer__navigation--primary">
+			<h6 class="footer__title">Severn Bronies</h6>
+			<ul class="footer__list">
+				{{#each navigationLinks}}
+				<li class="footer__item">
+					<a class="footer__link" href="#">{{ this }}</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="footer__navigation footer__navigation--secondary">
+			<h6 class="footer__title">Other stuff</h6>
+			<ul class="footer__list">
+				{{#each footerLinks}}
+				<li class="footer__item">
+					<a class="footer__link" href="#">{{ this }}</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="footer__boilerplate">
+			<p>
+				&copy;2016 Severn Bronies. All rights reserved. 
+				My Little Pony: Friendship is Magic is &copy; Hasbro. 
+				Severn Bronies is not affiliated in any way with Hasbro or DHX Media. 
+				No copyright infringement intended. All copyrights belong to their their respective owners.
+				Website designed and developed by <a href="http://greysadventures.com/">Grey's Adventures</a>.
+			</p>
+			<ul class="footer__boilerplate-links">
+				{{#each legalLinks}}
+				<li>
+					<a href="#">{{ this }}</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</footer>
