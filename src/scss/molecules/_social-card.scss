@@ -1,8 +1,8 @@
 .social-card {
 	position: relative;
-	border: 1px solid $meet-border-color;
 	background-color: #fff;
 	min-height: 42vw;
+	box-shadow: 0 0 .8em 0 rgba(#000, .2);
 	@include mq(tos) {
 		min-height: 32vw;
 	}
@@ -10,41 +10,36 @@
 		min-height: 45vh;
 	}
 	&__media {
-
 	}
 	&__image {
 		width: 100%;
 		height: 25vh;
+		margin-bottom: 20px;
 		object-fit: cover;
 	}
 	&__body {
-		padding: 20px;
+		padding: 0 20px 20px;
 	}
 	&__footer {
-		display: flex;
-		justify-content: space-between;
-		background-color: #777;
+		padding: 20px;
+		font-size: em-calc(14px);
 	}
-	&__user,
+	&__source,
 	&__date {
 		display: inline-block;
-		padding: 15px 20px;
-		color: #fff;
+		color: #777;
 		text-decoration: none;
 		line-height: 19px;
 		white-space: nowrap;
 	}
-	&__user {
-		padding-right: 0;
-		&::before {
-			@include icon-arrow-right(#fff, 20px);
-			content: "";
-			display: inline-block;
-			width: 20px;
-			height: 20px;
-			margin-right: 4px;
-			vertical-align: middle;
-		}
+	&__source {
+		@include hide-text;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin-right: 4px;
+		background-repeat: no-repeat;
+		vertical-align: middle;
 	}
 	&__date {
 		padding-left: 0;
@@ -57,27 +52,18 @@
 				font-size: em-calc(22px);
 			}
 		}
-		.social-card__footer {
-			background-color: palette(social, twitter);
-		}
-		.social-card__user::before {
-			@include icon-social-twitter(#fff, 20px);
+		.social-card__source {
+			@include icon-social-twitter(palette(social, twitter), 20px);
 		}
 	}
 	&--facebook {
-		.social-card__footer {
-			background-color: palette(social, facebook);
-		}
-		.social-card__user::before {
-			@include icon-social-facebook(#fff, 20px);
+		.social-card__source {
+			@include icon-social-facebook(palette(social, facebook), 20px);
 		}
 	}
 	&--tumblr {
-		.social-card__footer {
-			background-color: palette(social, tumblr);
-		}
-		.social-card__user::before {
-			@include icon-social-tumblr(#fff, 20px);
+		.social-card__source {
+			@include icon-social-tumblr(palette(social, tumblr), 20px);
 		}
 	}
 }

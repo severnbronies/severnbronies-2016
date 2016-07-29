@@ -65,7 +65,7 @@
 				}
 			}
 			.content {
-				margin-top: 20px;
+				margin-bottom: 20px;
 			}
 		}
 		&--media {
@@ -88,6 +88,7 @@
 	}
 	&__section-title {
 		@include header-janeway;
+		margin-bottom: 20px;
 		text-align: center;
 	}
 	&__section-body {

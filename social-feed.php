@@ -38,7 +38,7 @@
 						break;
 				}
 			?>
-			<a class="social-card__user" href="<?php echo $post->profile; ?>"><?php echo $post->name; ?></a>
+			<a class="social-card__source" href="<?php echo $post->profile; ?>"><?php echo $post->name; ?></a>
 			<a class="social-card__date" href="<?php echo $post->permalink; ?>">
 				<time datetime="<?php echo date("c", $post->timestamp); ?>" title="<?php echo date("c", $post->timestamp); ?>">
 					<?php echo sb_fuzzy_date($post->timestamp); ?>

@@ -1,46 +1,32 @@
 .navigation {
-	display: none;
-	color: #fff;
-	@include mq(tng) {
-		display: block;
-	}
 	&__inner {
-		@include wrapper;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-		padding-right: 10px;
-		padding-left: 10px;
-	}
-	&__list {
-
 	}
 	&__item {
 		display: inline-block;
 	}
 	&__link {
-		display: block;
-		padding: 15px 10px;
-		color: inherit;
-		font-weight: bold;
-		text-decoration: none;
+		display: inline-block;
+		padding: 10px;
+		position: relative;
+		color: #212121;
 		text-transform: uppercase;
-		letter-spacing: em-calc(1px);
-		border-bottom-width: 3px;
-		border-bottom-style: solid;
-		border-bottom-color: transparent;
-		&:hover,
-		&:focus {
-			border-bottom-color: #fff;
-		}
+		text-decoration: none;
+		letter-spacing: .1em;
+		transition-property: padding;
+		transition-duration: .3s;
+		transition-timing-function: ease;
 		&[href*="blog.severnbronies.co.uk"] {
 			&::after {
-				@include icon-external(#fff, 10px);
+				@include icon-external(#666, 10px);
 				content: "";
-				margin-left: 6px;
-				vertical-align: text-top;
+				margin-left: 3px;
+				vertical-align: middle;
 			}
+		}
+		&:hover,
+		&:focus {
+			padding-right: 15px;
+			padding-left: 15px;
 		}
 	}
 }

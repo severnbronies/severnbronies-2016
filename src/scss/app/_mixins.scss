@@ -60,3 +60,9 @@
 	&:-ms-input-placeholder { @content; }
 }
 
+// Hide text for old school text replacement
+@mixin hide-text {
+	text-indent: 110%;
+	white-space: nowrap;
+	overflow: hidden;
+}

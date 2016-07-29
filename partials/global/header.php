@@ -1,10 +1,18 @@
 <div class="wrapper" id="top">
 
+	<?php 
+		if(is_home()):
+	?>
+		homepage
+	<?php 
+		endif;
+	?>
+
 	<header class="masthead" role="banner">
 		<div class="masthead__inner">
-			<div class="masthead__branding">
-				<a class="masthead__logo" href="/">Severn Bronies</a>
-			</div>
+			<a class="masthead__branding" href="/">
+				<img class="masthead__logo" src="<?php echo sb_asset("images/logo.svg"); ?>" alt="<?php bloginfo("name"); ?>">
+			</a>
 			<div class="masthead__nav-toggle">
 				<a class="masthead__nav-toggle__link" href="#bottom">
 					<span class="masthead__nav-toggle__label">Menu</span>

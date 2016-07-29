@@ -1,6 +1,6 @@
 .meet {
 	margin-top: 20px;
-	border-top: 1px solid $meet-border-color;
+	box-shadow: 0 0 .8em 0 rgba(#000, .2);
 	&__header {
 		position: relative;
 	}
