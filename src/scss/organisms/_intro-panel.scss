@@ -1,3 +1,29 @@
 .intro-panel {
-	
+	color: #fff;
+	background-image: url("//placeponi.es/1280/720"); // DEBUG
+	background-color: #212121;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	&__inner {
+		@include wrapper;
+		height: calc(100vh - 89px);
+		min-height: 240px;
+		position: relative;
+	}
+	&__body {
+		max-width: 420px;
+		position: absolute;
+		bottom: 15%;
+		padding-right: 20px;
+		padding-left: 20px;
+		text-shadow: 0 0 42px rgba(#000, .8);
+	}
+	&__title {
+		@include header-sisko;
+		margin-bottom: 5px;
+	}
+	&__content {
+	}
 }

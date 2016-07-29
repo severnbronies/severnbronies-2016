@@ -3,7 +3,18 @@
 	<?php 
 		if(is_home()):
 	?>
-		homepage
+		<section class="intro-panel">
+			<div class="intro-panel__inner">
+				<div class="intro-panel__body">
+					<h1 class="intro-panel__title">
+						We are the Severn&nbsp;Bronies.
+					</h1>
+					<div class="content intro-panel__content">
+						<p>We <a href="/meet">run meets</a> for fans of My Little Pony in the south west and Wales, every single week. And it's totally awesome.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 	<?php 
 		endif;
 	?>

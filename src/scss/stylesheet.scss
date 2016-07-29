@@ -10,7 +10,6 @@
 @import "atoms/typography";
 @import "atoms/animation";
 @import "atoms/icon";
-@import "atoms/layout";
 @import "atoms/accessibility";
 @import "atoms/content";
 @import "atoms/table";
@@ -43,6 +42,7 @@
 @import "organisms/grid";
 @import "organisms/article";
 @import "organisms/search";
+@import "organisms/intro-panel";
 
 // Templates
 // e.g. @import "templates/datasheet";
