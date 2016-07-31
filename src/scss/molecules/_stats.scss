@@ -38,13 +38,7 @@
 		font-feature-settings: "tnum" on;
 		font-variant-numeric: tabular-nums;
 		@include mq(tos) {
-			font-size: em-calc(72px);
-		}
-		@include mq(tng) {
-			font-size: em-calc(116px);
-		}
-		@include mq(ds9) {
-			font-size: em-calc(146px);
+			font-size: 12vw;
 		}
 	}
 }
