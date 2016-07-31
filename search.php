@@ -32,10 +32,7 @@
 											<?php echo sb_search_highlight(get_search_query(), get_the_title()); ?>
 										</h2>
 										<div class="content search-results__content">
-											<?php echo sb_search_highlight(get_search_query(), get_the_excerpt()); ?>
-										</div>
-										<div class="search-results__url">
-											<?php echo get_permalink(); ?>
+											<p><?php echo sb_search_highlight(get_search_query(), get_the_excerpt()); ?></p>
 										</div>
 									</a>
 								</li>
