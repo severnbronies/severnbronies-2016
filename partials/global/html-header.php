@@ -69,6 +69,8 @@
 	<!-- Preload JavaScript -->
 	<script>
 		GOOGLE_MAPS_API_KEY = "<?php echo GOOGLE_MAPS_API_KEY; ?>";
+		var h =document.querySelector("html");
+		h.classList.remove("no-js"); h.classList.add("js");
 	</script>
 
 	<!-- Page title -->
