@@ -1,4 +1,7 @@
 <?php
+	/* 
+	Template Name: Page - Home
+	*/
 	get_template_part('partials/global/html-header');
 	get_template_part('partials/global/header');
 	$meet_query = new WP_Query(array(

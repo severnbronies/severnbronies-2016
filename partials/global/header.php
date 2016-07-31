@@ -1,16 +1,20 @@
 <div class="wrapper" id="top">
 
 	<?php 
-		if(is_home()):
+		if(is_front_page()):
+			if(has_post_thumbnail()):
+				$intro_image = sb_responsive_image_helper(get_post_thumbnail_id(), "intro-panel__image");
+			endif;
 	?>
 		<section class="intro-panel">
+			<?php echo $intro_image; ?>
 			<div class="intro-panel__inner">
 				<div class="intro-panel__body">
 					<h1 class="intro-panel__title">
-						We are the Severn&nbsp;Bronies.
+						<?php the_title(); ?>
 					</h1>
 					<div class="content intro-panel__content">
-						<p>We <a href="/meet">run meets</a> for fans of My Little Pony in the south west and Wales, every single week. And it's totally awesome.</p>
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</div>
