@@ -3,7 +3,7 @@
 	padding: 20px;
 	background-color: #fff;
 	min-height: 42vw;
-	box-shadow: 0 0 .8em 0 rgba(#000, .2);
+	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@include mq(tos) {
 		min-height: 32vw;
 	}

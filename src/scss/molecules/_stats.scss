@@ -13,21 +13,26 @@
 		text-align: center;
 	}
 	&__key {
+		margin-top: .6em;
+		font-size: em-calc(13px);
+		text-transform: uppercase;
 		line-height: 1;
-		font-size: em-calc(12px);
-		@include mq(tos) {
-			font-size: em-calc(16px);
-		}
+		letter-spacing: 1px;
+		opacity: .7;
 		@include mq(tng) {
-			font-size: em-calc(21px);
 			padding-right: 10px;
 			padding-left: 10px;
 		}
 		@include mq(ds9) {
-			font-size: em-calc(28px);
 		}
 	}
 	&__value {
+		color: transparent;
+		background-color: #888;
+		-webkit-background-clip: text;
+		background-clip: text;
+		font-family: monospace;
+		text-shadow: 0px 2px 3px rgba(#fff, .5);
 		line-height: .8;
 		font-size: em-calc(36px);
 		font-feature-settings: "tnum" on;

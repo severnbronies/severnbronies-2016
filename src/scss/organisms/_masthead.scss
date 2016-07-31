@@ -3,7 +3,7 @@
 	z-index: 2;
 	border-top: 3px solid palette(severn, base);
 	background-color: #fff;
-	box-shadow: 0 0 .8em 0 rgba(#000, .2);
+	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@each $locale, $color in $palette-locales {
 		[data-theme="#{$locale}"] & {
 			border-top-color: palette($locale, base);

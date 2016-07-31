@@ -2,7 +2,7 @@
 	display: flex;
 	position: relative;
 	overflow: hidden;
-	box-shadow: 0 0 .8em 0 rgba(#000, .2);
+	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@each $locale, $color in $palette-locales {
 		&[data-theme="#{$locale}"] {
 			.meet-card__link::after {
