@@ -44,9 +44,13 @@
 			max-width: 58em;
 			margin-right: auto;
 			margin-left: auto;
-			padding: 20px 40px;
+			padding: 20px;
 			background-color: #fff;
 			box-shadow: 0 0 13px 0 rgba(#000, .2);
+			@include mq(tng) {
+				padding-right: 40px;
+				padding-left: 40px;
+			}
 			.page-about__section-body {
 				@include mq(tng) {
 					column-count: 2;
