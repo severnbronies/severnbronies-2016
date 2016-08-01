@@ -41,13 +41,14 @@ app.ui = {
 
 $(document).ready(function() {
 	app.ui.fitvids();
+	$("img").each(function() {
+		app.ui.imageTransition($(this));
+	});
 });
 
 $(window).load(function() {
 	$("[data-counter]").each(function() {
 		app.ui.counter($(this));
 	});
-	$("img").each(function() {
-		app.ui.imageTransition($(this));
-	});
+	$("img").addClass("img-ready");
 });
