@@ -15,18 +15,46 @@
 		transition-property: padding;
 		transition-duration: .3s;
 		transition-timing-function: ease;
-		&[href*="blog.severnbronies.co.uk"] {
-			&::after {
-				@include icon-external(#666, 10px);
-				content: "";
-				margin-left: 3px;
-				vertical-align: middle;
-			}
+		// &[href*="blog.severnbronies.co.uk"] {
+		// 	&::after {
+		// 		@include icon-external(#666, 10px);
+		// 		content: "";
+		// 		margin-left: 3px;
+		// 		vertical-align: middle;
+		// 	}
+		// }
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			border: 2px solid palette(severn, base);
+			border-radius: 100%;
+			transform: scale(0);
+			transition: transform .32s $menu-transition-easing;
+		}
+		&::before {
+			width: 30px;
+			height: 30px;
+			margin-top: -15px;
+			margin-left: -15px;
+			opacity: .3;
+		}
+		&::after {
+			width: 24px;
+			height: 24px;
+			margin-top: -12px;
+			margin-left: -12px;
+			opacity: .2;
 		}
 		&:hover,
 		&:focus {
-			padding-right: 15px;
-			padding-left: 15px;
+			&::before,
+			&::after {
+				transform: scale(1);
+			}
 		}
 	}
 }
