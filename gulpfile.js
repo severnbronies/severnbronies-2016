@@ -11,13 +11,15 @@ gulp.task('default', ['fractal:watch'], function() {
 	gulp.watch('./src/type/{,*/}*', ['fonts']);
 });
 
-gulp.task('force', ['sass', 'javascript', 'images', 'fonts', 'fractal:export']);
+gulp.task('lint', ['sass-lint', 'javascript-lint'])
+gulp.task('production', ['sass', 'javascript', 'images', 'fonts']);
+gulp.task('force', ['production', 'fractal:export']);
 
 /*
  * Sass compilation
  */
 
-gulp.task('sass', ['sass-lint'], function() {
+gulp.task('sass', function() {
 	const sass = require('gulp-sass');
 	const autoprefixer = require('gulp-autoprefixer');
 	gulp.src('./src/scss/*.scss')
@@ -49,7 +51,7 @@ gulp.task('sass-lint', function() {
  * JavaScript compilation
  */
 
-gulp.task('javascript', ['javascript-lint'], function() {
+gulp.task('javascript', function() {
 	const concat = require('gulp-concat');
 	const uglify = require('gulp-uglify');
 	const merge = require('merge-stream');

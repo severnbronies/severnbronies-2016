@@ -37,5 +37,15 @@
 			background-color: palette(social, github);
 			@include icon-social-github(#fff);
 		}
+		&--telegram {
+			background-color: palette(social, telegram);
+			@include icon-social-telegram(#fff);
+			background-size: 16px 16px;
+		}
+		&--discord {
+			background-color: palette(social, discord);
+			@include icon-social-discord(#fff);
+			background-size: 18px 18px;
+		}
 	}
 }
