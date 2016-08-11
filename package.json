@@ -33,6 +33,6 @@
     "merge-stream": "^1.0.0"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.0.0"
+    "@frctl/fractal": "^1.0.8"
   }
 }
