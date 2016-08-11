@@ -1,6 +1,6 @@
 .meet {
 	margin-top: 20px;
-	border-top: 1px solid $meet-border-color;
+	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	&__header {
 		position: relative;
 	}
@@ -74,7 +74,6 @@
 	&__body {
 		margin-bottom: 30px;
 		background-color: #fff;
-		border: 1px solid $meet-border-color;
 		border-top-width: 0;
 	}
 	&__metadata {

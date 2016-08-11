@@ -1,12 +1,12 @@
 .meet-card {
 	display: flex;
 	position: relative;
-	border: 1px solid $meet-border-color;
 	overflow: hidden;
+	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@each $locale, $color in $palette-locales {
 		&[data-theme="#{$locale}"] {
 			.meet-card__link::after {
-				background-image: linear-gradient(45deg, rgba(palette($locale, base), .7) 0%, rgba(0, 0, 0, 0) 100%);
+				background-image: linear-gradient(45deg, rgba(palette($locale, base), .7) 0%, rgba(palette(severn, base), 0) 100%);
 			}
 		}
 	}

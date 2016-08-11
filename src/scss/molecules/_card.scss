@@ -1,9 +1,9 @@
 .card {
 	position: relative;
 	padding: 20px;
-	border: 1px solid $meet-border-color;
 	background-color: #fff;
 	min-height: 42vw;
+	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@include mq(tos) {
 		min-height: 32vw;
 	}

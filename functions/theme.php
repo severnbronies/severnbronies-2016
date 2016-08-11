@@ -42,7 +42,7 @@ function sb_body_attributes() {
  * @return string The (hash-prefixed) hexadecimal colour code. 
  */
 function sb_theme_color() {
-	$theme_color = "#2b2e4a";
+	$theme_color = "#5832ab";
 	if(is_single() && get_post_type() == "meet") {
 		$meet_location = sb_meet_location(get_field("meet_location"));
 		if(isset($meet_location["locality"]) && !empty($meet_location["locality"])) {

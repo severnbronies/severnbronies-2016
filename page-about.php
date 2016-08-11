@@ -36,92 +36,90 @@
 			the_post();
 ?>
 
-	<main class="main" id="content" role="main">
-		<div class="page-about">
-			<div class="page-about__media">
-				<?php
-					if(has_post_thumbnail()):
-						echo sb_responsive_image_helper(get_post_thumbnail_id(), "page-about__image");
-					endif; 
-				?>
-			</div>
-			<div class="page-about__body">
-				<section class="content page-about__section page-about__section--intro">
-					<?php the_content(); ?>
-				</section>
-				<section class="page-about__section page-about__section--stats">
-					<ul class="stats stats--large">
-						<li class="stats__item">
-							<strong class="stats__value" data-counter><?php echo $meet_count; ?></strong>
-							<span class="stats__key">events</span>
-						</li>
-						<li class="stats__item">
-							<strong class="stats__value" data-counter><?php echo $meet_length; ?></strong>
-							<span class="stats__key">hours</span>
-						</li>
-						<li class="stats__item">
-							<strong class="stats__value" data-counter>180</strong>
-							<span class="stats__key">people<small>(ish)</small></span>
-						</li>
-					</ul>
-				</section>
-				<section class="page-about__section page-about__section--categories">
-					<header class="page-about__section-header">
-						<h1 class="page-about__section-title">Meets</h1>
-					</header>
-					<div class="page-about__section-body">
-						<?php
-							foreach($meet_categories as $category): 
-						?>
-							<div class="content">
-								<strong><?php echo $category->name; ?></strong>&mdash;<?php echo $category->description; ?>
-							</div>
-						<?php 
-							endforeach;
-						?>
+	<main class="main page-about" id="content" role="main">
+		<div class="page-about__media">
+			<?php
+				if(has_post_thumbnail()):
+					echo sb_responsive_image_helper(get_post_thumbnail_id(), "page-about__image");
+				endif; 
+			?>
+		</div>
+		<div class="page-about__body">
+			<section class="content page-about__section page-about__section--intro">
+				<?php the_content(); ?>
+			</section>
+			<section class="page-about__section page-about__section--stats">
+				<ul class="stats stats--large">
+					<li class="stats__item">
+						<strong class="stats__value" data-counter><?php echo $meet_count; ?></strong>
+						<span class="stats__key">events</span>
+					</li>
+					<li class="stats__item">
+						<strong class="stats__value" data-counter><?php echo $meet_length; ?></strong>
+						<span class="stats__key">hours</span>
+					</li>
+					<li class="stats__item">
+						<strong class="stats__value" data-counter>180</strong>
+						<span class="stats__key">people(ish)</span>
+					</li>
+				</ul>
+			</section>
+			<section class="page-about__section page-about__section--categories">
+				<header class="page-about__section-header">
+					<h1 class="page-about__section-title">Meets</h1>
+				</header>
+				<div class="page-about__section-body">
+					<?php
+						foreach($meet_categories as $category): 
+					?>
 						<div class="content">
-							Also you get a free badge and sticker when you come to your first meet!
+							<strong><?php echo $category->name; ?></strong>&mdash;<?php echo $category->description; ?>
 						</div>
+					<?php 
+						endforeach;
+					?>
+					<div class="content">
+						Also you get a free badge and sticker when you come to your first meet!
 					</div>
-				</section>
-				<?php
-					if(count($meet_staff) > 0):
-				?>
-				<section class="page-about__section page-about__section--staff">
-					<header class="page-about__section-header">
-						<h1 class="page-about__section-title">Brought to you by&hellip;</h1>
-					</header>
-					<div class="page-about__section-body">
-						<?php 
-							foreach($meet_staff as $staff):
-						?>
-							<article class="staff-card">
-								<img class="staff-card__avatar" alt="" src="<?php echo $staff["avatar"]; ?>">
-								<div class="staff-card__body">
-									<header class="staff-card__header">
-										<h1 class="staff-card__title"><?php echo $staff["name"]; ?></h1>
-										<?php 
-											if(!empty($staff["email"])):
-										?>
-											<a class="staff-card__email" href="mailto:<?php echo $staff["email"]; ?>"><?php echo $staff["email"]; ?></a>
-										<?php 
-											endif;
-										?>
-									</header>
-									<div class="content staff-card__content">
-										<?php echo $staff["biography"]; ?>
-									</div>
+				</div>
+			</section>
+			<?php
+				if(count($meet_staff) > 0):
+			?>
+			<section class="page-about__section page-about__section--staff">
+				<header class="page-about__section-header">
+					<h1 class="page-about__section-title">Brought to you by&hellip;</h1>
+				</header>
+				<div class="page-about__section-body">
+					<?php 
+						foreach($meet_staff as $staff):
+					?>
+						<article class="staff-card">
+							<img class="staff-card__avatar" alt="" src="<?php echo $staff["avatar"]; ?>">
+							<div class="staff-card__body">
+								<header class="staff-card__header">
+									<h1 class="staff-card__title"><?php echo $staff["name"]; ?></h1>
+									<?php 
+										if(!empty($staff["email"])):
+									?>
+										<a class="staff-card__email" href="mailto:<?php echo $staff["email"]; ?>"><?php echo $staff["email"]; ?></a>
+									<?php 
+										endif;
+									?>
+								</header>
+								<div class="content staff-card__content">
+									<?php echo $staff["biography"]; ?>
 								</div>
-							</article>
-						<?php
-							endforeach;
-						?>
-					</div>
-				</section>
-				<?php
-					endif;
-				?>
-			</div>
+							</div>
+						</article>
+					<?php
+						endforeach;
+					?>
+				</div>
+			</section>
+			<?php
+				endif;
+			?>
 		</div>
 	</main>
 
