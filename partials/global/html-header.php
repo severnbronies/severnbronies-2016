@@ -47,7 +47,7 @@
 	<meta name="twitter:card" content="summary">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="<?php bloginfo('description'); ?>">
-	<meta property="og:image" content="<?php echo sb_asset("images/favicon/apple-touch-icon-180x180.png"); ?>">
+	<meta property="og:image" content="<?php echo sb_asset("images/opengraph.png"); ?>">
 <?php 
 	endif;
 ?>
@@ -58,7 +58,7 @@
 	<!-- Preload JavaScript -->
 	<script>
 		GOOGLE_MAPS_API_KEY = "<?php echo GOOGLE_MAPS_API_KEY; ?>";
-		var h =document.querySelector("html");
+		var h = document.querySelector("html");
 		h.classList.remove("no-js"); h.classList.add("js");
 	</script>
 
