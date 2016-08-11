@@ -57,13 +57,14 @@
 	}
 	&__title {
 		@include header-sisko;
+		margin-bottom: 15px;
 		opacity: .85;
 	}
 	&__list {
 		list-style: none;
 	}
 	&__item {
-		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 	&__link {
 		display: inline-block;

@@ -5,7 +5,7 @@
 	if(has_post_thumbnail()):
 		$meet_image = sb_responsive_image_helper(get_post_thumbnail_id(), "meet-card__image");
 	else: 
-		$meet_image = '<img class="meet-card__map" alt="Map showing the location of ' . $meet_location["name"] . '." srcset="//maps.googleapis.com/maps/api/staticmap?size=320x320&amp;scale=2&amp;maptype=roadmap&amp;markers=color:0xe84545%7C' . $meet_coords . '&amp;zoom=15&amp;key=' . GOOGLE_MAPS_API_KEY . '">';
+		$meet_image = '<img class="meet-card__map" alt="Map showing the location of ' . $meet_location["name"] . '." srcset="https://maps.googleapis.com/maps/api/staticmap?size=320x320&amp;scale=2&amp;maptype=roadmap&amp;markers=color:0xe84545%7C' . $meet_coords . '&amp;zoom=15&amp;key=' . GOOGLE_MAPS_API_KEY . '">';
 	endif; 
 ?>
 <article class="meet-card grid__item" data-theme="<?php echo $meet_theme; ?>">

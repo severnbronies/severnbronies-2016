@@ -5,7 +5,9 @@
 	<!-- Postload JavaScript -->
 	<script>
 		WebFontConfig = {
-			typekit: { id: 'rvj6shm' }
+			google: {
+				families: ['Montserrat:400']
+			}
 		};
 		(function(d) {
 			var wf = d.createElement('script'), s = d.scripts[0];

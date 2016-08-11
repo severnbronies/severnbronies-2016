@@ -1,9 +1,6 @@
 var app = app || {};
 
 app.ui = {
-	yesJs: function() {
-		$("html").removeClass("no-js").addClass("js");
-	},
 	fitvids: function() {
 		$(document).fitVids();
 	},
@@ -29,16 +26,29 @@ app.ui = {
 			string = character + string;
 		}
 		return string;
+	},
+	imageTransition: function($image) {
+		var image = new Image();
+		image.onload = function() {
+			$image.addClass("img-ready");
+		};
+		image.onerror = function() {
+			console.log("Could not load", $image.attr("src"));
+		};
+		image.src = $image.attr("src");
 	}
 };
 
 $(document).ready(function() {
-	app.ui.yesJs();
 	app.ui.fitvids();
+	$("img").each(function() {
+		app.ui.imageTransition($(this));
+	});
 });
 
 $(window).load(function() {
 	$("[data-counter]").each(function() {
 		app.ui.counter($(this));
 	});
+	$("img").addClass("img-ready");
 });

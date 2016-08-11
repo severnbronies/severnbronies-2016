@@ -1,46 +1,45 @@
 .masthead {
-	color: #fff;
+	position: relative;
+	z-index: 2;
+	border-top: 3px solid palette(severn, base);
+	background-color: #fff;
+	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@each $locale, $color in $palette-locales {
 		[data-theme="#{$locale}"] & {
-			background-color: palette($locale, base);
+			border-top-color: palette($locale, base);
 		}
 	}
 	&__inner {
 		@include wrapper;
+		width: 100%;
 		display: flex;
 		flex-direction: row;
-		align-items: flex-end;
 		justify-content: space-between;
-		@include mq("(min-width: 650px)") {
-			justify-content: flex-start;
-		}
+		align-items: center;
 	}
 	&__branding {
-	}
-	&__logo {
-		display: inline-block;
-		padding: 15px 20px;
-		font-size: em-calc(21px);
-		font-weight: bold;
-		letter-spacing: em-calc(1px, 21px);
-		line-height: em-calc(24px, 21px);
-		text-transform: uppercase;
-		color: inherit;
-		text-decoration: none;
-		transition: color .3s ease;
+		position: relative;
+		padding-right: 10px;
+		padding-left: 10px;
+		background-color: palette(severn, base);
 		@each $locale, $color in $palette-locales {
 			[data-theme="#{$locale}"] & {
-				background-color: palette($locale, darker);
-				color: palette($locale, light);
+				background-color: palette($locale, base);
 			}
 		}
-		&:hover,
-		&:focus {
-			color: #fff;
+	}
+	&__logo {
+		height: 86px;
+	}
+	&__nav {
+		display: none;
+		padding-right: 10px;
+		@include mq("only screen and (min-width: 560px)") {
+			display: block;
 		}
 	}
 	&__nav-toggle {
-		@include mq("(min-width: 650px)") {
+		@include mq("only screen and (min-width: 560px)") {
 			display: none;
 		}
 		&__link {
@@ -52,18 +51,12 @@
 			text-transform: uppercase;
 			&::before {
 				content: "";
-				@include icon-menu(#fff, 24px);
+				@include icon-menu(#212121, 24px);
 				vertical-align: middle;
 			}
 		}
 		&__label {
 			@include hidden;
-		}
-	}
-	&__nav {
-		display: none;
-		@include mq("(min-width: 650px)") {
-			display: block;
 		}
 	}
 }

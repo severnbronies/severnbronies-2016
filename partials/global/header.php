@@ -1,10 +1,33 @@
 <div class="wrapper" id="top">
 
+	<?php 
+		if(is_front_page()):
+			if(has_post_thumbnail()):
+				$intro_image = sb_responsive_image_helper(get_post_thumbnail_id(), "intro-panel__image");
+			endif;
+	?>
+		<section class="intro-panel">
+			<?php echo $intro_image; ?>
+			<div class="intro-panel__inner">
+				<div class="intro-panel__body">
+					<h1 class="intro-panel__title">
+						<?php the_title(); ?>
+					</h1>
+					<div class="content intro-panel__content">
+						<?php the_content(); ?>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php 
+		endif;
+	?>
+
 	<header class="masthead" role="banner">
 		<div class="masthead__inner">
-			<div class="masthead__branding">
-				<a class="masthead__logo" href="/">Severn Bronies</a>
-			</div>
+			<a class="masthead__branding" href="/">
+				<img class="masthead__logo" src="<?php echo sb_asset("images/logo.svg"); ?>" alt="<?php bloginfo("name"); ?>">
+			</a>
 			<div class="masthead__nav-toggle">
 				<a class="masthead__nav-toggle__link" href="#bottom">
 					<span class="masthead__nav-toggle__label">Menu</span>

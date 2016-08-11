@@ -44,11 +44,15 @@
 	}
 	&__email {
 		@include secondary-font;
-		color: palette(severn, base);
+		color: inherit;
 		text-decoration: none;
 		&:hover,
 		&:focus {
-			color: palette(severn, darkest);
+			opacity: .8;
+		}
+		&::before {
+			content: "\002709";
+			margin-right: .2em;
 		}
 	}
 	&__content {
