@@ -1,0 +1,30 @@
+.button.button { // This is double commented to give it a higher specificity to .content links, in lieu of using !important
+	display: inline-block;
+	padding: 15px;
+	color: #fff;
+	text-decoration: none;
+	line-height: 1;
+	transition-property: box-shadow, background-color;
+	transition-duration: .2s;
+	transition-timing-function: ease;
+	@each $locale, $color in $palette-locales {
+		[data-theme="#{$locale}"] & {
+			background-color: palette($locale, base);
+			box-shadow: inset 0 -.1em 0 0 palette($locale, light); 
+			&:hover,
+			&:focus {
+				background-color: palette($locale, darker);
+				box-shadow: inset 0 -.2em 0 0 palette($locale, light); 
+			}
+		}
+	}
+	&--disabled,
+	&[disabled] {
+		&,
+		&:hover,
+		&:focus {
+			background-color: #ccc;
+			pointer-events: none;
+		}
+	}
+}
