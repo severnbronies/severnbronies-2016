@@ -1,12 +1,12 @@
 .button.button { // This is double commented to give it a higher specificity to .content links, in lieu of using !important
 	display: inline-block;
 	padding: 15px;
-	color: #fff;
-	text-decoration: none;
-	line-height: 1;
-	transition-property: box-shadow, background-color;
 	transition-duration: .2s;
+	transition-property: box-shadow, background-color;
 	transition-timing-function: ease;
+	color: #fff;
+	line-height: 1;
+	text-decoration: none;
 	@each $locale, $color in $palette-locales {
 		[data-theme="#{$locale}"] & {
 			background-color: palette($locale, base);

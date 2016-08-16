@@ -3,9 +3,9 @@
 	width: 100%;
 	list-style: none;
 	&__item {
-		padding: 20px;
 		display: table-cell;
 		width: 33.3333%;
+		padding: 20px;
 	}
 	&__key,
 	&__value {
@@ -15,9 +15,9 @@
 	&__key {
 		margin-top: .6em;
 		font-size: em-calc(13px);
-		text-transform: uppercase;
-		line-height: 1;
 		letter-spacing: 1px;
+		line-height: 1;
+		text-transform: uppercase;
 		opacity: .7;
 		@include mq(tng) {
 			padding-right: 10px;
@@ -29,8 +29,8 @@
 	&__value {
 		color: #999;
 		font-family: monospace;
-		line-height: .8;
 		font-size: em-calc(36px);
+		line-height: .8;
 		font-feature-settings: "tnum" on;
 		font-variant-numeric: tabular-nums;
 		@include mq(tos) {

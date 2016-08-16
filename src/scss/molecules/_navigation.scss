@@ -1,20 +1,23 @@
 .navigation {
 	&__inner {
 	}
+	&__list {
+		list-style: none;
+	}
 	&__item {
 		display: inline-block;
 	}
 	&__link {
 		display: inline-block;
-		padding: 10px;
 		position: relative;
-		color: #212121;
-		text-transform: uppercase;
-		text-decoration: none;
-		letter-spacing: .1em;
-		transition-property: padding;
+		padding: 10px;
 		transition-duration: .3s;
+		transition-property: padding;
 		transition-timing-function: ease;
+		color: #212121;
+		letter-spacing: .1em;
+		text-decoration: none;
+		text-transform: uppercase;
 		// &[href*="blog.severnbronies.co.uk"] {
 		// 	&::after {
 		// 		@include icon-external(#666, 10px);
@@ -25,15 +28,15 @@
 		// }
 		&::before,
 		&::after {
-			content: "";
 			display: block;
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			border: 2px solid palette(severn, base);
-			border-radius: 100%;
 			transform: scale(0);
 			transition: transform .32s $menu-transition-easing;
+			border: 2px solid palette(severn, base);
+			border-radius: 100%;
+			content: "";
 		}
 		&::before {
 			width: 30px;

@@ -1,7 +1,7 @@
 .social-card {
 	position: relative;
-	background-color: #fff;
 	min-height: 42vw;
+	background-color: #fff;
 	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@include mq(tos) {
 		min-height: 32vw;
@@ -29,8 +29,8 @@
 	&__date {
 		display: inline-block;
 		color: #777;
-		text-decoration: none;
 		line-height: 19px;
+		text-decoration: none;
 		white-space: nowrap;
 	}
 	&__source {
