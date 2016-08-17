@@ -72,6 +72,6 @@
 <body class="" <?php echo sb_body_attributes(); ?>>
 
 	<ul class="accessibility-links">
-		<li><a href="#bottom">Skip to navigation</a></li>
-		<li><a href="#content">Skip to content</a></li>
+		<li><a href="#bottom">Jump to the site navigation</a></li>
+		<li><a href="#content">Jump to the page content</a></li>
 	</ul>
