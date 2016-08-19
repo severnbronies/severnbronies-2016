@@ -3,13 +3,13 @@
 		border-bottom: 1px solid $meet-border-color;
 	}
 	&__item {
+		position: relative;
 		min-height: $avatar-grid-size;
+		padding: 10px 20px;
 		border-width: 0;
+		border-bottom-width: 1px;
 		border-style: solid;
 		border-color: $meet-border-color;
-		border-bottom-width: 1px;
-		position: relative;
-		padding: 10px 20px;
 		overflow: hidden;
 		@include mq(tng) {
 			display: table-cell;

@@ -1,10 +1,10 @@
 // Settings - Breakpoints 
 $breakpoints: (
-	ent: 'only screen',
-	tos: 'only screen and (min-width: 520px)',
-	tng: 'only screen and (min-width: 860px)',
-	ds9: 'only screen and (min-width: 1020px)',
-	voy: 'only screen and (min-width: 1280px)'
+	ent: "only screen",
+	tos: "only screen and (min-width: 520px)",
+	tng: "only screen and (min-width: 860px)",
+	ds9: "only screen and (min-width: 1020px)",
+	voy: "only screen and (min-width: 1280px)"
 );
 
 // Settings - Typography
@@ -13,7 +13,7 @@ $base-font-size: 16px;
 // Settings - Animation
 $menu-width: 500px;
 $menu-transition-duration: 1s;
-$menu-transition-easing: cubic-bezier(.785, .135, .150, .860);
+$menu-transition-easing: cubic-bezier(.785, .135, .15, .86);
 
 // Settings - Colours
 $palette-locales: (

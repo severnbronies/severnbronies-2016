@@ -2,8 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: space-between;
 	align-items: flex-start;
+	justify-content: space-between;
 	margin: 40px 20px;
 	@include mq(tos) {
 		flex-direction: row;
@@ -11,16 +11,16 @@
 	&__avatar {
 		width: 120px;
 		height: 120px;
-		margin-left: -6px;
 		margin-bottom: 6px;
+		margin-left: -6px;
 		border: 6px solid #fff;
 		border-radius: 6px;
 		line-height: 0;
 		@include mq(tos) {
 			width: 20%;
 			height: auto;
-			margin-left: 0;
 			margin-bottom: 0;
+			margin-left: 0;
 		}
 	}
 	&__body {
@@ -51,50 +51,11 @@
 			opacity: .8;
 		}
 		&::before {
+			margin-right: .5em;
 			content: "\002709";
-			margin-right: .2em;
 		}
 	}
 	&__content {
 		opacity: .65;
 	}
 }
-
-// .staff-card {
-// 	display: flex;
-// 	flex-direction: row;
-// 	flex-wrap: nowrap;
-// 	align-items: stretch;
-// 	margin-top: 20px;
-// 	margin-bottom: 20px;
-// 	border: 1px solid #ccc;
-// 	background-color: #fff;
-// 	&__avatar {
-// 		width: 96px;
-// 		height: 96px;
-// 	}
-// 	&__body {
-// 		padding: 20px;
-// 		border-left: 1px solid #ccc;
-// 	}
-// 	&__header {
-
-// 	}
-// 	&__title {
-// 		@include header-picard;
-// 		display: inline;
-// 	}
-// 	&__email {
-// 		@include secondary-font;
-// 		margin-left: 5px;
-// 		color: palette(severn, base);
-// 		text-decoration: none;
-// 		&:hover,
-// 		&:focus {
-// 			color: palette(severn, darkest);
-// 		}
-// 	}
-// 	&__content {
-
-// 	}
-// }

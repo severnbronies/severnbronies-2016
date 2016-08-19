@@ -24,7 +24,7 @@ function sb_page_title() {
  * @return string The resulting HTML. 
  */
 function sb_responsive_image_helper($image_id, $class_name = "") {
-	return '<img class="' . $class_name . '" alt="' . get_post_meta($image_id, "_wp_attachment_image_alt", true) . '" src="' . wp_get_attachment_image_src($image_id, "banner-large")[0] . '" srcset="' . wp_get_attachment_image_src($image_id, "banner-large")[0] . ' 1000w, ' . wp_get_attachment_image_src($image_id, "banner-medium")[0] . ' 600w, ' . wp_get_attachment_image_src($image_id, "banner-small")[0] . ' 1w" sizes="(min-width: 1000px) 100vw, (min-width: 600px) 100vw, (min-width: 0px) 100vw, 100vw">';
+	return '<img itemprop="image" class="' . $class_name . '" alt="' . get_post_meta($image_id, "_wp_attachment_image_alt", true) . '" src="' . wp_get_attachment_image_src($image_id, "banner-large")[0] . '" srcset="' . wp_get_attachment_image_src($image_id, "banner-large")[0] . ' 1000w, ' . wp_get_attachment_image_src($image_id, "banner-medium")[0] . ' 600w, ' . wp_get_attachment_image_src($image_id, "banner-small")[0] . ' 1w" sizes="(min-width: 1000px) 100vw, (min-width: 600px) 100vw, (min-width: 0px) 100vw, 100vw">';
 }
 
 /**
@@ -89,4 +89,24 @@ function sb_search_highlight($term, $string) {
 	$keys = explode(" ", $term);
 	$string = preg_replace('/('.implode('|', $keys) .')/iu', '<mark>\0</mark>', $string);
 	return $string;
+}
+
+/**
+ * Return the HTML formatted start and end dates for a meet as an HTML5 time element.
+ * @param  string $start The start date timestamp.
+ * @param  mixed  $end   The end date timestamp, set to false to not output this at all.
+ * @return string        HTML formatted start and end dates.
+ */
+function sb_meet_dates($start, $end = false) {
+	$output = '<time datetime="'.date("c", $start).'" itemprop="startDate" content="'.date("c", $start).'">'.date("jS F Y, g:ia", $start).'</time>';
+	if($end) {
+		$output .= "&ndash;";
+		if(date("Ymd", $start) === date("Ymd", $end)) {
+			$output .= '<time datetime="'.date("c", $end).'" itemprop="endDate" content="'.date("c", $end).'">'.date("g:ia", $end).'</time>';
+		}
+		else {
+			$output .= '<time datetime="'.date("c", $end).'" itemprop="endDate" content="'.date("c", $end).'">'.date("jS F Y, g:ia", $end).'</time>';
+		}
+	}
+	return $output;
 }

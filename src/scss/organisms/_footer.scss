@@ -17,24 +17,24 @@
 	&__navigation,
 	&__boilerplate {
 		padding-right: 20px;
-		padding-left: 20px;
 		padding-bottom: 30px;
+		padding-left: 20px;
 	}
 	&__social-links {
 		@include mq(tos) {
-			width: 50%;
 			order: 2;
+			width: 50%;
 		}
 		@include mq(tng) {
-			width: 25%;
 			order: 3;
+			width: 25%;
 		}
 	}
 	&__navigation {
 		&--primary {
 			@include mq(tos) {
-				width: 50%;
 				order: 1;
+				width: 50%;
 			}
 			@include mq(tng) {
 				width: 25%;
@@ -42,16 +42,16 @@
 		}
 		&--secondary {
 			@include mq(tos) {
-				width: 100%;
 				order: 3;
+				width: 100%;
 				.footer__list {
-					column-count: 2;
 					column-gap: 20px;
+					column-count: 2;
 				}
 			}
 			@include mq(tng) {
-				width: 50%;
 				order: 2;
+				width: 50%;
 			}
 		}
 	}
@@ -77,13 +77,13 @@
 		}
 	}
 	&__boilerplate {
+		order: 5;
 		margin-top: 20px;
 		padding-top: 10px;
 		border-top: 3px solid rgba(#fff, .1);
 		color: #777;
 		font-size: em-calc(12px);
 		line-height: em-calc(15px, 12px);
-		order: 5;
 		a {
 			color: inherit;
 		}

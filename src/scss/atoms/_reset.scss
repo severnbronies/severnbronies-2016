@@ -1,329 +1,262 @@
-/**
- * Grey's CSS Reset v3.2 (Modified: 21st March 2014)
- * http://github.com/querkmachine/greyreset
- */
+@viewport { width: device-width; }
 
-
-
-/**
- * Responsive reset 
- */
-
-@-webkit-viewport { width: device-width; }
-   @-moz-viewport { width: device-width; }
-    @-ms-viewport { width: device-width; }
-     @-o-viewport { width: device-width; }
-        @viewport { width: device-width; }
-
-
-
-/**
- * Generic elements 
- */
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html, body,
-div, span, article, aside, figure, figcaption, footer, header, group, main, menu, nav, section,
-object, embed, iframe, applet, audio, video, img, picture,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, dl, dt, dd, ol, ul, li,
-a, pre, abbr, address, cite, code, del, ins, dfn, em, kbd, q, samp, small, sub, sup, var, b, i, u, s, strong, time, mark, bdi, bdo, ruby, rt, rp,
-form, fieldset, legend, label, input, button, select, textarea, keygen, output, progress, meter,
-details, summary, command, menu,
-table, thead, tbody, tfoot, caption, tr, th, td,
-hr {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  font-size: inherit;
-  font-style: normal;
-  vertical-align: baseline;
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
 }
 
 html {
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-  -webkit-overflow-scrolling: touch;
+	text-size-adjust: 100%;
+	overflow-scrolling: touch;
 }
 
 body {
-  background-color: transparent;
-  font-size: 100%;
-  line-height: 1;
+	background-color: transparent;
+	font-size: 100%;
+	line-height: 1;
 }
 
-article, aside, figure, figcaption, footer, header, hgroup, main, nav, picture, section, details {
-  display: block; /* IE6-9, FF3 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
 }
 
-figure {
-  margin: 0; /* IE8-9, S5 */
+template,
+[hidden] {
+	display: none;
 }
 
-hr {
-  -moz-box-sizing: content-box;
-       box-sizing: content-box;
-  display: block;
-  height: 0;
-  border-top: 1px solid #cccccc;
-}
+/** Multimedia and embedded content */
 
-
-
-/**
- * Multimedia 
- */ 
-
-audio, video, canvas {
-  display: inline-block; /* IE8-9 */
-  *display: inline; /* IE6-7, FF3 */
-  *zoom: 1; /* IE6-7, FF3 */
-}
-
-img, picture, svg, audio, video, canvas {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
-
-img {
-  image-rendering: optimizeQuality;
-  -ms-interpolation-mode: bicubic; /* IE7-8 */
+audio,
+canvas,
+progress,
+svg,
+video {
+	display: inline-block;
 }
 
 audio:not([controls]) {
-  display: none;
+	display: none;
+	height: 0;
+}
+
+audio,
+canvas,
+img,
+svg,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+img {
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
 }
 
 svg:not(:root) {
-  overflow: hidden; /* IE9 */
+	overflow: hidden;
 }
 
+hr {
+	height: 0;
+	border-top: 1px solid #ccc;
+	overflow: visible;
+	box-sizing: content-box;
+}
 
-
-/**
- * Hyperlinks
- */
+/** Links */
 
 a {
-  background: transparent; /* IE10 */
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+	&:active,
+	&:hover {
+		outline-width: 0;
+	}
+	img {
+		border: 0;
+	}
 }
 
-a:active, a:hover {
-  outline: 0;
+/** Typography */
+
+abbr[title],
+dfn[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
 }
 
-a:focus {
-  outline: thin dotted; /* Chrome */
+b,
+strong {
+	font-weight: inherit;
+	font-weight: bolder;
 }
 
-a img {
-  border: none; /* IE6-9 */
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
 }
 
-
-
-/**
- * Typography 
- */
-
-strong, b {
-  font-weight: bold;
-}
-
-em, i, dfn {
-  font-style: italic;
-}
-
-ins, u {
-  text-decoration: underline;
-}
-
-del, s {
-  text-decoration: line-through;
-}
-
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-small {
-  font-size: smaller;
-}
-
-sup, sub {
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-pre, code, kbd, samp, ruby, rt, rb {
-  font-size: 1em;
-  font-family: monospace;
+dfn {
+	font-style: italic;
 }
 
 mark {
-  background-color: #ff9;
-  border-bottom: 1px solid yellow;
+	background-color: #ff0;
+	color: #000;
 }
 
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help;
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
-
-
-/**
- * Lists
- */
-
-nav ol, nav ul {
-  list-style: none;
+small {
+	font-size: 80%;
 }
 
+sub,
+sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+}
 
+sub {
+	bottom: -.25em;
+}
 
-/**
- * Tables
- */
+sup {
+	top: -.5em;
+}
+
+q {
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/** Tables */
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 th, td, caption {
-  text-align: left;
-  vertical-align: top;
+	text-align: left;
+	vertical-align: top;
 }
 
+/** Forms */
 
-
-/**
- * Forms
- */
-
-[hidden],
-template {
-  display: none; /* IE7-9, FF3, S4 */
+button,
+input,
+select,
+textarea {
+	font: inherit;
 }
 
-input, button, textarea, select, optgroup {
-  margin: 0;
-  padding: 0;
-  border: 1px solid black;
-  background: transparent;
-  font-family: inherit;
-  font-size: 100%;
-  font-style: inherit;
-  font-weight: inherit;
-  vertical-align: baseline;
-  *vertical-align: middle; /* IE6-7 */
+optgroup {
+	font-weight: bold;
 }
 
-select option {
-  border: none;
-}
-
-input, button {
-  line-height: normal; /* FF3-4 */
-}
-
-button {
-  text-transform: none; /* Chrome, S5+, IE8+ */
-  overflow: visible; /* IE8+ */
+button,
+input {
+	overflow: visible;
 }
 
 button,
 select {
-  text-transform: none; /* IE8+, FF4+, Opera */
-}
-
-optgroup {
-  font-weight: bold;
-}
-
-input::-moz-focus-inner,
-button::-moz-focus-inner {
-  padding: 0; /* FF4+ */
-  border: 0; /* FF4+ */
+	text-transform: none;
 }
 
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  cursor: pointer;
-  -webkit-appearance: button;/* iOS */
-  *overflow: visible; /* IE7 */
-}
-
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-}
-
-input[type="search"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-appearance: textfield;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; /* iOS, S5, Chrome (OS X) */
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto; /* Chrome */
-}
-
-textarea {
-  vertical-align: top;
-  overflow: auto; /* IE6-9 */
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+	&::-moz-focus-inner {
+		padding: 0;
+		border-style: none;
+	}
+	&:-moz-focusring {
+		outline: 1px solid ButtonText;
+	}
 }
 
 fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.635em 0.75em;
+	margin: 0 2px;
+	padding: .35em .625em .75em;
+	border: 1px solid #c0c0c0;
 }
 
 legend {
-  padding: 0;
-  border: 0;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	color: inherit;
+	white-space: normal;
+}
+
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+	padding: 0;
+}
+
+[type="number"] {
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		height: auto;
+	}
+}
+
+[type="search"] {
+	outline-offset: 2px;
+	-webkit-appearance: textfield;
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+}
+
+::-webkit-input-placeholder {
+	color: inherit;
+	opacity: .54;
+}
+
+::-webkit-file-upload-button {
+	font: inherit;
+	-webkit-appearance: button;
+}
+
+[disabled] {
+	cursor: default;
 }

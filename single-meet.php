@@ -12,7 +12,8 @@
 				$meet_runners[] = array(
 					"id" => $runner,
 					"name" => get_the_title($runner),
-					"avatar" => sb_profile_avatar($runner)
+					"avatar" => sb_profile_avatar($runner),
+					"email" => get_field("runner_email", $runner),
 				);
 			}
 			// Location
@@ -28,7 +29,8 @@
 ?>
 
 	<main class="main" id="content" role="main">
-		<article class="meet">
+		<article class="meet" itemscope itemtype="http://schema.org/Event">
+			<meta itemprop="url" content="<?php the_permalink(); ?>">
 			<header class="meet__header">
 				<div class="meet__media">
 					<?php echo $meet_image; ?>
@@ -42,7 +44,7 @@
 						endif;
 					?>
 				</div>
-				<h1 class="meet__title"><?php the_title(); ?></h1>
+				<h1 class="meet__title" itemprop="name"><?php the_title(); ?></h1>
 				<?php 
 					if(time() >= get_field("meet_start_time") && time() < get_field("meet_end_time")):
 				?>
@@ -70,12 +72,18 @@
 						</div>
 						<div class="content metadata__value">
 							<?php 
-								for($i = 0; $i < count($meet_runners); $i++) {
-									echo $meet_runners[$i]["name"];
+								for($i = 0; $i < count($meet_runners); $i++):
+							?>
+									<span itemprop="organizer" itemscope itemtype="http://schema.org/Person">
+										<meta itemprop="image" content="<?php echo $meet_runners[$i]["avatar"]; ?>">
+										<meta itemprop="email" content="<?php echo $meet_runners[$i]["email"]; ?>">
+										<span itemprop="name"><?php echo $meet_runners[$i]["name"]; ?></span>
+									</span>
+							<?php 
 									if(!empty($meet_runners[$i + 1])):
-										echo ", ";
+										echo " / ";
 									endif;
-								}
+								endfor;
 							?>
 						</div>
 					</div>
@@ -109,13 +117,15 @@
 							Meeting point
 						</div>
 						<div class="content metadata__value">
-							<?php echo $meet_location["name"]; ?>,
-							<?php echo $meet_location["address"]; ?>
+							<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+								<span itemprop="name"><?php echo $meet_location["name"]; ?></span>,
+								<span itemprop="address"><?php echo $meet_location["address"]; ?></span>
+							</span>
 							(<a href="https://google.co.uk/maps/?q=<?php echo urlencode($meet_location["name"] . ", " . $meet_location["address"]); ?>" target="_blank">map</a>)
 						</div>
 					</div>
 				</footer>
-				<div class="content article meet__content">
+				<div class="content article meet__content" itemprop="description">
 					<?php
 						if(strlen(get_the_content()) > 0):
 							the_content(); 

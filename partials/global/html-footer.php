@@ -1,5 +1,5 @@
 	<ul class="accessibility-links">
-		<li><a href="#top">Skip to top</a></li>
+		<li><a href="#top">Jump to the top of the page</a></li>
 	</ul>
 
 	<!-- Postload JavaScript -->

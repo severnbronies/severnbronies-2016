@@ -1,7 +1,6 @@
 .meet-card {
 	display: flex;
 	position: relative;
-	overflow: hidden;
 	box-shadow: 0 0 13px 0 rgba(#000, .2);
 	@each $locale, $color in $palette-locales {
 		&[data-theme="#{$locale}"] {
@@ -14,21 +13,21 @@
 		display: block;
 		position: relative;
 		width: 100%;
-		text-decoration: none;
 		background-color: #212121;
+		text-decoration: none;
 		&::before,
 		&::after {
-			content: "";
 			position: absolute;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
+			content: "";
 			z-index: 1;
 		}
 		&::before {
-			background-color: rgba(palette(severn, base), .6);
 			transition: background-color .3s $menu-transition-easing;
+			background-color: rgba(palette(severn, base), .6);
 		}
 		&:hover,
 		&:focus {
@@ -57,18 +56,18 @@
 		}
 	}
 	&__body {
-		padding: 15px 20px;
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		z-index: 2;
+		padding: 15px 20px;
 		color: #fff;
+		z-index: 2;
 	}
 	&__title {
 		@include header-kirk;
+		position: relative;
 		margin-bottom: 5px;
 		padding-right: 15px;
-		position: relative;
 		color: inherit;
 	}
 	&__live {
@@ -85,8 +84,8 @@
 		display: inline;
 		&:nth-child(n+2) {
 			&::before {
-				content: "\2022";
 				margin-right: .3em;
+				content: "\2022";
 			}
 		}
 	}

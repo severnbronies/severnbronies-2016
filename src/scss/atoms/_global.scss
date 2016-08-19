@@ -3,8 +3,8 @@ html {
 }
 
 body {
-	color: #212121;
 	background-color: transparent;
+	color: #212121;
 	&.overlay-open {
 		overflow: hidden;
 	}

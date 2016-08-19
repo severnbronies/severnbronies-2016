@@ -1,4 +1,10 @@
-<!doctype html>
+<?php 
+	if(have_posts()): 
+		while(have_posts()):
+			the_post();
+		endwhile;
+	endif;
+?><!doctype html>
 <html lang="en-gb" dir="ltr" prefix="og: http://ogp.me/ns#" class="no-js">
 <head>
 
@@ -12,7 +18,13 @@
 	<!-- Content metadata -->
 	<meta name="author" content="<?php bloginfo("name"); ?>">
 	<meta name="copyright" content="<?php echo date("Y"); ?> <?php bloginfo("name"); ?>">
-	<meta name="description" content="<?php bloginfo("description"); ?>">
+	<meta name="description" content="<?php
+		if(is_page() || is_single()):
+			echo strip_tags(get_the_excerpt($post->ID));
+		else:
+			echo sb_page_title();
+		endif;
+	?>">
 
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo sb_asset("images/favicon/apple-touch-icon.png"); ?>">
@@ -28,11 +40,6 @@
 	<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 	<meta name="twitter:site" content="@severnbronies">
 <?php 
-	if(have_posts()): 
-		while(have_posts()):
-			the_post();
-		endwhile;
-	endif;
 	if(is_single()):
 ?>
 	<meta name="twitter:card" content="summary_large_image">
@@ -72,6 +79,6 @@
 <body class="" <?php echo sb_body_attributes(); ?>>
 
 	<ul class="accessibility-links">
-		<li><a href="#bottom">Skip to navigation</a></li>
-		<li><a href="#content">Skip to content</a></li>
+		<li><a href="#bottom">Jump to the site navigation</a></li>
+		<li><a href="#content">Jump to the page content</a></li>
 	</ul>

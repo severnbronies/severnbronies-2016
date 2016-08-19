@@ -10,10 +10,10 @@
 		padding-top: 10px;
 		padding-right: 20px;
 		padding-bottom: 10px;
-		text-align: left;
 		border-width: 0;
 		border-style: solid;
 		border-color: #ddd;
+		text-align: left;
 		vertical-align: top;
 	}
 	thead {
@@ -57,9 +57,9 @@
 		}
 		tr {
 			border-width: 0;
+			border-bottom-width: 1px;
 			border-style: solid;
 			border-color: #ddd;
-			border-bottom-width: 1px;
 			&:first-child {
 				border-top-width: 1px;
 			}

@@ -1,11 +1,11 @@
 @mixin header-font {
-	font-family: Montserrat, 'Helvetica Neue', Arial, sans-serif;
+	font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
 	font-weight: 400;
 }
 
 @mixin body-font {
-	font-size: $base-font-size;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: $base-font-size;
 	font-weight: 400;
 }
 
@@ -65,8 +65,8 @@
 
 @mixin header-pike {
 	@include header-font;
-	font-weight: normal;
 	font-style: italic;
+	font-weight: normal;
 }
 
 body {
