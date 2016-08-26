@@ -1,3 +1,4 @@
+default: "Severn"
 context:
     meetImage: //placeponi.es/500/500/2
     meetTitle: Stranger than Fan Fiction

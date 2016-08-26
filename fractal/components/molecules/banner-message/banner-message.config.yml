@@ -1,4 +1,10 @@
-status: wip
 context:
     message: We're legally obliged to tell you that this website uses cookies, some of which may stalk you relentlessly across the internet. For more information see our page about cookies. That's it. You can carry on with your life now, sleeping soundly, safe in the knowledge that this website uses cookies.
     closeButton: true
+variants:
+  - name: error
+    status: wip
+  - name: success
+    status: wip
+  - name: warning
+    status: wip
