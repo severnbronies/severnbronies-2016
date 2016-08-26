@@ -1,4 +1,4 @@
-status: wip
+default: "Severn"
 context:
     themes: 
         - severn 

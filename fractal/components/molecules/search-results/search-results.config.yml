@@ -1,3 +1,4 @@
+default: "Standard result"
 status: wip
 context:
     searchResults:
@@ -10,3 +11,6 @@ context:
         - title: "#6Severn: The Season 6 Premiere Meet"
           excerpt: Well, that came suddenly. Guess we’re doing a meetup then!
           permalink: http://severnbronies.co.uk/meet/season-6-premiere-meet
+variants:
+  - name: no-results
+    status: ready

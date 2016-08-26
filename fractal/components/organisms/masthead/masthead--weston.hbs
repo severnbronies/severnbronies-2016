@@ -1,0 +1,21 @@
+<div data-theme="weston-super-mare">
+
+    <header class="masthead" role="banner">
+        <div class="masthead__inner">
+            <a class="masthead__branding" href="/">
+                <img class="masthead__logo" src="{{ path '/images/logo.svg' }}" alt="Severn Bronies">
+            </a>
+            <div class="masthead__nav-toggle">
+                <a class="masthead__nav-toggle__link" href="#bottom">
+                    <span class="masthead__nav-toggle__label">Menu</span>
+                </a>
+            </div>
+            <nav class="navigation masthead__nav" role="navigation">
+                <div class="navigation__inner">
+                    {{> @navigation }}
+                </div>
+            </nav>
+        </div>
+    </header>
+
+</div>

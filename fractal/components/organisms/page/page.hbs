@@ -5,13 +5,13 @@
     <div class="page__body">
         <header class="page__header">
             <h1 class="page__title">{{ title }}</h1>
-            <div class="page__modified">
-                Last modified:
-                <time datetime="2016-06-05T09:13:02Z">{{ date }}</time>
-            </div>
         </header>
         <div class="content article page__content">
             <p>{{ content }}</p>
+            <p class="page__modified">
+                This page was last modified on
+                <time datetime="2016-06-05T09:13:02Z">{{ date }}</time>
+            </p>
         </div>
     </div>
 </article>
