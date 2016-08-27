@@ -32,15 +32,21 @@
 		}
 	}
 	&__image {
+		display: none;
 		width: 80px;
 		height: 80px;
 		float: left;
 		object-fit: cover;
+		@include mq(tos) {
+			display: block;
+		}
 	}
 	&__body {
 		display: flex;
 		flex-direction: column;
-		margin-left: 100px;
+		@include mq(tos) {
+			margin-left: 100px;
+		}
 	}
 	&__title {
 		@include header-picard;
@@ -61,6 +67,10 @@
 	&__content {
 		@include secondary-font;
 		order: 3;
+		font-size: em-calc(13px);
+		@include mq(tos) {
+			font-size: em-calc(14px);
+		}
 	}
 	&__message {
 		@include secondary-font;

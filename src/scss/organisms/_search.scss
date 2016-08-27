@@ -19,8 +19,10 @@
 	}
 	&__results {
 		margin-top: 40px;
-		padding-left: 6vw;
 		transition: opacity 1s $menu-transition-easing;
+		@include mq(tos) {
+			padding-left: 6vw;
+		}
 	}
 	&--loading {
 		.search__form {
