@@ -15,10 +15,10 @@
 		color: inherit;
 		text-decoration: none;
 		transition: box-shadow .2s ease;
-		box-shadow: inset 2px 0 0 0 palette(severn, base); 
+		box-shadow: inset 3px 0 0 0 palette(severn, base); 
 		@each $locale, $color in $palette-locales {
 			[data-theme="#{$locale}"] & {
-				box-shadow: inset 2px 0 0 0 palette($locale, base); 
+				box-shadow: inset 3px 0 0 0 palette($locale, base); 
 			}
 		}
 		&:hover,
