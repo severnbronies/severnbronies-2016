@@ -5,22 +5,72 @@
 	&__item {
 		max-width: 38em;
 		margin-bottom: 20px;
-		padding: 20px;
 		background-color: #fff;
 		box-shadow: 0 0 13px 0 rgba(#000, .2);
 	}
 	&__link {
+		@include clearfix;
 		display: block;
+		padding: 20px 20px 20px 18px;
 		color: inherit;
 		text-decoration: none;
+		transition: box-shadow .2s ease;
+		box-shadow: inset 3px 0 0 0 palette(severn, base); 
+		@each $locale, $color in $palette-locales {
+			[data-theme="#{$locale}"] & {
+				box-shadow: inset 3px 0 0 0 palette($locale, base); 
+			}
+		}
+		&:hover,
+		&:focus {
+			box-shadow: inset 5px 0 0 0 palette(severn, base); 
+			@each $locale, $color in $palette-locales {
+				[data-theme="#{$locale}"] & {
+					box-shadow: inset 5px 0 0 0 palette($locale, base); 
+				}
+			}
+		}
+	}
+	&__image {
+		display: none;
+		width: 80px;
+		height: 80px;
+		float: left;
+		object-fit: cover;
+		@include mq(tos) {
+			display: block;
+		}
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+		@include mq(tos) {
+			margin-left: 100px;
+		}
 	}
 	&__title {
 		@include header-picard;
+		display: inline-block;
+		order: 2;
 		margin-bottom: 8px;
 		color: palette(severn, base);
 	}
+	&__type {
+		@include header-archer;
+		@include secondary-font;
+		order: 1;
+		margin-bottom: 8px;
+		font-weight: bold;
+	}
+	&__date {
+	}
 	&__content {
 		@include secondary-font;
+		order: 3;
+		font-size: em-calc(13px);
+		@include mq(tos) {
+			font-size: em-calc(14px);
+		}
 	}
 	&__message {
 		@include secondary-font;
