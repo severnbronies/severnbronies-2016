@@ -1,14 +1,21 @@
 .template-error-page {
-	width: 90%;
-	max-width: 560px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top: 2.5%;
+	@include wrapper;
+	display: flex;
+	flex-direction: column;
+	padding-top: 5%;
 	padding-bottom: 5%;
 	text-align: center;
+	@include mq(tng) {
+		flex-direction: row;
+		text-align: right;
+	}
 	&__image {
 		position: relative;
 		margin-bottom: 10%;
+		padding: 0 20px;
+		@include mq(tng) {
+			order: 2;
+		}
 		&:before {
 			display: block;
 			position: absolute;
@@ -25,10 +32,21 @@
 			position: relative;
 		}
 	}
+	&__body {
+		max-width: 32em;
+		margin: 0 auto;
+		padding: 0 20px;
+		@include mq(tng) {
+			order: 1;
+			margin: 40px 0;
+		}
+	}
 	&__title {
 		@include header-janeway;
+		max-width: 16em;
+		margin-bottom: 20px;
 	}
-	&__body {
+	&__content {
 		
 	}
 }
