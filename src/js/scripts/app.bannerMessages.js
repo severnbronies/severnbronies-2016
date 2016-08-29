@@ -7,7 +7,7 @@ app.bannerMessages = function() {
 			var $this = $(this);
 			$this.closest(".banner-message").remove();
 			var cookieName = $this.attr("data-close-banner");
-			app.helpers.createCookie(cookieName, "1", 28);
+			app.helpers.createCookie(cookieName, "1", 84);
 		});
 	};
 };

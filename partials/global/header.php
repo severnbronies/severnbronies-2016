@@ -49,8 +49,6 @@
 		</div>
 	</header>
 
-	
-
 	<!--[if lt IE 9]>
 		<div class="banner-message banner-message--warning">
 			<div class="content banner-message__body">
