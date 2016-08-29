@@ -41,7 +41,7 @@ class sb_navigation_walker extends Walker_Nav_Menu {
 			$classes .= " navigation__item--current";
 		}
 		$output .= "<li class=\"$classes\">";
-		$attributes = trim( $attributes );
+		$attributes = trim($attributes);
 		$title = apply_filters("the_title", $item->title, $item->ID);
 		$item_output = "$args->before<a $attributes>$args->link_before$title$args->link_after</a>$args->after";
 		$output .= apply_filters(
@@ -101,7 +101,7 @@ class sb_footer_walker extends Walker_Nav_Menu {
 
 class sb_social_links_walker extends Walker_Nav_Menu {
 	public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-		$attributes = 'class="social-links__link social-links__link--' . strtolower($item->title) . '"';
+		$attributes = 'class="social-links__link social-links__link--' . sb_social_service_from_url($item->url) . '"';
 		$classes = "social-links__item";
 		if(!empty($item->attr_title) && $item->attr_title !== $item->title) {
 			$attributes .= ' title="' . esc_attr($item->attr_title) . '"';

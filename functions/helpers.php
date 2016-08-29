@@ -110,3 +110,38 @@ function sb_meet_dates($start, $end = false) {
 	}
 	return $output;
 }
+
+/** 
+ * Pass it a URL, it returns the attribute-safe service name that it links to. 
+ * @param  string $url The URL of the link.
+ * @return string      The already sanitised version of the service name. 
+ */
+function sb_social_service_from_url($url) {
+	switch(parse_url($url, PHP_URL_HOST)) {
+		case 'twitter.com':
+		case 'www.twitter.com':
+			return "twitter"; 
+			break;
+		case 'facebook.com':
+		case 'www.facebook.com':
+			return "facebook"; 
+			break;
+		case 'tumblr.com':
+		case 'www.tumblr.com':
+		case 'blog.severnbronies.co.uk':
+			return "tumblr"; 
+			break;
+		case 'telegram.me':
+		case 'www.telegram.me':
+			return "telegram"; 
+			break;
+		case 'discordapp.com':
+		case 'www.discordapp.com':
+			return "discord"; 
+			break;
+		case 'github.com':
+		case 'www.github.com':
+			return "github"; 
+			break;
+	}
+}

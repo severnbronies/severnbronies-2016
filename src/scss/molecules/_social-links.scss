@@ -1,50 +1,65 @@
 .social-links {
 	&__list {
-		
+		list-style: none;
 	}
 	&__item {
-		display: inline-block;
-		margin-right: 5px;
+		width: 50%;
+		float: left;
+		margin-bottom: 4px;
+		@include mq("only screen and (min-width: 860px) and (max-width: 1070px)") {
+			width: 100%;
+			float: none;
+		}
 	}
 	&__label {
-		@include hidden;
 	}
 	&__link {
 		display: block;
-		width: 2em;
-		height: 2em;
-		transition: transform .3s $menu-transition-easing;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 1.5em;
-		&:hover,
-		&:focus {
+		padding-right: 8px;
+		color: #888;
+		font-size: em-calc(13px);
+		text-decoration: none;
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 2em;
+			height: 2em;
+			margin-right: 8px;
+			color: #fff;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 1.5em;
+			transition: transform .3s $menu-transition-easing;
+			vertical-align: middle;
+		}
+		&:hover::before,
+		&:focus::before {
 			transform: scale(1.2);
 		}
-		&--twitter {
-			background-color: palette(social, twitter);
+		&--twitter::before {
 			@include icon-social-twitter(#fff);
+			background-color: palette(social, twitter);
 		}
-		&--facebook {
-			background-color: palette(social, facebook);
+		&--facebook::before {
 			@include icon-social-facebook(#fff);
+			background-color: palette(social, facebook);
 		}
-		&--tumblr {
-			background-color: palette(social, tumblr);
+		&--tumblr::before {
 			@include icon-social-tumblr(#fff);
+			background-color: palette(social, tumblr);
 		}
-		&--github {
-			background-color: palette(social, github);
+		&--github::before {
 			@include icon-social-github(#fff);
+			background-color: palette(social, github);
 		}
-		&--telegram {
-			background-color: palette(social, telegram);
+		&--telegram::before {
 			@include icon-social-telegram(#fff);
+			background-color: palette(social, telegram);
 			background-size: 16px 16px;
 		}
-		&--discord {
-			background-color: palette(social, discord);
+		&--discord::before {
 			@include icon-social-discord(#fff);
+			background-color: palette(social, discord);
 			background-size: 18px 18px;
 		}
 	}
