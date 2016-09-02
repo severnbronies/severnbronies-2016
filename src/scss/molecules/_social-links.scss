@@ -4,8 +4,8 @@
 	}
 	&__item {
 		width: 50%;
-		float: left;
 		margin-bottom: 4px;
+		float: left;
 	}
 	&__label {
 	}
@@ -16,16 +16,16 @@
 		font-size: em-calc(13px);
 		text-decoration: none;
 		&::before {
-			content: "";
 			display: inline-block;
 			width: 2em;
 			height: 2em;
 			margin-right: 8px;
-			color: #fff;
+			transition: transform .3s $menu-transition-easing;
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: 1.5em;
-			transition: transform .3s $menu-transition-easing;
+			color: #fff;
+			content: "";
 			vertical-align: middle;
 		}
 		&:hover::before,
