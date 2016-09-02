@@ -1,8 +1,8 @@
 .banner-message {
 	position: relative;
 	padding: 15px 40px 15px 20px;
-	color: #fff;
 	background-color: palette(context, neutral);
+	color: #fff;
 	&__body {
 		font-size: em-calc(14px);
 		p {
