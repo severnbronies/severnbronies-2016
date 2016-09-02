@@ -11,7 +11,6 @@ app.search = function($form) {
 			e.preventDefault();
 			$form.closest(".search").addClass("search--loading");
 			var query = $form.find("[name='s']").val();
-			console.log("Captured search", query);
 			$.ajax({
 				url: $form.attr("action"),
 				method: $form.attr("method"),
@@ -20,7 +19,11 @@ app.search = function($form) {
 				}
 			}).done(function(data) {
 				$("[data-search-results]").replaceWith($(data).find("[data-search-results]"));
-			}).fail(function() {
+				$("img:not(.img-ready)").each(function() {
+					app.ui.imageTransition($(this));
+				});
+			}).fail(function(jqXHR, textStatus, errorThrown) {
+				console.log(errorThrown);
 				alert("An error occurred.");
 			}).always(function() {
 				$form.closest(".search").removeClass("search--loading");

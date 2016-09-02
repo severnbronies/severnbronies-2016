@@ -29,6 +29,12 @@
 			order: 3;
 			width: 25%;
 		}
+		@include mq("only screen and (min-width: 860px) and (max-width: 1070px)") {
+			.social-links__itme {
+				width: 100%;
+				float: none;
+			}
+		}
 	}
 	&__navigation {
 		&--primary {
@@ -69,7 +75,7 @@
 	}
 	&__link {
 		display: inline-block;
-		color: #777;
+		color: #888;
 		text-decoration: none;
 		&:hover,
 		&:focus {
@@ -81,7 +87,7 @@
 		margin-top: 20px;
 		padding-top: 10px;
 		border-top: 3px solid rgba(#fff, .1);
-		color: #777;
+		color: #888;
 		font-size: em-calc(12px);
 		line-height: em-calc(15px, 12px);
 		a {

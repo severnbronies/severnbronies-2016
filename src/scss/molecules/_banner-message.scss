@@ -1,8 +1,8 @@
 .banner-message {
 	position: relative;
 	padding: 15px 40px 15px 20px;
-	border-bottom: 1px solid rgba(black, .1);
 	background-color: palette(context, neutral);
+	color: #fff;
 	&__body {
 		font-size: em-calc(14px);
 		p {
@@ -33,5 +33,8 @@
 	}
 	&--success {
 		background-color: palette(context, success);
+	}
+	&--alert {
+		background-color: palette(severn, base);
 	}
 }

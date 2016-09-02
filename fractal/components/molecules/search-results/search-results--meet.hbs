@@ -1,16 +1,20 @@
 <div class="search-results" data-search-results>
     <ol class="search-results__list">
         {{#each searchResults}}
-        <li class="search-results__item">
+        <li class="search-results__item search-results__item--meet" data-theme="{{ this.locale }}">
             <a class="search-results__link" href="#">
+                {{#if this.image}}
+                <img class="search-results__image" alt="" src="{{ this.image }}">
+                {{/if}}
                 <div class="search-results__body">
                     <div class="search-results__type">
-                        Page
+                        Meet
                     </div>
                     <h2 class="search-results__title">
                         {{ this.title }}
                     </h2>
                     <div class="content search-results__content">
+                        <p>{{ this.locale }} &middot; <time class="search-results__date" datetime="2016-05-05T10:10:10">5th May 2016; 10:10am</time>&ndash;<time class="search-results__date" datetime="2016-05-05T21:10:10">9:10pm</time></p>
                         <p>{{ this.excerpt }}</p>
                     </div>
                 </div>

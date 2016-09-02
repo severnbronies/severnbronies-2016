@@ -1,16 +1,22 @@
-default: "Standard result"
+default: Standard result
 status: wip
 context:
     searchResults:
         - title: Severn Tunnel Bronies 
           excerpt: A little weekly meet for little bronies.
           permalink: http://severnbronies.co.uk/meet/severn-tunnel-bronies
+          image: //placeponi.es/400/300
+          locale: cardiff
         - title: "Severn Bronies On Tour: BUCK!"
           excerpt: BUCKcon is upon us! And with many of us headed there this year, we’re going to have an On Tour meet in Manchester!
           permalink: http://severnbronies.co.uk/meet/severn-bronies-on-tour
+          image: //placeponi.es/300/150
         - title: "#6Severn: The Season 6 Premiere Meet"
           excerpt: Well, that came suddenly. Guess we’re doing a meetup then!
           permalink: http://severnbronies.co.uk/meet/season-6-premiere-meet
+          locale: bristol
 variants:
   - name: no-results
     status: ready
+  - name: meet
+    title: Meet result
