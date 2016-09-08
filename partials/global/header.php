@@ -69,3 +69,16 @@
 	<?php 
 		endif;
 	?>
+	
+	<?php 
+		if(get_theme_mod("sb_alert_message", false) && !isset($_COOKIE["sbAlert-" + md5(get_theme_mod("sb_alert_message"))])) :
+	?>
+		<div class="banner-message <?php if(get_theme_mod("sb_alert_type", false)) { ?>banner-message--<?php echo get_theme_mod("sb_alert_type"); ?><?php } ?>">
+			<div class="content banner-message__body">
+				<p><?php echo get_theme_mod("sb_alert_message"); ?></p>
+			</div>
+			<a class="banner-message__close" data-close-banner="sbAlert-<?php echo md5(get_theme_mod("sb_alert_message")); ?>" href="#">&times;</a>
+		</div>
+	<?php 
+		endif;
+	?>
