@@ -6,12 +6,12 @@
 	get_template_part('partials/global/header');
 	$meet_query = new WP_Query(array(
 		"post_type" => "meet",
-		"orderby" => "meta_value_num",
+		"orderby" => "meta_value",
 		"order" => "ASC",
 		"posts_per_page" => -1,
 		"meta_key" => "meet_end_time",
 		"meta_compare" => ">",
-		"meta_value" => time()
+		"meta_value" => date('Y-m-d H:i:s')
 	));
 ?>
 
