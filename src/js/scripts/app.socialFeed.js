@@ -15,6 +15,9 @@ app.socialFeed = function() {
 			cache: false
 		}).done(function(html) {
 			$container.append(html);
+			$("img:not(.img-ready)").each(function() {
+				app.ui.imageTransition($(this));
+			});
 		});
 	};
 };
