@@ -15,6 +15,7 @@
 		width: 100%;
 		background-color: #212121;
 		text-decoration: none;
+		line-height: 0;
 		&::before,
 		&::after {
 			position: absolute;
@@ -62,6 +63,7 @@
 		padding: 15px 20px;
 		color: #fff;
 		z-index: 2;
+		line-height: em-calc($base-font-size);
 	}
 	&__title {
 		@include header-kirk;
