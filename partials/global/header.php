@@ -71,7 +71,7 @@
 	?>
 	
 	<?php 
-		if(get_theme_mod("sb_alert_message", false) && !isset($_COOKIE["sbAlert-" + md5(get_theme_mod("sb_alert_message"))])) :
+		if(get_theme_mod("sb_alert_message", false) && !isset($_COOKIE["sbAlert-" . md5(get_theme_mod("sb_alert_message"))])) :
 	?>
 		<div class="banner-message <?php if(get_theme_mod("sb_alert_type", false)) { ?>banner-message--<?php echo get_theme_mod("sb_alert_type"); ?><?php } ?>">
 			<div class="content banner-message__body">
