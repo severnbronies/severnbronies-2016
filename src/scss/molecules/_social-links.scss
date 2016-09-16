@@ -3,7 +3,7 @@
 		list-style: none;
 	}
 	&__item {
-		width: 50%;
+		width: 105px;
 		margin-bottom: 4px;
 		float: left;
 	}
@@ -15,6 +15,7 @@
 		color: #888;
 		font-size: em-calc(13px);
 		text-decoration: none;
+		white-space: nowrap;
 		&::before {
 			display: inline-block;
 			width: 2em;

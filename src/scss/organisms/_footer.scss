@@ -29,12 +29,6 @@
 			order: 3;
 			width: 25%;
 		}
-		@include mq("only screen and (min-width: 860px) and (max-width: 1070px)") {
-			.social-links__itme {
-				width: 100%;
-				float: none;
-			}
-		}
 	}
 	&__navigation {
 		&--primary {
