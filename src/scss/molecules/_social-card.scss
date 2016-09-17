@@ -10,11 +10,13 @@
 		min-height: 45vh;
 	}
 	&__media {
+		display: block;
+		margin-bottom: 20px;
+		line-height: 0;
 	}
 	&__image {
 		width: 100%;
 		height: 25vh;
-		margin-bottom: 20px;
 		object-fit: cover;
 	}
 	&__body {

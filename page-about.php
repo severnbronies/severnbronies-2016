@@ -66,21 +66,21 @@
 			</section>
 			<section class="page-about__section page-about__section--categories">
 				<header class="page-about__section-header">
-					<h1 class="page-about__section-title">Meets</h1>
+					<h1 class="page-about__section-title">Six kinds of meet</h1>
 				</header>
 				<div class="page-about__section-body">
 					<?php
 						foreach($meet_categories as $category): 
 					?>
-						<div class="content">
-							<strong><?php echo $category->name; ?></strong>&mdash;<?php echo $category->description; ?>
+						<div class="page-about__meet">
+							<img class="page-about__meet-image" src="<?php echo sb_asset("images/meets/" . $category->slug . ".png"); ?>">
+							<div class="content page-about__meet-description">
+								<p><strong><?php echo $category->name; ?></strong>: <?php echo $category->description; ?></p>
+							</div>
 						</div>
 					<?php 
 						endforeach;
 					?>
-					<div class="content">
-						Also you get a free badge and sticker when you come to your first meet!
-					</div>
 				</div>
 			</section>
 			<?php
@@ -88,7 +88,7 @@
 			?>
 			<section class="page-about__section page-about__section--staff">
 				<header class="page-about__section-header">
-					<h1 class="page-about__section-title">Brought to you by&hellip;</h1>
+					<h1 class="page-about__section-title">Brought to you by</h1>
 				</header>
 				<div class="page-about__section-body">
 					<?php 
