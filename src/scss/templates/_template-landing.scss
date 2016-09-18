@@ -1,0 +1,31 @@
+.template-landing {
+	margin-top: 30px;
+	margin-bottom: 40px;
+	&__inner {
+		padding-right: 20px;
+		padding-left: 20px;
+		@include mq(tos) {
+			padding-left: 6vw;
+		}
+	}
+	&__header {
+		margin-bottom: 20px;
+	}
+	&__title {
+		@include header-janeway;
+		opacity: .7;
+	}
+	&__body {
+
+	}
+	&__content {
+		max-width: 36em;
+		font-size: em-calc(18px);
+		@include mq(tng) {
+			font-size: em-calc(21px);
+		}
+	}
+	&__children {
+		margin-top: 30px;
+	}
+}

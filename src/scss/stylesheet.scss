@@ -4,7 +4,6 @@
 @import "app/mixins";
 
 // Atoms
-// e.g. @import "atoms/table";
 @import "atoms/reset";
 @import "atoms/global";
 @import "atoms/typography";
@@ -18,7 +17,6 @@
 @import "atoms/live-label";
 
 // Molecules
-// e.g. @import "molecules/data-table";
 @import "molecules/navigation";
 @import "molecules/search-form";
 @import "molecules/search-results";
@@ -34,7 +32,6 @@
 @import "molecules/social-card";
 
 // Organisms
-// e.g. @import "organisms/dataset";
 @import "organisms/masthead";
 @import "organisms/footer";
 @import "organisms/main";
@@ -46,12 +43,11 @@
 @import "organisms/intro-panel";
 
 // Templates
-// e.g. @import "templates/datasheet";
+@import "templates/template-landing";
 @import "templates/template-search";
 @import "templates/template-error-page";
 
 // Pages
-// e.g. @import "pages/datasheet-3124";
 @import "pages/page-about";
 @import "pages/page-home";
 
