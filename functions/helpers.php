@@ -86,8 +86,10 @@ function sb_fuzzy_date($timestamp) {
  * @return string         The modified text/HTML with the term highlighted.
  */
 function sb_search_highlight($term, $string) {
-	$keys = explode(" ", $term);
-	$string = preg_replace('/('.implode('|', $keys) .')/iu', '<mark>\0</mark>', $string);
+	if(!empty($term)) {
+		$keys = explode(" ", $term);
+		$string = preg_replace('/('.implode('|', $keys) .')/iu', '<mark>\0</mark>', $string);
+	}
 	return $string;
 }
 
