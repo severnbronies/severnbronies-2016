@@ -139,8 +139,8 @@ function sb_social_service_from_url($url) {
 			break;
 		case 'discordapp.com':
 		case 'www.discordapp.com':
-		case 'discordapp.gg':
-		case 'www.discordapp.gg':
+		case 'discord.gg':
+		case 'www.discord.gg':
 			return "discord"; 
 			break;
 		case 'github.com':
