@@ -102,4 +102,11 @@
 			padding-left: 140px;
 		}
 	}
+	&__contact-footer {
+		@include header-sisko;
+		padding: 40px 20px;
+		color: #fff;
+		background-color: #5832ab;
+		text-align: center;
+	}
 }

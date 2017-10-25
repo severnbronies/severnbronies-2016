@@ -1,6 +1,6 @@
 <?php 
 
-define("ASSET_VERSION", "2.4.1");
+define("ASSET_VERSION", "2.5.0");
 
 require_once "functions/helpers.php";
 require_once "functions/theme.php";
