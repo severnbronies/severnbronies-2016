@@ -39,7 +39,6 @@
 				<p>
 					&copy;<?php echo date("Y"); ?> Severn Bronies Ltd. All rights reserved. 
 					Severn Bronies Ltd. is a registered company in England and Wales. Company number: 10718261.
-					Registered office: Flat 3, 9 Manilla Road, Bristol, BS8 4ED, United Kingdom.
 					<em>My Little Pony: Friendship is Magic</em> is &copy; Hasbro. 
 					Severn Bronies Ltd. is not affiliated in any way with Hasbro or DHX Media. 
 					No copyright infringement intended. All copyrights belong to their their respective owners.
