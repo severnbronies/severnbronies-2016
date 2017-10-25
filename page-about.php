@@ -100,11 +100,11 @@
 								<header class="staff-card__header">
 									<h1 class="staff-card__title"><?php echo $staff["name"]; ?></h1>
 									<?php 
-										if(!empty($staff["email"])):
+										/*if(!empty($staff["email"])):
 									?>
 										<a class="staff-card__email" href="mailto:<?php echo $staff["email"]; ?>"><?php echo $staff["email"]; ?></a>
 									<?php 
-										endif;
+										endif;*/
 									?>
 								</header>
 								<div class="content staff-card__content">
@@ -120,6 +120,10 @@
 			<?php
 				endif;
 			?>
+			<footer class="content page-about__contact-footer">
+				Get in touch.<br>
+				<a href="mailto:hello@severnbronies.co.uk">hello@severnbronies.co.uk</a>
+			</footer>
 		</div>
 	</main>
 
