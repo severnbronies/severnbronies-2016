@@ -37,9 +37,10 @@
 			</div>
 			<div class="footer__boilerplate">
 				<p>
-					&copy;<?php echo date("Y"); ?> <?php bloginfo("name"); ?>. All rights reserved. 
-					My Little Pony: Friendship is Magic is &copy; Hasbro. 
-					Severn Bronies is not affiliated in any way with Hasbro or DHX Media. 
+					&copy;<?php echo date("Y"); ?> Severn Bronies Ltd. All rights reserved. 
+					Severn Bronies Ltd. is a registered company in England and Wales. Company number: 10718261.
+					<em>My Little Pony: Friendship is Magic</em> is &copy; Hasbro. 
+					Severn Bronies Ltd. is not affiliated in any way with Hasbro or DHX Media. 
 					No copyright infringement intended. All copyrights belong to their their respective owners.
 					Website designed and developed by <a href="http://greysadventures.com/">Grey's Adventures</a>.
 				</p>
