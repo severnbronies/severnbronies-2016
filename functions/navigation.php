@@ -74,7 +74,7 @@ class sb_footer_walker extends Walker_Nav_Menu {
 			$attributes .= ' href="' . esc_attr($item->url) . '"';
 		}
 		if($item->classes[0] != "") {
-			$classes .= " " . $item->classes[0];
+			$classes .= " footer__item--" . $item->classes[0];
 		}
 		$output .= "<li class=\"$classes\">";
 		$attributes = trim( $attributes );
