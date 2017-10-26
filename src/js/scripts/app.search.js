@@ -19,9 +19,7 @@ app.search = function($form) {
 				}
 			}).done(function(data) {
 				$("[data-search-results]").replaceWith($(data).find("[data-search-results]"));
-				$("img:not(.img-ready)").each(function() {
-					app.ui.imageTransition($(this));
-				});
+				app.ui.lazyload();
 			}).fail(function(jqXHR, textStatus, errorThrown) {
 				console.log(errorThrown);
 				alert("An error occurred.");

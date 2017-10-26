@@ -27,28 +27,26 @@ app.ui = {
 		}
 		return string;
 	},
-	imageTransition: function($image) {
-		var image = new Image();
-		image.onload = function() {
-			$image.addClass("img-ready");
-		};
-		image.onerror = function() {
-			console.log("Could not load", $image.attr("src"));
-		};
-		image.src = $image.attr("src");
+	lazyload: function() {
+		const $images = $('noscript.lazyload');
+		loadMedia(
+			$images.get(),
+			function() {
+				console.log(this);
+				$(this).addClass('img-ready');
+			},
+			true
+		);
 	}
 };
 
 $(document).ready(function() {
 	app.ui.fitvids();
-	$("img").each(function() {
-		app.ui.imageTransition($(this));
-	});
+	app.ui.lazyload();
 });
 
 $(window).load(function() {
 	$("[data-counter]").each(function() {
 		app.ui.counter($(this));
 	});
-	$("img").addClass("img-ready");
 });
