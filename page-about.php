@@ -73,7 +73,7 @@
 						foreach($meet_categories as $category): 
 					?>
 						<div class="page-about__meet">
-							<img class="page-about__meet-image" src="<?php echo sb_asset("images/meets/" . $category->slug . ".png"); ?>">
+							<noscript class="lazyload"><img class="page-about__meet-image" src="<?php echo sb_asset("images/meets/" . $category->slug . ".png"); ?>"></noscript>
 							<div class="content page-about__meet-description">
 								<p><strong><?php echo $category->name; ?></strong>: <?php echo $category->description; ?></p>
 							</div>
@@ -95,7 +95,7 @@
 						foreach($meet_staff as $staff):
 					?>
 						<article class="staff-card">
-							<img class="staff-card__avatar" alt="" src="<?php echo $staff["avatar"]; ?>">
+							<noscript class="lazyload"><img class="staff-card__avatar" alt="" src="<?php echo $staff["avatar"]; ?>"></noscript>
 							<div class="staff-card__body">
 								<header class="staff-card__header">
 									<h1 class="staff-card__title"><?php echo $staff["name"]; ?></h1>

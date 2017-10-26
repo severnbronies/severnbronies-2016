@@ -1,12 +1,10 @@
 img {
-	animation-name: image-in;
 	animation-duration: 3s;
-	animation-easing: linear;
-	animation-fill-mode: both;
+	animation-timing-function: linear;
 	.js & {
-		animation-play-state: paused;
+		animation-fill-mode: both;
 		&.img-ready {
-			animation-play-state: running;
+			animation-name: image-in;
 		}
 	}
 }

@@ -61,7 +61,7 @@
 								<?php 
 									for($i = 0; $i < $meet_runners_count; $i++):
 								?>
-								<img class="avatar-grid__item" alt="<?php echo $meet_runners[$i]["name"]; ?>" src="<?php echo $meet_runners[$i]["avatar"]; ?>">
+								<noscript class="lazyload"><img class="avatar-grid__item" alt="<?php echo $meet_runners[$i]["name"]; ?>" src="<?php echo $meet_runners[$i]["avatar"]; ?>"></noscript>
 								<?php 
 									endfor; 
 								?>
