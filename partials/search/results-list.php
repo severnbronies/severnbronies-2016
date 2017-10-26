@@ -8,7 +8,7 @@
 			<?php 
 				if(has_post_thumbnail()):
 			?>
-				<img class="search-results__image" alt="" src="<?php echo the_post_thumbnail_url('search-result'); ?>">
+				<noscript class="lazyload"><img class="search-results__image" alt="" src="<?php echo the_post_thumbnail_url('search-result'); ?>"></noscript>
 			<?php
 				endif;
 			?>

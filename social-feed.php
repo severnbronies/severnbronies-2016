@@ -49,7 +49,7 @@
 			if(!empty($post->image)):
 		?>
 			<a class="social-card__media" href="<?php echo $post->permalink; ?>">
-				<img class="social-card__image" alt="" src="<?php echo $post->image; ?>">
+				<noscript class="lazyload"><img class="social-card__image" alt="" src="<?php echo $post->image; ?>"></noscript>
 			</a>
 		<?php
 			endif;

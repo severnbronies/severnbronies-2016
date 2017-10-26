@@ -26,7 +26,7 @@
 	<header class="masthead" role="banner">
 		<div class="masthead__inner">
 			<a class="masthead__branding" href="/">
-				<img class="masthead__logo" src="<?php echo sb_asset("images/logo.svg"); ?>" alt="<?php bloginfo("name"); ?>">
+				<noscript class="lazyload"><img class="masthead__logo" src="<?php echo sb_asset("images/logo.svg"); ?>" alt="<?php bloginfo("name"); ?>"></noscript>
 			</a>
 			<div class="masthead__nav-toggle">
 				<a class="masthead__nav-toggle__link" href="#bottom">
