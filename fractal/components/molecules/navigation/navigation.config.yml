@@ -1,6 +1,10 @@
 context:
     navigationItems:
-        Meets: /meets
-        About: /about
-        Rules: /rules
-        Blog: http://blog.severnbronies.co.uk/
+        - label: Meets
+          href: /meets
+        - label: About
+          href: /about
+        - label: Rules
+          href: /rules
+        - label: Blog
+          href: http://blog.severnbronies.co.uk/

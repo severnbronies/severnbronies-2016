@@ -246,8 +246,8 @@ const nunjucks = require('@frctl/nunjucks')({
 });
 
 fractal.set('project.title', `${config.formattedName} component library`);
-//fractal.components.engine(nunjucks);
-fractal.components.set('ext', '.hbs');
+fractal.components.engine(nunjucks);
+fractal.components.set('ext', '.html');
 fractal.components.set('path', path.join(__dirname, 'fractal/components'));
 fractal.components.set('default.preview', '@preview');
 fractal.components.set('default.status', 'prototype');
@@ -278,7 +278,7 @@ fractal.components.set('statuses', {
 		color: "#29CC29"
 	}
 });
-//fractal.docs.engine(nunjucks);
+fractal.docs.engine(nunjucks);
 fractal.docs.set('path', path.join(__dirname, 'fractal/docs'));
 fractal.docs.set('default.status', 'draft');
 fractal.web.set('static.path', 'dst');
@@ -286,7 +286,7 @@ fractal.web.set('builder.dest', 'components');
 const customMandelbrot = mandelbrot({
 	'skin': 'black',
 	'nav': ['docs', 'components'],
-	'styles': ['default', '/css/styleguide.css'],
+	'styles': ['default'],
 	'scripts': ['default'],
 	'format': 'yaml'
 });

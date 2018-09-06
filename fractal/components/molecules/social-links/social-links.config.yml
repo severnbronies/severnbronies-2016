@@ -1,9 +1,15 @@
 status: wip
 context:
     socialLinks:
-        twitter: https://twitter.com/severnbronies
-        facebook: https://facebook.com/severnbronies
-        tumblr: http://blog.severnbronies.co.uk/
-        telegram: https://telegram.me/severnbronies
-        discord: https://discordapp.com/invite/mD3QkbX
-        github: https://github.com/severnbronies
+        - label: twitter
+          href: https://twitter.com/severnbronies
+        - label: facebook
+          href: https://facebook.com/severnbronies
+        - label: tumblr
+          href: http://blog.severnbronies.co.uk/
+        - label: telegram
+          href: https://telegram.me/severnbronies
+        - label: discord
+          href: https://discordapp.com/invite/mD3QkbX
+        - label: github
+          href: https://github.com/severnbronies

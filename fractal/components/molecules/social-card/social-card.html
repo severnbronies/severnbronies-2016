@@ -1,0 +1,22 @@
+<div class="grid">
+    {% for item in socialItems %}
+    <div class="social-card social-card--twitter {% if item.image %}social-card--has-image{% endif %} grid__item">
+        <footer class="social-card__footer">
+            <a class="social-card__source" href="#">Source name</a>
+            <a class="social-card__date" href="{{ item.permalink }}">
+                <time datetime="2016-05-06T09:04:12Z" title="2016-05-06T09:04:12Z">
+                    {{ item.timeAgo }}
+                </time>
+            </a>
+        </footer>
+        {% if item.image %}
+            <a class="social-card__media" href="{{ item.permalink }}">
+                <img class="social-card__image" alt="" src="{{ item.image }}">
+            </a>
+        {% endif %}
+        <div class="content social-card__body">
+            <p>{{ item.content }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

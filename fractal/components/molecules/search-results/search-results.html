@@ -1,6 +1,6 @@
 <div class="search-results" data-search-results>
     <ol class="search-results__list">
-        {{#each searchResults}}
+        {% for result in searchResults %}
         <li class="search-results__item">
             <a class="search-results__link" href="#">
                 <div class="search-results__body">
@@ -8,14 +8,14 @@
                         Page
                     </div>
                     <h2 class="search-results__title">
-                        {{ this.title }}
+                        {{ result.title }}
                     </h2>
                     <div class="content search-results__content">
-                        <p>{{ this.excerpt }}</p>
+                        <p>{{ result.excerpt }}</p>
                     </div>
                 </div>
             </a>
         </li>
-        {{/each}}
+        {% endfor %}
     </ol>
 </div>

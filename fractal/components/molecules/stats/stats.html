@@ -1,0 +1,8 @@
+<ul class="stats">
+    {% for stat in stats %}
+    <li class="stats__item">
+        <strong class="stats__value" data-counter>{{ stat.count }}</strong>
+        <span class="stats__key">{{ stat.label }}</span>
+    </li>
+    {% endfor %}
+</ul>

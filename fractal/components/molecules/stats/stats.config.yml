@@ -1,5 +1,8 @@
 context:
     stats:
-        events: 287
-        hours: 1052
-        people(ish): 180
+        - label: events
+          count: 287
+        - label: hours
+          count: 1052
+        - label: people(ish)
+          count: 180

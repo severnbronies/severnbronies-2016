@@ -1,0 +1,25 @@
+<div class="search-results" data-search-results>
+    <ol class="search-results__list">
+        {% for result in searchResults %}
+        <li class="search-results__item search-results__item--meet" data-theme="{{ result.locale }}">
+            <a class="search-results__link" href="#">
+                {% if result.image %}
+                <img class="search-results__image" alt="" src="{{ result.image }}">
+                {% endif %}
+                <div class="search-results__body">
+                    <div class="search-results__type">
+                        Meet
+                    </div>
+                    <h2 class="search-results__title">
+                        {{ result.title }}
+                    </h2>
+                    <div class="content search-results__content">
+                        <p>{{ result.locale }} &middot; <time class="search-results__date" datetime="2016-05-05T10:10:10">5th May 2016; 10:10am</time>&ndash;<time class="search-results__date" datetime="2016-05-05T21:10:10">9:10pm</time></p>
+                        <p>{{ result.excerpt }}</p>
+                    </div>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+</div>

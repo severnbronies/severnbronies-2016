@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            {% for col in columns %}
+            <th>{{ col.header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for col in columns %}
+            <td>{{ col.content }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
