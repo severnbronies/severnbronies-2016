@@ -40,8 +40,8 @@ She is the best pony.              ( /  \_         `.' / `.
 /* TEAM */
   Designer and developer: Kimberly Grey
   Twitter: @kimpegasus
-  Email: grey@bristolbronies.co.uk
-  Site: http://greysadventures.com/
+  Email: kim@severnbronies.co.uk
+  Site: http://berly.kim/
 
 /* SITE */
   Standards: HTML5, CSS3
