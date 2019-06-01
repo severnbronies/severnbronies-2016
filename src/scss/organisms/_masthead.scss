@@ -59,4 +59,22 @@
 			@include hidden;
 		}
 	}
+	[data-month="06"] &,
+	[data-month="07"] & {
+		border-top-color: #000;
+		.masthead__branding {
+			$pride2019Colors: (#eb6762, #f5bd60, #fff671, #abde75, #59b0f8, #aa68de);
+			$pride2019BandWidth: 4px;
+			$pride2019BandGap: 11px;
+			$pride2019Pos: 12px; // initial offset
+			$pride2019Gradient: '';
+			@each $color in $pride2019Colors {
+				$pride2019Gradient: $pride2019Gradient + 'transparent #{$pride2019Pos}, #{$color} #{$pride2019Pos}, #{$color} #{$pride2019Pos + $pride2019BandWidth}, transparent #{$pride2019Pos + $pride2019BandWidth}, ';
+				$pride2019Pos: $pride2019Pos + $pride2019BandWidth + $pride2019BandGap;
+			}
+			$pride2019Gradient: $pride2019Gradient + 'transparent';
+			background-color: #000;
+			background-image: linear-gradient(125.842deg, #{$pride2019Gradient});
+		}
+	}
 }
